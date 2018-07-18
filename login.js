@@ -14,7 +14,7 @@ loginMenu.id = 'login-menu';
 
         // IMG CLASS = 'user-pic'
         let loganPic = document.createElement('img');
-        loganPic.src = 'images/snorlax-profile.png';
+        loganPic.src = 'snorlax-profile.png';
         loganPic.classList.add('user-pic');
 
         // SPAN
@@ -37,7 +37,7 @@ newUserLogin.classList.add('user-profile');
 
     // IMG CLASS - 'user-pic'
     let newUserPic = document.createElement('img');
-    newUserPic.src = 'images/add.png';
+    newUserPic.src = 'add.png';
     newUserPic.classList.add('user-pic');
 
     // SPAN
