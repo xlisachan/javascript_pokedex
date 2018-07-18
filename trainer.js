@@ -136,6 +136,11 @@ class Trainer{
                 pokePic.src = pokemon.frontPic;
                 pokeBall.append(pokePic);
                 pokemonSection.append(pokeBall);
+
+                pokeBall.addEventListener('click', e => {
+                    
+                    pokeSearch(pokemon);
+                })
             }
             
             //     //Create remove button
