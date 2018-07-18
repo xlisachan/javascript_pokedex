@@ -109,6 +109,7 @@ class Trainer{
     
             let newTrainerFacts = document.createElement('div');
             newTrainerFacts.classList.add('trainer-facts');
+            
             //p CLASS - 'content' (name)
             let trainerName = document.createElement('p');
             trainerName.classList.add('content')
@@ -130,13 +131,13 @@ class Trainer{
             for (let pokemon of this.pokemonCaught) {
                
                 let pokeBall = document.createElement('span');
+                pokeBall.classList.add('pokeball');
                 let pokePic = document.createElement('img');
                 pokePic.src = pokemon.frontPic;
                 pokeBall.append(pokePic);
                 pokemonSection.append(pokeBall);
             }
             
-    
             //     //Create remove button
             //     let pokeBall = document.createElement('div');
             //     pokeBall.classList.add('pokeball');
