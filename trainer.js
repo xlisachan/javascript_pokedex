@@ -60,7 +60,7 @@ class Trainer{
         //LOGIN MENU
 
         //NAVBAR - LEFT
-        // pokemonSearch.appendChild(pokeSearchForm);
+        pokemonSearch.appendChild(pokeSearchForm);
 
         //NAVBAR -RIGHT
         let userLogin = document.getElementById('user');
@@ -134,33 +134,17 @@ class Trainer{
                 pokeBall.classList.add('pokeball');
                 let pokePic = document.createElement('img');
                 pokePic.src = pokemon.frontPic;
-                pokeBall.append(pokePic);
+                let pokeTag = document.createElement('p');
+                pokeTag.innerText = pokemon.name;
+                pokeBall.append(pokePic, pokeTag);
                 pokemonSection.append(pokeBall);
 
                 pokeBall.addEventListener('click', e => {
-                    
-                    pokeSearch(pokemon);
+                    newTrainerContainer.remove();
+                    pokeSearch(pokemon.name);
                 })
             }
             
-            //     //Create remove button
-            //     let pokeBall = document.createElement('div');
-            //     pokeBall.classList.add('pokeball');
-    
-            //     let pokeMonster = document.createElement('img');
-            //     pokeMonster.src = pokemon.pokeFrontPic;
-    
-            //     let removeButton = document.createElement('button')
-            //     removeButton.innerText = "Remove"
-            //     removeButton.classList.add('remove-poke');
-    
-            //     //for time management we are only going to append the name
-            //     let pokeWrapper = document.createElement('span')
-            //     pokeWrapper.innerText = pokemon.name
-    
-            //     pokeBall.append(pokeWrapper, pokeMonster, removeButton);
-            //     pokemonSection.append(pokeBall);
-    
         newTrainerFacts.append(trainerName, trainerStats);
         newTrainerContainer.append(newTrainerFacts, pokemonSection);
         pokedex.append(newTrainerContainer);
