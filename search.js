@@ -18,7 +18,7 @@ pokeSearchForm.setAttribute('autocomplete', 'off');
     const pokeSearchSubmit = document.createElement('img');
     pokeSearchSubmit.setAttribute('width', '20px');
     pokeSearchSubmit.setAttribute('height', 'auto');
-    pokeSearchSubmit.src = 'images/searchbutton.png';
+    pokeSearchSubmit.src = 'searchbutton.png';
     pokeSearchButton.appendChild(pokeSearchSubmit);
 
 pokeSearchForm.append(pokeSearchInputBox, pokeSearchButton);
