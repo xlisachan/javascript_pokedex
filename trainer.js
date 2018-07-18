@@ -130,6 +130,7 @@ class Trainer{
             for (let pokemon of this.pokemonCaught) {
                
                 let pokeBall = document.createElement('span');
+                pokeBall.classList.add('pokeball');
                 let pokePic = document.createElement('img');
                 pokePic.src = pokemon.frontPic;
                 pokeBall.append(pokePic);
