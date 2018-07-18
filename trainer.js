@@ -162,42 +162,42 @@ class Trainer{
     }
 }
 
-// //SECTION CLASS - 'trainer-signup'
-// let trainerSignup = document.createElement('section');
-// trainerSignup.classList.add('trainer-signup');
+//SECTION CLASS - 'trainer-signup'
+let trainerSignup = document.createElement('section');
+trainerSignup.classList.add('trainer-signup');
 
-//     //name
-//     let nameSpan = document.createElement('span');
-//     let name = document.createElement('h1')
-//     name.innerText = 'Name ';
-//     let nameInput = document.createElement('input');
-//     nameInput.classList.add('trainer-name');
-//     nameSpan.append(name, nameInput);
+    //name
+    let nameSpan = document.createElement('span');
+    let name = document.createElement('h1')
+    name.innerText = 'Name ';
+    let nameInput = document.createElement('input');
+    nameInput.classList.add('trainer-name');
+    nameSpan.append(name, nameInput);
 
-//     // hometown
-//     // let hometownSpan = document.createElement('span');
-//     // let hometown = document.createElement('h2')
-//     // hometown.innerText = 'Hometown ';
-//     // let hometownInput = document.createElement('input');
-//     // hometownInput.classList.add('trainer-hometown');
-//     // hometownSpan.append(hometown, hometownInput);
+    // hometown
+    // let hometownSpan = document.createElement('span');
+    // let hometown = document.createElement('h2')
+    // hometown.innerText = 'Hometown ';
+    // let hometownInput = document.createElement('input');
+    // hometownInput.classList.add('trainer-hometown');
+    // hometownSpan.append(hometown, hometownInput);
 
-//     //add button
-//     let addTrainerButton = document.createElement('button');
-//     addTrainerButton.innerText = 'ADD';
+    //add button
+    let addTrainerButton = document.createElement('button');
+    addTrainerButton.innerText = 'ADD';
 
-// //append
-// trainerSignup.append(nameSpan, addTrainerButton);
-// document.body.append(trainerSignup);
+//append
+trainerSignup.append(nameSpan, addTrainerButton);
+document.body.append(trainerSignup);
 
-// addTrainerButton.addEventListener('click', e => {
-//     e.preventDefault();
-//     let trainerName = document.getElementsByClassName('trainer-name')[0].value;
-//     // let trainerHometown = document.getElementsByClassName('trainer-hometown')[0].value;
+addTrainerButton.addEventListener('click', e => {
+    e.preventDefault();
+    let trainerName = document.getElementsByClassName('trainer-name')[0].value;
+    // let trainerHometown = document.getElementsByClassName('trainer-hometown')[0].value;
 
-//     let newTrainer = new Trainer(trainerName);
+    let newTrainer = new Trainer(trainerName);
 
-//     trainerList.push(newTrainer);
-//     newTrainer.renderTrainer();
-//     trainerSignup.remove();
-// });
+    trainerList.push(newTrainer);
+    newTrainer.renderTrainer();
+    trainerSignup.remove();
+});
