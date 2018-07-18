@@ -1,0 +1,192 @@
+@import 'colors';
+@import 'mixins';
+@import 'fonts';
+
+body{
+    font-family: $font-family;
+    font-size: 14px;
+    color: #000000;
+    text-transform: uppercase;
+}
+
+#container{
+    font-size: 30px;
+}
+
+// login
+#login-menu {
+    @include flexbox(flex, column, center, center);
+    justify-content: center;
+    width: 250px;
+    
+
+    .user-profile {
+        @include flexbox(flex, row, center, none);
+        justify-content: space-between;
+        margin: 5px;
+
+            .user-pic{
+                width: 30%;
+                height: auto;
+            }
+    }
+}
+
+#user{
+    text-align: right;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    color: black;
+    position: absolute;
+    left: -75px;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown:hover .dropdown-content {display: block;}
+
+.dropdown:hover .dropbtn {background-color: #3e8e41;}
+
+
+
+//trainer
+.new-trainer {
+    @include flexbox(flex, column, center, center);
+    justify-content: center;
+    width: 250px;
+    font-size: 90%;
+}
+
+.trainer-facts{
+    @include flexbox (flex, column, flex-start, center);
+}
+.trainer-pokemon {
+    @include flexbox(flex, row, center, center);
+    width: 300px;
+}
+
+#pokedex{
+    @include flexbox(flex, column, center, center);
+
+}
+
+.red-topcase{
+    @include flexbox(flex, column, center, center);
+    background-color: $red;
+    width: 335px;
+    height: 680px;
+    border-radius: 30px 30px;
+    border: 15px inset $red;
+    
+}
+
+.white-bezel {
+    @include flexbox(flex, column, center, center);
+    background-color: $white;
+    width: 350px;
+    height: 400px;
+    border-top: 10px solid white;
+    border-bottom: 10px solid white;
+    // border-left: 2px solid gray;
+}
+
+.circle-blacktop {
+    @include flexbox(flex, column, center, center);
+    background-color: $black;
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    position: absolute;
+    top: 90px;
+    border: 10px solid $white;   
+}
+
+.circle-blackbottom {
+    @include flexbox(flex, column, center, center);
+    background-color: $black;
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    position: absolute;
+    top: 490px;   
+    border: 10px solid $white; 
+}
+
+.screen{
+    background-color: $light-blue;
+    width: 335px;
+    height: 400px;
+    border-left: 15px solid gray;
+    position: absolute;
+    box-shadow: inset 2px 8px 18px -12px; 
+
+}
+
+.circle-bluetop {
+    @include flexbox(flex, column, center, center);
+    background-color: $light-blue;
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    position: absolute;
+    top: 3px;
+    border: 5px solid black;
+}
+
+.circle-bluebottom {
+    @include flexbox(flex, column, center, center);
+    background-color: $light-blue;
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    position: absolute;
+    top: 0px;  
+    border: 7px solid black;
+}
+
+.active {
+    @include flexbox(flex, column, center, center);
+    width: 90%;
+}
+
+#navigation-bar{
+    background-color: #333A40;
+    height: 30px;
+    color: white;
+    @include flexbox(flex, row, center, center);
+}
+
+// .search-button{
+//     height: 5%;
+//     width: auto;
+// }
+.poke-search{
+    @include flexbox (flex, row, center, center);
+
+}
+
+.user{
+
+}
+
+.content{
+
+}
+
+
