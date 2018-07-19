@@ -39,20 +39,15 @@ let pokeSearch = (pokemon) => {
 
         //DIV CLASS - 'pokemon-pics'
         let pokemonAlbum = document.createElement('div');
-        pokemonAlbum.classList.add('pokemon-pics');
 
-            //IMG CLASS - 'poke-pic'
-                //front
-                let pokeFrontPic = document.createElement('img');
-                pokeFrontPic.classList.add('pokemon-pic');
-                pokeFrontPic.src = data.sprites.front_default;
+        //IMG CLASS - 'poke-pic'
+            //front
+            let pokeFrontPic = document.createElement('img');
+            pokeFrontPic.classList.add('pokemon-pic');
+            pokeFrontPic.src = data.sprites.front_default;
 
-                //back
-                let pokeBackPic = document.createElement('img');
-                pokeBackPic.classList.add('pokemon-pic');
-                pokeBackPic.src = data.sprites.back_default;
         
-        pokemonAlbum.append(pokeFrontPic, pokeBackPic);
+        pokemonAlbum.append(pokeFrontPic);
 
         //DIV CLASS - 'pokefacts'
         let pokeFacts = document.createElement('div');
