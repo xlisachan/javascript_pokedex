@@ -1,6 +1,9 @@
 let trainerList = [];
 let trainers = 0;
 
+let newTrainerContainer = document.createElement('section');
+newTrainerContainer.classList.add('new-trainer');
+
 class Trainer{
     constructor(name){
         this.name = name;
@@ -104,9 +107,6 @@ class Trainer{
         })
 
         //SECTION CLASS - 'new-trainer'
-        let newTrainerContainer = document.createElement('section');
-        newTrainerContainer.classList.add('new-trainer');
-    
             let newTrainerFacts = document.createElement('div');
             newTrainerFacts.classList.add('trainer-facts');
             

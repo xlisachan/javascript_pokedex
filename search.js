@@ -28,6 +28,7 @@ pokemonSearch.appendChild(pokeSearchForm);
 pokeSearchForm.addEventListener('submit', e => {
     e.preventDefault();
     pokemonSearchResults.innerHTML = '';
+    newTrainerContainer.innerHTML = '';
     let pokemon = document.getElementById('search');
     pokeSearch(pokemon.value);
     pokemon.value = '';

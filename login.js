@@ -1,5 +1,4 @@
 pokeSearchForm.remove();
-// userLogin.appendChild(userNameButton);
 trainerSignup.remove();
 
 // SECTION ID - 'login-menu'
