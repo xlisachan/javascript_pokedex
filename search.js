@@ -85,7 +85,6 @@ let pokeSearch = (pokemon) => {
             pokeAbility.innerHTML = 'Abilities' + '<br>' + `${pokemonAbilities}`;
         
         pokemonSearchResults.append(pokeFacts, pokeStats, pokeAbility);
->>>>>>> scss
         pokedex.append(pokemonSearchResults);
 
     }).catch(error => {
