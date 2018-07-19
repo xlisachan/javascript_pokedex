@@ -68,11 +68,9 @@ body{
     @include flexbox(flex, column, center, center);
     font-size: 85%;
 }
-// .pokemon-pics{
-//     @include flexbox(flex, row, center, center);
-// }
+
 .pokemon-pic{
-    width: 80%;
+    width: 150%;
     height: auto;
 }
 

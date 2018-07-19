@@ -41,9 +41,12 @@ let pokeSearch = (pokemon) => {
         let pokemonAlbum = document.createElement('div');
 
         //IMG CLASS - 'poke-pic'
-        let pokeFrontPic = document.createElement('img');
-        pokeFrontPic.classList.add('pokemon-pic');
-        pokeFrontPic.src = data.sprites.front_default;
+            //front
+            let pokeFrontPic = document.createElement('img');
+            pokeFrontPic.classList.add('pokemon-pic');
+            pokeFrontPic.src = data.sprites.front_default;
+        
+        pokemonAlbum.append(pokeFrontPic);
 
         //DIV CLASS - 'pokefacts'
         let pokeFacts = document.createElement('div');
