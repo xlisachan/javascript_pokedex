@@ -38,20 +38,11 @@ let pokeSearch = (pokemon) => {
 
         //DIV CLASS - 'pokemon-pics'
         let pokemonAlbum = document.createElement('div');
-        pokemonAlbum.classList.add('pokemon-pics');
 
-            //IMG CLASS - 'poke-pic'
-                //front
-                let pokeFrontPic = document.createElement('img');
-                pokeFrontPic.classList.add('pokemon-pic');
-                pokeFrontPic.src = data.sprites.front_default;
-
-                //back
-                let pokeBackPic = document.createElement('img');
-                pokeBackPic.classList.add('pokemon-pic');
-                pokeBackPic.src = data.sprites.back_default;
-        
-        pokemonAlbum.append(pokeFrontPic, pokeBackPic);
+        //IMG CLASS - 'poke-pic'
+        let pokeFrontPic = document.createElement('img');
+        pokeFrontPic.classList.add('pokemon-pic');
+        pokeFrontPic.src = data.sprites.front_default;
 
         //DIV CLASS - 'pokefacts'
         let pokeFacts = document.createElement('div');
@@ -76,7 +67,7 @@ let pokeSearch = (pokemon) => {
             pokeType.classList.add('poke-stats');
             pokeType.innerText = data.types[0].type.name;
 
-        pokeFacts.append(pokeName, pokeNumber, pokeType);
+        pokeFacts.append(pokeFrontPic, pokeName, pokeNumber, pokeType);
 
         //DIV CLASS - 'pokestats' (hp, attack, defense, abilities)
         let pokeStats = document.createElement('div');
@@ -104,15 +95,8 @@ let pokeSearch = (pokemon) => {
             pokeAbility.innerText = `Ability ${pokemonAbilities}`;
 
             pokeStats.append(pokemonHp, pokemonAtk, pokemonDef, pokeAbility);
-
-            // //description??
-            // console.log(data);
-
-            // //evolution
-            // console.log(data);
         
-        
-        pokemonSearchResults.append(pokemonAlbum, pokeFacts, pokeStats);
+        pokemonSearchResults.append(pokeFrontPic, pokeFacts, pokeStats);
         pokedex.append(pokemonSearchResults);
     }).catch(error => {
         console.log(error);
