@@ -63,19 +63,36 @@ body{
 
 .dropdown:hover .dropbtn {background-color: #3e8e41;}
 
-//pokesearchresults
+//SEARCH
+#poke-search{
+    @include flexbox(flex, row, none, center);
+}
+#search {
+    width: 160px;
+    font-size: 10px;
+}
 .poke-results {
     @include flexbox(flex, column, center, center);
     font-size: 85%;
+    width: 110%
+}
+
+.poke-facts{
+    @include flexbox(flex, column, center, center);
 }
 
 .pokemon-pic{
-    width: 150%;
+    width: 160%;
     height: auto;
+}
+
+.poke-stats{
+    text-align: center;
 }
 
 .pokestats{
     @include flexbox(flex, row, center, space-between);
+    text-align: center;
     width: 110%;
 }
 
@@ -115,7 +132,11 @@ body{
 
 #pokedex{
     @include flexbox(flex, column, center, center);
+}
 
+.new-button{
+    border: 1px solid black;
+    background-color: lightgray;
 }
 
 //CASE
@@ -205,10 +226,6 @@ body{
     @include flexbox(flex, row, center, center);
 }
 
-// .search-button{
-//     height: 5%;
-//     width: auto;
-// }
 .poke-search{
     @include flexbox (flex, row, center, center);
 
