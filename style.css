@@ -88,6 +88,7 @@ body {
 .dropdown:hover .dropbtn {
   background-color: #3e8e41;
 }
+<<<<<<< HEAD
 
 .poke-results {
   display: -webkit-box;
@@ -131,6 +132,8 @@ body {
 .pokeAbils {
   width: 110%;
 }
+=======
+>>>>>>> search
 
 .new-trainer {
   display: -webkit-box;
@@ -182,6 +185,7 @@ body {
       -ms-flex-pack: center;
           justify-content: center;
   width: 300px;
+<<<<<<< HEAD
   position: relative;
   left: 12px;
 }
@@ -208,6 +212,8 @@ body {
   width: 90px;
   height: 110px;
   font-size: 80%;
+=======
+>>>>>>> search
 }
 
 #pokedex {
