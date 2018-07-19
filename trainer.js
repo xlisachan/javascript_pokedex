@@ -1,6 +1,7 @@
 let trainerList = [];
 let trainers = 0;
 
+
 class Trainer{
     constructor(name){
         this.name = name;
@@ -51,8 +52,6 @@ class Trainer{
             // this.pokemonCaught[pokemonName] = newPokemon;
             this.pokemonCaught.push(newPokemon);
 
-            //evolution
-            // console.log(data);
         });
     }
 
@@ -60,7 +59,7 @@ class Trainer{
         //LOGIN MENU
 
         //NAVBAR - LEFT
-        // pokemonSearch.appendChild(pokeSearchForm);
+        pokemonSearch.appendChild(pokeSearchForm);
 
         //NAVBAR -RIGHT
         let userLogin = document.getElementById('user');
@@ -79,41 +78,37 @@ class Trainer{
             let DDlogin = document.createElement('a');
             DDlogin.innerText = 'Login';
 
-            let DDsearch = document.createElement('a');
-            DDsearch.innerText = 'Search';
-
-        userNameDropdown.append(DDuserProfile, DDlogin, DDsearch);
+        userNameDropdown.append(DDuserProfile, DDlogin);
 
         userNameButton.append(userNameText, userNameDropdown);
         userLogin.appendChild(userNameButton);
 
         userNameButton.addEventListener('click', e =>{
             e.preventDefault();
-            if (e.target == DDuserProfile){
+            if (e.target === DDuserProfile){
                 pokedex.innerHTML = '';
+                userNameButton.remove();
                 logan.renderTrainer();
-                userNameButton.remove();
             } else if (e.target === DDlogin){
-                newTrainerContainer.remove();
-                pokedex.appendChild(loginMenu);
+                pokedex.innerHTML = '';
                 userNameButton.remove();
+                pokeSearchForm.remove();
+                pokedex.appendChild(loginMenu); 
             } 
-            // else if (e.target == DDsearch){
-            //     pokedex.appendChild()
-            // }
         })
 
         //SECTION CLASS - 'new-trainer'
         let newTrainerContainer = document.createElement('section');
         newTrainerContainer.classList.add('new-trainer');
-    
+            
             let newTrainerFacts = document.createElement('div');
             newTrainerFacts.classList.add('trainer-facts');
+            
             //p CLASS - 'content' (name)
             let trainerName = document.createElement('p');
             trainerName.classList.add('content')
             trainerName.innerText = 'Name ' + this.name;
-            // trainerSignup.id = this.id;
+            trainerSignup.id = this.id;
     
             //h2 CLASS - 'content' (hometown)
             // let trainerHometown = document.createElement('h2');
@@ -130,31 +125,22 @@ class Trainer{
             for (let pokemon of this.pokemonCaught) {
                
                 let pokeBall = document.createElement('span');
+                pokeBall.classList.add('pokeball');
                 let pokePic = document.createElement('img');
                 pokePic.src = pokemon.frontPic;
-                pokeBall.append(pokePic);
+                let pokeTag = document.createElement('p');
+                pokeTag.innerText = pokemon.name;
+                pokeBall.append(pokePic, pokeTag);
                 pokemonSection.append(pokeBall);
+
+                pokeBall.addEventListener('click', e => {
+                    e.preventDefault();
+                    pokemonSearchResults.innerHTML = '';
+                    newTrainerContainer.remove();
+                    pokeSearch(pokemon.name);
+                })
             }
             
-    
-            //     //Create remove button
-            //     let pokeBall = document.createElement('div');
-            //     pokeBall.classList.add('pokeball');
-    
-            //     let pokeMonster = document.createElement('img');
-            //     pokeMonster.src = pokemon.pokeFrontPic;
-    
-            //     let removeButton = document.createElement('button')
-            //     removeButton.innerText = "Remove"
-            //     removeButton.classList.add('remove-poke');
-    
-            //     //for time management we are only going to append the name
-            //     let pokeWrapper = document.createElement('span')
-            //     pokeWrapper.innerText = pokemon.name
-    
-            //     pokeBall.append(pokeWrapper, pokeMonster, removeButton);
-            //     pokemonSection.append(pokeBall);
-    
         newTrainerFacts.append(trainerName, trainerStats);
         newTrainerContainer.append(newTrainerFacts, pokemonSection);
         pokedex.append(newTrainerContainer);
@@ -162,42 +148,43 @@ class Trainer{
     }
 }
 
-// //SECTION CLASS - 'trainer-signup'
-// let trainerSignup = document.createElement('section');
-// trainerSignup.classList.add('trainer-signup');
+//SECTION CLASS - 'trainer-signup'
+let trainerSignup = document.createElement('section');
+trainerSignup.classList.add('trainer-signup');
 
-//     //name
-//     let nameSpan = document.createElement('span');
-//     let name = document.createElement('h1')
-//     name.innerText = 'Name ';
-//     let nameInput = document.createElement('input');
-//     nameInput.classList.add('trainer-name');
-//     nameSpan.append(name, nameInput);
+    //name
+    let nameSpan = document.createElement('span');
+    let name = document.createElement('p')
+    name.innerText = 'Name ';
+    let nameInput = document.createElement('input');
+    nameInput.classList.add('trainer-name');
+    nameSpan.append(name, nameInput);
 
-//     // hometown
-//     // let hometownSpan = document.createElement('span');
-//     // let hometown = document.createElement('h2')
-//     // hometown.innerText = 'Hometown ';
-//     // let hometownInput = document.createElement('input');
-//     // hometownInput.classList.add('trainer-hometown');
-//     // hometownSpan.append(hometown, hometownInput);
+    // hometown
+    // let hometownSpan = document.createElement('span');
+    // let hometown = document.createElement('h2')
+    // hometown.innerText = 'Hometown ';
+    // let hometownInput = document.createElement('input');
+    // hometownInput.classList.add('trainer-hometown');
+    // hometownSpan.append(hometown, hometownInput);
 
-//     //add button
-//     let addTrainerButton = document.createElement('button');
-//     addTrainerButton.innerText = 'ADD';
+    //add button
+    let addTrainerButton = document.createElement('button');
+    addTrainerButton.classList.add('new-button');
+    addTrainerButton.innerText = 'ADD';
 
-// //append
-// trainerSignup.append(nameSpan, addTrainerButton);
-// document.body.append(trainerSignup);
+//append
+trainerSignup.append(nameSpan, addTrainerButton);
+document.body.append(trainerSignup);
 
-// addTrainerButton.addEventListener('click', e => {
-//     e.preventDefault();
-//     let trainerName = document.getElementsByClassName('trainer-name')[0].value;
-//     // let trainerHometown = document.getElementsByClassName('trainer-hometown')[0].value;
+addTrainerButton.addEventListener('click', e => {
+    e.preventDefault();
+    let trainerName = document.getElementsByClassName('trainer-name')[0].value;
+    // let trainerHometown = document.getElementsByClassName('trainer-hometown')[0].value;
 
-//     let newTrainer = new Trainer(trainerName);
+    let newTrainer = new Trainer(trainerName);
 
-//     trainerList.push(newTrainer);
-//     newTrainer.renderTrainer();
-//     trainerSignup.remove();
-// });
+    trainerList.push(newTrainer);
+    newTrainer.renderTrainer();
+    trainerSignup.remove();
+});

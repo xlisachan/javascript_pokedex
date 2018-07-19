@@ -1,10 +1,9 @@
 pokeSearchForm.remove();
-// userLogin.appendChild(userNameButton);
-// trainerSignup.remove();
-// loganContainer.remove();
+trainerSignup.remove();
+
+let pokedex = document.getElementsByClassName('active')[0];
 
 // SECTION ID - 'login-menu'
-let pokedex = document.getElementsByClassName('active')[0];
 let loginMenu = document.createElement('section');
 loginMenu.id = 'login-menu';
 

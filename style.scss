@@ -63,7 +63,42 @@ body{
 
 .dropdown:hover .dropbtn {background-color: #3e8e41;}
 
+//SEARCH
+#poke-search{
+    @include flexbox(flex, row, none, center);
+}
+#search {
+    width: 150px;
+    font-size: 10px;
+}
+.poke-results {
+    @include flexbox(flex, column, center, center);
+    font-size: 85%;
+    width: 110%
+}
 
+.poke-facts{
+    @include flexbox(flex, column, center, center);
+}
+
+.pokemon-pic{
+    width: 160%;
+    height: auto;
+}
+
+.poke-stats{
+    text-align: center;
+}
+
+.pokestats{
+    @include flexbox(flex, row, center, space-between);
+    text-align: center;
+    width: 110%;
+}
+
+.pokeAbils{
+    width: 110%;
+}
 
 //trainer
 .new-trainer {
@@ -79,13 +114,32 @@ body{
 .trainer-pokemon {
     @include flexbox(flex, row, center, center);
     width: 300px;
+    position: relative;
+    left: 12px;
+}
+
+.pokeball{
+    @include flexbox(flex, column, center, center);
+    border: 1px solid gray;
+    border-radius: 10px;
+    background-color: white;
+    opacity: 0.95;
+    margin: 5px;
+    width: 90px;
+    height: 110px;
+    font-size: 80%;
 }
 
 #pokedex{
     @include flexbox(flex, column, center, center);
-
 }
 
+.new-button{
+    border: 1px solid black;
+    background-color: lightgray;
+}
+
+//CASE
 .red-topcase{
     @include flexbox(flex, column, center, center);
     background-color: $red;
@@ -100,7 +154,7 @@ body{
     @include flexbox(flex, column, center, center);
     background-color: $white;
     width: 350px;
-    height: 400px;
+    height: 420px;
     border-top: 10px solid white;
     border-bottom: 10px solid white;
     // border-left: 2px solid gray;
@@ -109,33 +163,34 @@ body{
 .circle-blacktop {
     @include flexbox(flex, column, center, center);
     background-color: $black;
-    width: 110px;
-    height: 110px;
+    width: 165px;
+    height: 165px;
     border-radius: 50%;
     position: absolute;
-    top: 90px;
+    top: 70px;
     border: 10px solid $white;   
 }
 
 .circle-blackbottom {
     @include flexbox(flex, column, center, center);
     background-color: $black;
-    width: 110px;
-    height: 110px;
+    width: 165px;
+    height: 165px;
     border-radius: 50%;
     position: absolute;
-    top: 490px;   
+    top: 450px;   
     border: 10px solid $white; 
 }
 
 .screen{
     background-color: $light-blue;
-    width: 335px;
+    width: 325px;
     height: 400px;
-    border-left: 15px solid gray;
+    border-left: 8px solid gray;
     position: absolute;
     box-shadow: inset 2px 8px 18px -12px; 
-
+    // border-left: 1px solid black;
+    border-right: 0.5px solid black;
 }
 
 .circle-bluetop {
@@ -145,7 +200,7 @@ body{
     height: 90px;
     border-radius: 50%;
     position: absolute;
-    top: 3px;
+    top: 23px;
     border: 5px solid black;
 }
 
@@ -156,7 +211,7 @@ body{
     height: 90px;
     border-radius: 50%;
     position: absolute;
-    top: 0px;  
+    top: 30px;  
     border: 7px solid black;
 }
 
@@ -172,10 +227,6 @@ body{
     @include flexbox(flex, row, center, center);
 }
 
-// .search-button{
-//     height: 5%;
-//     width: auto;
-// }
 .poke-search{
     @include flexbox (flex, row, center, center);
 
