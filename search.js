@@ -1,4 +1,5 @@
 let pokemonSearchResults = document.createElement('div');
+pokemonSearchResults.classList.add('poke-results');
 //SEARCH ID - 'poke-search' // FORM - POKESEARCH
 let pokemonSearch = document.getElementById('poke-search');
 
@@ -80,39 +81,33 @@ let pokeSearch = (pokemon) => {
 
         //DIV CLASS - 'pokestats' (hp, attack, defense, abilities)
         let pokeStats = document.createElement('div');
-        pokeStats.classList.add('flex-row');
+        pokeStats.classList.add('pokestats');
 
             //hp
             let pokemonHp = document.createElement('p');
-            pokemonHp.innerText = `${data.stats[5].stat.name} ` + parseInt(`${data.stats[5].base_stat}`);
+            pokemonHp.innerHTML = 'HP' + `<br>` + parseInt(`${data.stats[5].base_stat}`);
 
             //attack
             let pokemonAtk = document.createElement('p');
-            pokemonAtk.innerText = `${data.stats[4].stat.name} ` + parseInt(`${data.stats[4].base_stat}`);
+            pokemonAtk.innerHTML = 'ATK' + `<br>` + parseInt(`${data.stats[4].base_stat}`);
 
             //defense
             let pokemonDef = document.createElement('p');
-            pokemonDef.innerText = `${data.stats[3].stat.name} ` + parseInt(`${data.stats[3].base_stat}`)
+            pokemonDef.innerHTML = 'DEF' + `<br>` + parseInt(`${data.stats[3].base_stat}`);
 
-            //abilities
-            let abilities = data.abilities;
-            let pokemonAbilities = [];
-            abilities.forEach(ability => {
-                pokemonAbilities.push(ability.ability.name);
-            })
-            let pokeAbility = document.createElement('span');
-            pokeAbility.innerText = `Ability ${pokemonAbilities}`;
+        //abilities
+        let abilities = data.abilities;
+        let pokemonAbilities = [];
+        abilities.forEach(ability => {
+            pokemonAbilities.push(ability.ability.name);
+        })
+        let pokeAbility = document.createElement('div');
+        pokeAbility.classList.add('pokeAbils')
+        pokeAbility.innerHTML = 'Abilities' + '<br>' + `${pokemonAbilities}`;
 
-            pokeStats.append(pokemonHp, pokemonAtk, pokemonDef, pokeAbility);
-
-            // //description??
-            // console.log(data);
-
-            // //evolution
-            // console.log(data);
+        pokeStats.append(pokemonHp, pokemonAtk, pokemonDef);
         
-        
-        pokemonSearchResults.append(pokemonAlbum, pokeFacts, pokeStats);
+        pokemonSearchResults.append(pokemonAlbum, pokeFacts, pokeStats, pokeAbility);
         pokedex.append(pokemonSearchResults);
     }).catch(error => {
         console.log(error);

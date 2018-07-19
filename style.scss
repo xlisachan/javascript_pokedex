@@ -63,7 +63,27 @@ body{
 
 .dropdown:hover .dropbtn {background-color: #3e8e41;}
 
+//pokesearchresults
+.poke-results {
+    @include flexbox(flex, column, center, center);
+    font-size: 85%;
+}
+// .pokemon-pics{
+//     @include flexbox(flex, row, center, center);
+// }
+.pokemon-pic{
+    width: 80%;
+    height: auto;
+}
 
+.pokestats{
+    @include flexbox(flex, row, center, space-between);
+    width: 110%;
+}
+
+.pokeAbils{
+    width: 110%;
+}
 
 //trainer
 .new-trainer {
@@ -84,15 +104,15 @@ body{
 }
 
 .pokeball{
-    border: 1px solid black;
+    @include flexbox(flex, column, center, center);
+    border: 1px solid gray;
     border-radius: 10px;
     background-color: white;
+    opacity: 0.95;
     margin: 5px;
-}
-
-.pokeball {
-    border: 3px solid black;
-    border-radius: 10px;
+    width: 90px;
+    height: 110px;
+    font-size: 80%;
 }
 
 #pokedex{
