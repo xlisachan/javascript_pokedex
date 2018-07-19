@@ -36,8 +36,6 @@ let pokeSearch = (pokemon) => {
     axios.get('https://pokeapi.co/api/v2/pokemon/' + pokemon).then(response => {
         let data = response.data;
 
-        //DIV CLASS - 'pokemon-pics'
-        let pokemonAlbum = document.createElement('div');
 
         //IMG CLASS - 'poke-pic'
         let pokeFrontPic = document.createElement('img');
