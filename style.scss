@@ -59,18 +59,24 @@ body{
     display: block;
 }
 
-.dropdown:hover .dropdown-content {display: block;}
+.dropdown:hover .dropdown-content {
+    display: block;
+}
 
-.dropdown:hover .dropbtn {background-color: #3e8e41;}
+.dropdown:hover .dropbtn {
+    background-color: #3e8e41;
+}
 
 //SEARCH
 #poke-search{
     @include flexbox(flex, row, none, center);
 }
+
 #search {
     width: 150px;
     font-size: 10px;
 }
+
 .poke-results {
     @include flexbox(flex, column, center, center);
     font-size: 85%;
@@ -82,8 +88,9 @@ body{
 }
 
 .pokemon-pic{
-    width: 160%;
-    height: auto;
+    max-width: 160px;
+    width:160%;
+    height: auto; 
 }
 
 .poke-stats{

@@ -145,6 +145,7 @@ body {
 }
 
 .pokemon-pic {
+  max-width: 160px;
   width: 160%;
   height: auto;
 }
