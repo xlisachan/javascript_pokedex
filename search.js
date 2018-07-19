@@ -17,7 +17,7 @@ pokeSearchForm.setAttribute('autocomplete', 'off');
 
     const pokeSearchButton = document.createElement('div');
     const pokeSearchSubmit = document.createElement('img');
-    pokeSearchSubmit.setAttribute('width', '20px');
+    pokeSearchSubmit.setAttribute('width', '30px');
     pokeSearchSubmit.setAttribute('height', 'auto');
     pokeSearchSubmit.src = 'searchbutton.png';
     pokeSearchButton.appendChild(pokeSearchSubmit);
@@ -37,58 +37,42 @@ let pokeSearch = (pokemon) => {
     axios.get('https://pokeapi.co/api/v2/pokemon/' + pokemon).then(response => {
         let data = response.data;
 
-        //DIV CLASS - 'pokemon-pics'
-        let pokemonAlbum = document.createElement('div');
+            //DIV CLASS - 'pokefacts'
+            let pokeFacts = document.createElement('div');
+            pokeFacts.classList.add('poke-facts');
 
-        //IMG CLASS - 'poke-pic'
-            //front
-            let pokeFrontPic = document.createElement('img');
-            pokeFrontPic.classList.add('pokemon-pic');
-            pokeFrontPic.src = data.sprites.front_default;
-        
-        pokemonAlbum.append(pokeFrontPic);
+                let backButton = document.createElement('button');
+                backButton.src = "";
+            
+                //IMG CLASS - 'poke-pic'
+                let pokeFrontPic = document.createElement('img');
+                pokeFrontPic.classList.add('pokemon-pic');
+                pokeFrontPic.src = data.sprites.front_default;
 
-        //DIV CLASS - 'pokefacts'
-        let pokeFacts = document.createElement('div');
-        pokeFacts.classList.add('flex-col');
+                //pokemon name
+                let pokePtag = document.createElement('p');
+                pokePtag.classList.add('poke-stats');
+                pokePtag.innerHTML = '<p>' + `${data.name}` + '<br/>' + 'NO. ' + `${data.id}` + '<br/>' + `${data.types[0].type.name}` + '</p>';
+            
+            pokeFacts.append(pokeFrontPic, pokePtag);
 
-            //pokemon name
-            let pokeName = document.createElement('p');
-            pokeName.classList.add('poke-stats');
-            pokeName.innerText = data.name;
+            //DIV CLASS - 'pokestats' (hp, attack, defense, abilities)
+            let pokeStats = document.createElement('div');
+            pokeStats.classList.add('pokestats');
 
-            //pokemon number
-            // console.log(data.id);
-            let pokeNumber = document.createElement('p');
-            pokeNumber.classList.add('poke-stats');
-            pokeNumber.innerText = `NO. ${data.id}`;
+                //hp
+                let pokemonHp = document.createElement('p');
+                pokemonHp.innerHTML = 'HP' + '<br>' + parseInt(`${data.stats[5].base_stat}`);
 
-            //pokemon type
-            // console.log(data.types[0].type.name);
-            let pokeTypeDiv = document.createElement('div');
-            pokeTypeDiv.classList.add('flex-row');
-            let pokeType = document.createElement('p');
-            pokeType.classList.add('poke-stats');
-            pokeType.innerText = data.types[0].type.name;
+                //attack
+                let pokemonAtk = document.createElement('p');
+                pokemonAtk.innerHTML = 'ATK' + `<br>` + parseInt(`${data.stats[4].base_stat}`);
 
-        pokeFacts.append(pokeFrontPic, pokeName, pokeNumber, pokeType);
+                //defense
+                let pokemonDef = document.createElement('p');
+                pokemonDef.innerHTML = 'DEF' + `<br>` + parseInt(`${data.stats[3].base_stat}`);
 
-        //DIV CLASS - 'pokestats' (hp, attack, defense, abilities)
-        let pokeStats = document.createElement('div');
-        pokeStats.classList.add('pokestats');
-
-            //hp
-            let pokemonHp = document.createElement('p');
-            pokemonHp.innerHTML = 'HP' + `<br>` + parseInt(`${data.stats[5].base_stat}`);
-
-            //attack
-            let pokemonAtk = document.createElement('p');
-            pokemonAtk.innerHTML = 'ATK' + `<br>` + parseInt(`${data.stats[4].base_stat}`);
-
-            //defense
-            let pokemonDef = document.createElement('p');
-
-            pokemonDef.innerText = `${data.stats[3].stat.name} ` + parseInt(`${data.stats[3].base_stat}`)
+            pokeStats.append(pokemonHp, pokemonAtk, pokemonDef);
 
             //abilities
             let abilities = data.abilities;
@@ -96,13 +80,14 @@ let pokeSearch = (pokemon) => {
             abilities.forEach(ability => {
                 pokemonAbilities.push(ability.ability.name);
             })
-            let pokeAbility = document.createElement('span');
-            pokeAbility.innerText = `Ability ${pokemonAbilities}`;
-
-            pokeStats.append(pokemonHp, pokemonAtk, pokemonDef, pokeAbility);
+            let pokeAbility = document.createElement('div');
+            pokeAbility.classList.add('pokeAbils')
+            pokeAbility.innerHTML = 'Abilities' + '<br>' + `${pokemonAbilities}`;
         
-        pokemonSearchResults.append(pokeFrontPic, pokeFacts, pokeStats);
+        pokemonSearchResults.append(pokeFacts, pokeStats, pokeAbility);
+>>>>>>> scss
         pokedex.append(pokemonSearchResults);
+
     }).catch(error => {
         console.log(error);
     });

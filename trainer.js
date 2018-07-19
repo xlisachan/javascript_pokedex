@@ -79,24 +79,24 @@ class Trainer{
             let DDlogin = document.createElement('a');
             DDlogin.innerText = 'Login';
 
-            let DDsearch = document.createElement('a');
-            DDsearch.innerText = 'Search';
-
-        userNameDropdown.append(DDuserProfile, DDlogin, DDsearch);
+        userNameDropdown.append(DDuserProfile, DDlogin);
 
         userNameButton.append(userNameText, userNameDropdown);
         userLogin.appendChild(userNameButton);
 
         userNameButton.addEventListener('click', e =>{
             e.preventDefault();
-            if (e.target == DDuserProfile){
+            if (e.target === DDuserProfile){
                 pokedex.innerHTML = '';
                 logan.renderTrainer();
                 userNameButton.remove();
             } else if (e.target === DDlogin){
+                pokedex.innerHTML = '';
+                userNameButton.remove();
+                pokeSearchForm.remove();
                 newTrainerContainer.remove();
                 pokedex.appendChild(loginMenu);
-                userNameButton.remove();
+                
             } 
             // else if (e.target == DDsearch){
             //     pokedex.appendChild()
@@ -140,6 +140,8 @@ class Trainer{
                 pokemonSection.append(pokeBall);
 
                 pokeBall.addEventListener('click', e => {
+                    e.preventDefault();
+                    pokemonSearchResults.innerHTML = '';
                     newTrainerContainer.remove();
                     pokeSearch(pokemon.name);
                 })
@@ -158,7 +160,7 @@ trainerSignup.classList.add('trainer-signup');
 
     //name
     let nameSpan = document.createElement('span');
-    let name = document.createElement('h1')
+    let name = document.createElement('p')
     name.innerText = 'Name ';
     let nameInput = document.createElement('input');
     nameInput.classList.add('trainer-name');
@@ -174,6 +176,7 @@ trainerSignup.classList.add('trainer-signup');
 
     //add button
     let addTrainerButton = document.createElement('button');
+    addTrainerButton.classList.add('new-button');
     addTrainerButton.innerText = 'ADD';
 
 //append
