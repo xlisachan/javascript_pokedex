@@ -9,9 +9,6 @@ body{
     text-transform: uppercase;
 }
 
-#outer-border{
-    @include flexbox(flex, column, center, center);
-}
 #container{
     font-size: 30px;
 }
