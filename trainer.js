@@ -1,8 +1,6 @@
 let trainerList = [];
 let trainers = 0;
 
-let newTrainerContainer = document.createElement('section');
-newTrainerContainer.classList.add('new-trainer');
 
 class Trainer{
     constructor(name){
@@ -54,8 +52,6 @@ class Trainer{
             // this.pokemonCaught[pokemonName] = newPokemon;
             this.pokemonCaught.push(newPokemon);
 
-            //evolution
-            // console.log(data);
         });
     }
 
@@ -91,22 +87,20 @@ class Trainer{
             e.preventDefault();
             if (e.target === DDuserProfile){
                 pokedex.innerHTML = '';
-                logan.renderTrainer();
                 userNameButton.remove();
+                logan.renderTrainer();
             } else if (e.target === DDlogin){
                 pokedex.innerHTML = '';
                 userNameButton.remove();
                 pokeSearchForm.remove();
-                newTrainerContainer.remove();
-                pokedex.appendChild(loginMenu);
-                
+                pokedex.appendChild(loginMenu); 
             } 
-            // else if (e.target == DDsearch){
-            //     pokedex.appendChild()
-            // }
         })
 
         //SECTION CLASS - 'new-trainer'
+        let newTrainerContainer = document.createElement('section');
+        newTrainerContainer.classList.add('new-trainer');
+            
             let newTrainerFacts = document.createElement('div');
             newTrainerFacts.classList.add('trainer-facts');
             
@@ -114,7 +108,7 @@ class Trainer{
             let trainerName = document.createElement('p');
             trainerName.classList.add('content')
             trainerName.innerText = 'Name ' + this.name;
-            // trainerSignup.id = this.id;
+            trainerSignup.id = this.id;
     
             //h2 CLASS - 'content' (hometown)
             // let trainerHometown = document.createElement('h2');

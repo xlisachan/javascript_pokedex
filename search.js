@@ -28,7 +28,7 @@ pokemonSearch.appendChild(pokeSearchForm);
 pokeSearchForm.addEventListener('submit', e => {
     e.preventDefault();
     pokemonSearchResults.innerHTML = '';
-    newTrainerContainer.innerHTML = '';
+    pokedex.innerHTML = '';
     let pokemon = document.getElementById('search');
     pokeSearch(pokemon.value);
     pokemon.value = '';
@@ -41,9 +41,6 @@ let pokeSearch = (pokemon) => {
             //DIV CLASS - 'pokefacts'
             let pokeFacts = document.createElement('div');
             pokeFacts.classList.add('poke-facts');
-
-                let backButton = document.createElement('button');
-                backButton.src = "";
             
                 //IMG CLASS - 'poke-pic'
                 let pokeFrontPic = document.createElement('img');

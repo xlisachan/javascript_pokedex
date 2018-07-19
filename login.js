@@ -1,8 +1,9 @@
 pokeSearchForm.remove();
 trainerSignup.remove();
 
-// SECTION ID - 'login-menu'
 let pokedex = document.getElementsByClassName('active')[0];
+
+// SECTION ID - 'login-menu'
 let loginMenu = document.createElement('section');
 loginMenu.id = 'login-menu';
 
