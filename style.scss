@@ -19,7 +19,6 @@ body{
     justify-content: center;
     width: 250px;
     
-
     .user-profile {
         @include flexbox(flex, row, center, none);
         justify-content: space-between;
@@ -32,10 +31,15 @@ body{
     }
 }
 
+.add-button{
+    width: 10%;
+    height: auto;
+}
 #user{
     text-align: right;
 }
 
+//DROPDOWN
 .dropdown {
     position: relative;
     display: inline-block;
@@ -119,7 +123,8 @@ body{
     @include flexbox (flex, column, flex-start, center);
 }
 .trainer-pokemon {
-    @include flexbox(flex, row, center, center);
+    @include flexbox(flex, row, center, flex-start);
+    flex-flow: row wrap;
     width: 300px;
     position: relative;
     left: 12px;

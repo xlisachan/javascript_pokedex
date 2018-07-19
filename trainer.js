@@ -57,6 +57,27 @@ class Trainer{
 
     renderTrainer() {
         //LOGIN MENU
+        // let newUserDiv = document.createElement('div');
+        // newUserDiv.classList.add('user-profile');
+    
+        //     // IMG CLASS = 'user-pic'
+        //     let newUserPic = document.createElement('img');
+        //     newUserPic.src = 'psyduck.png';
+        //     newUserPic.classList.add('user-pic');
+    
+        //     // SPAN
+        //     let newUserText = document.createElement('span');
+        //     newUserText.innerText = this.name;
+    
+        // newUserDiv.append(newUserPic, newUserText);
+        // loginMenu.prepend(newUserDiv);
+        // pokedex.appendChild(loginMenu);
+
+        // newUserDiv.addEventListener('click', e => {
+        //     e.preventDefault();
+        //     loginMenu.innerHTML = '';
+        //     newTrainer.renderTrainer();
+        // })
 
         //NAVBAR - LEFT
         pokemonSearch.appendChild(pokeSearchForm);
@@ -108,7 +129,7 @@ class Trainer{
             let trainerName = document.createElement('p');
             trainerName.classList.add('content')
             trainerName.innerText = 'Name ' + this.name;
-            trainerSignup.id = this.id;
+            // trainerSignup.id = this.id;
     
             //h2 CLASS - 'content' (hometown)
             // let trainerHometown = document.createElement('h2');
@@ -126,10 +147,13 @@ class Trainer{
                
                 let pokeBall = document.createElement('span');
                 pokeBall.classList.add('pokeball');
-                let pokePic = document.createElement('img');
-                pokePic.src = pokemon.frontPic;
-                let pokeTag = document.createElement('p');
-                pokeTag.innerText = pokemon.name;
+
+                    let pokePic = document.createElement('img');
+                    pokePic.src = pokemon.frontPic;
+
+                    let pokeTag = document.createElement('p');
+                    pokeTag.innerText = pokemon.name;
+
                 pokeBall.append(pokePic, pokeTag);
                 pokemonSection.append(pokeBall);
 
@@ -149,16 +173,16 @@ class Trainer{
 }
 
 //SECTION CLASS - 'trainer-signup'
-let trainerSignup = document.createElement('section');
-trainerSignup.classList.add('trainer-signup');
+// let trainerSignup = document.createElement('section');
+// trainerSignup.classList.add('trainer-signup');
 
-    //name
-    let nameSpan = document.createElement('span');
-    let name = document.createElement('p')
-    name.innerText = 'Name ';
-    let nameInput = document.createElement('input');
-    nameInput.classList.add('trainer-name');
-    nameSpan.append(name, nameInput);
+    // //name
+    // let nameSpan = document.createElement('span');
+    // let name = document.createElement('p')
+    // name.innerText = 'Name ';
+    // let nameInput = document.createElement('input');
+    // nameInput.classList.add('trainer-name');
+    // nameSpan.append(name, nameInput);
 
     // hometown
     // let hometownSpan = document.createElement('span');
@@ -168,23 +192,23 @@ trainerSignup.classList.add('trainer-signup');
     // hometownInput.classList.add('trainer-hometown');
     // hometownSpan.append(hometown, hometownInput);
 
-    //add button
-    let addTrainerButton = document.createElement('button');
-    addTrainerButton.classList.add('new-button');
-    addTrainerButton.innerText = 'ADD';
+    // //add button
+    // let addTrainerButton = document.createElement('button');
+    // addTrainerButton.classList.add('new-button');
+    // addTrainerButton.innerText = 'ADD';
 
-//append
-trainerSignup.append(nameSpan, addTrainerButton);
-document.body.append(trainerSignup);
+// //append
+// trainerSignup.append(nameSpan, addTrainerButton);
+// document.body.append(trainerSignup);
 
-addTrainerButton.addEventListener('click', e => {
-    e.preventDefault();
-    let trainerName = document.getElementsByClassName('trainer-name')[0].value;
-    // let trainerHometown = document.getElementsByClassName('trainer-hometown')[0].value;
+// addTrainerButton.addEventListener('click', e => {
+//     e.preventDefault();
+//     let trainerName = document.getElementsByClassName('trainer-name')[0].value;
+//     // let trainerHometown = document.getElementsByClassName('trainer-hometown')[0].value;
 
-    let newTrainer = new Trainer(trainerName);
+//     let newTrainer = new Trainer(trainerName);
 
-    trainerList.push(newTrainer);
-    newTrainer.renderTrainer();
-    trainerSignup.remove();
-});
+//     trainerList.push(newTrainer);
+//     newTrainer.renderTrainer();
+//     trainerSignup.remove();
+// });

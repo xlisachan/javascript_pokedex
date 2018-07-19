@@ -53,6 +53,11 @@ body {
   height: auto;
 }
 
+.add-button {
+  width: 10%;
+  height: auto;
+}
+
 #user {
   text-align: right;
 }
@@ -222,9 +227,11 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -ms-flex-flow: row wrap;
+      flex-flow: row wrap;
   width: 300px;
   position: relative;
   left: 12px;

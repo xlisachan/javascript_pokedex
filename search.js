@@ -38,6 +38,17 @@ let pokeSearch = (pokemon) => {
     axios.get('https://pokeapi.co/api/v2/pokemon/' + pokemon).then(response => {
         let data = response.data;
 
+            let addPokemonButton = document.createElement('img');
+            addPokemonButton.classList.add('add-button');
+            addPokemonButton.src = "add.png";
+
+            addPokemonButton.addEventListener('click', e => {
+                e.preventDefault();
+                let pokeNum = data.id;
+                logan.add(pokeNum);
+                alert(`${pokemon} added to Pokedex!`);
+            })
+
             //DIV CLASS - 'pokefacts'
             let pokeFacts = document.createElement('div');
             pokeFacts.classList.add('poke-facts');
@@ -50,7 +61,7 @@ let pokeSearch = (pokemon) => {
                 //pokemon name
                 let pokePtag = document.createElement('p');
                 pokePtag.classList.add('poke-stats');
-                pokePtag.innerHTML = '<p>' + `${data.name}` + '<br/>' + 'NO. ' + `${data.id}` + '<br/>' + `${data.types[0].type.name}` + '</p>';
+                pokePtag.innerHTML = '<span>' + `${data.name}` + '<br/>' + 'NO. ' + `${data.id}` + '<br/>' + `${data.types[0].type.name}` + '</span>';
             
             pokeFacts.append(pokeFrontPic, pokePtag);
 
@@ -82,7 +93,7 @@ let pokeSearch = (pokemon) => {
             pokeAbility.classList.add('pokeAbils')
             pokeAbility.innerHTML = 'Abilities' + '<br>' + `${pokemonAbilities}`;
         
-        pokemonSearchResults.append(pokeFacts, pokeStats, pokeAbility);
+        pokemonSearchResults.append(addPokemonButton, pokeFacts, pokeStats, pokeAbility);
         pokedex.append(pokemonSearchResults);
 
     }).catch(error => {
