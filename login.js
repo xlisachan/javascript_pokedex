@@ -1,5 +1,5 @@
 pokeSearchForm.remove();
-trainerSignup.remove();
+// trainerSignup.remove();
 
 let pokedex = document.getElementsByClassName('active')[0];
 
@@ -30,24 +30,24 @@ loganLogin.addEventListener('click', e => {
     logan.renderTrainer();
 })
 
-// DIV CLASS - 'user-profile'
-let newUserLogin = document.createElement('div');
-newUserLogin.classList.add('user-profile');
+// // DIV CLASS - 'user-profile'
+// let newUserLogin = document.createElement('div');
+// newUserLogin.classList.add('user-profile');
 
-    // IMG CLASS - 'user-pic'
-    let newUserPic = document.createElement('img');
-    newUserPic.src = 'add.png';
-    newUserPic.classList.add('user-pic');
+//     // IMG CLASS - 'user-pic'
+//     let newUserPic = document.createElement('img');
+//     newUserPic.src = 'add.png';
+//     newUserPic.classList.add('user-pic');
 
-    // SPAN
-    let newUserText = document.createElement('span');
-    newUserText.innerText = 'NEW TRAINER';
+//     // SPAN
+//     let newUserText = document.createElement('span');
+//     newUserText.innerText = 'NEW TRAINER';
 
-loginMenu.appendChild(newUserLogin);
-newUserLogin.append(newUserPic, newUserText);
+// loginMenu.appendChild(newUserLogin);
+// newUserLogin.append(newUserPic, newUserText);
 
-newUserLogin.addEventListener('click', e => {
-    e.preventDefault();
-    loginMenu.remove();
-    pokedex.appendChild(trainerSignup);
-})
+// newUserLogin.addEventListener('click', e => {
+//     e.preventDefault();
+//     loginMenu.remove();
+//     pokedex.appendChild(trainerSignup);
+// })
