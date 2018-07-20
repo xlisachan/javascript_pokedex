@@ -1,8 +1,8 @@
 let logan = new Trainer('Logan');
 
-logan.add('54');
-logan.add('143');
-logan.add('80');
+logan.add('psyduck');
+logan.add('snorlax');
+logan.add('slowbro');
 
 logan.get('psyduck');
 logan.get('slowbro');
