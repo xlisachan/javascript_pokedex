@@ -100,8 +100,6 @@ let pokeSearch = (pokemon) => {
             //DIV CLASS - 'pokestats' (hp, attack, defense, abilities)
             let pokeStats = document.createElement('div');
             pokeStats.classList.add('pokestats');
-
-        pokeFacts.append(pokeFrontPic, pokeName, pokeNumber, pokeType);
         
                 //hp
                 let pokemonHp = document.createElement('p');
