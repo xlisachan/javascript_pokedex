@@ -101,6 +101,8 @@ let pokeSearch = (pokemon) => {
             let pokeStats = document.createElement('div');
             pokeStats.classList.add('pokestats');
 
+        pokeFacts.append(pokeFrontPic, pokeName, pokeNumber, pokeType);
+        
                 //hp
                 let pokemonHp = document.createElement('p');
                 pokemonHp.innerHTML = 'HP' + '<br>' + parseInt(`${data.stats[5].base_stat}`);
@@ -121,6 +123,7 @@ let pokeSearch = (pokemon) => {
             abilities.forEach(ability => {
                 pokemonAbilities.push(ability.ability.name);
             })
+
             let pokeAbility = document.createElement('div');
             pokeAbility.classList.add('pokeAbils')
             pokeAbility.innerHTML = 'Abilities' + '<br>' + `${pokemonAbilities}`;
