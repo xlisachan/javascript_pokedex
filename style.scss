@@ -5,31 +5,114 @@
 body{
     font-family: $font-family;
     font-size: 14px;
-    color: #000000;
+    color: $black;
     text-transform: uppercase;
 }
 
-#container{
-    font-size: 30px;
+#pokedex{
+    @include flexbox(flex, column, center, center);
 }
 
-// login
+.active {
+    @include flexbox(flex, column, center, center);
+    width: 90%;
+}
+
+//CASE
+.red-topcase {
+    @include flexbox(flex, column, center, center);
+    background-color: $red;
+    width: 335px;
+    height: 680px;
+    border: 15px inset $red;  
+    border-radius: 30px 30px; 
+}
+
+.white-bezel {
+    @include flexbox(flex, column, center, center);
+    background-color: $white;
+    width: 350px;
+    height: 420px;
+    border-top: 10px solid white;
+    border-bottom: 10px solid white;
+}
+
+.circle-blacktop {
+    @include flexbox(flex, column, center, center);
+    background-color: $black;
+    width: 165px;
+    height: 165px;
+    border: 10px solid $white;
+    border-radius: 50%;
+    position: absolute;
+    top: 70px;  
+}
+
+.circle-blackbottom {
+    @include flexbox(flex, column, center, center);
+    background-color: $black;
+    width: 165px;
+    height: 165px;
+    border: 10px solid $white;
+    border-radius: 50%;
+    position: absolute;
+    top: 450px;   
+}
+
+.screen{
+    background-color: $light-blue;
+    width: 325px;
+    height: 400px;
+    border-left: 8px solid gray;
+    border-right: 0.5px solid black;
+    box-shadow: inset 2px 8px 18px -12px; 
+    position: absolute;
+}
+
+.circle-bluetop {
+    @include flexbox(flex, column, center, center);
+    background-color: $light-blue;
+    width: 90px;
+    height: 90px;
+    border: 5px solid black;
+    border-radius: 50%;
+    position: absolute;
+    top: 23px;
+}
+
+.circle-bluebottom {
+    @include flexbox(flex, column, center, center);
+    background-color: $light-blue;
+    width: 90px;
+    height: 90px;
+    border: 7px solid black;
+    border-radius: 50%;
+    position: absolute;
+    top: 30px;  
+}
+
+//LOGIN MENU
 #login-menu {
     @include flexbox(flex, column, center, center);
-    justify-content: center;
     width: 250px;
     
-
     .user-profile {
-        @include flexbox(flex, row, center, none);
-        justify-content: space-between;
+        @include flexbox(flex, row, center, space-between);
         margin: 5px;
 
-            .user-pic{
-                width: 30%;
-                height: auto;
-            }
+        .user-pic{
+            width: 30%;
+            height: auto;
+        }
     }
+}
+
+//NAV BAR - DROPDOWN
+#navigation-bar{
+    background-color: #333A40;
+    height: 30px;
+    color: white;
+    @include flexbox(flex, row, center, center);
 }
 
 #user{
@@ -50,20 +133,18 @@ body{
     min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
+    
+    a {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+    }
 }
 
-.dropdown-content a {
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
+.dropdown:hover .dropdown-content {
     display: block;
 }
-
-.dropdown:hover .dropdown-content {display: block;}
-
-.dropdown:hover .dropbtn {background-color: #3e8e41;}
-
-
 
 //trainer
 .new-trainer {
@@ -76,122 +157,88 @@ body{
 .trainer-facts{
     @include flexbox (flex, column, flex-start, center);
 }
+
 .trainer-pokemon {
-    @include flexbox(flex, row, center, center);
+    @include flexbox(flex, row, flex-start, flex-start);
+    flex-flow: row wrap;
     width: 300px;
     position: relative;
     left: 12px;
+    height: 280px;
+    overflow: scroll;
 }
 
 .pokeball{
-    border: 1px solid black;
+    @include flexbox(flex, column, center, center);
+    border: 1px solid gray;
     border-radius: 10px;
     background-color: white;
+    opacity: 0.95;
     margin: 5px;
-}
-
-.pokeball {
-    border: 3px solid black;
-    border-radius: 10px;
-}
-
-#pokedex{
-    @include flexbox(flex, column, center, center);
-
-}
-
-//CASE
-.red-topcase{
-    @include flexbox(flex, column, center, center);
-    background-color: $red;
-    width: 335px;
-    height: 680px;
-    border-radius: 30px 30px;
-    border: 15px inset $red;
-    
-}
-
-.white-bezel {
-    @include flexbox(flex, column, center, center);
-    background-color: $white;
-    width: 350px;
-    height: 400px;
-    border-top: 10px solid white;
-    border-bottom: 10px solid white;
-    // border-left: 2px solid gray;
-}
-
-.circle-blacktop {
-    @include flexbox(flex, column, center, center);
-    background-color: $black;
-    width: 110px;
-    height: 110px;
-    border-radius: 50%;
-    position: absolute;
-    top: 90px;
-    border: 10px solid $white;   
-}
-
-.circle-blackbottom {
-    @include flexbox(flex, column, center, center);
-    background-color: $black;
-    width: 110px;
-    height: 110px;
-    border-radius: 50%;
-    position: absolute;
-    top: 490px;   
-    border: 10px solid $white; 
-}
-
-.screen{
-    background-color: $light-blue;
-    width: 335px;
-    height: 400px;
-    border-left: 15px solid gray;
-    position: absolute;
-    box-shadow: inset 2px 8px 18px -12px; 
-
-}
-
-.circle-bluetop {
-    @include flexbox(flex, column, center, center);
-    background-color: $light-blue;
     width: 90px;
-    height: 90px;
-    border-radius: 50%;
-    position: absolute;
-    top: 3px;
-    border: 5px solid black;
+    height: 110px;
+    font-size: 80%;
 }
 
-.circle-bluebottom {
+//SEARCH
+#search {
+    width: 150px;
+    font-size: 10px;
+}
+
+.poke-results {
     @include flexbox(flex, column, center, center);
-    background-color: $light-blue;
-    width: 90px;
-    height: 90px;
-    border-radius: 50%;
-    position: absolute;
-    top: 0px;  
-    border: 7px solid black;
+    font-size: 85%;
+    width: 110%
 }
 
-.active {
-    @include flexbox(flex, column, center, center);
-    width: 90%;
+#poke-search{
+    @include flexbox(flex, row, none, center);
 }
 
-#navigation-bar{
-    background-color: #333A40;
-    height: 30px;
-    color: white;
+form {
+    display: flex;
+}
+
+.top-div{
     @include flexbox(flex, row, center, center);
 }
 
-// .search-button{
-//     height: 5%;
-//     width: auto;
-// }
-.poke-search{
-    @include flexbox (flex, row, center, center);
-
+.back-button{
+    width: 50%;
+    height: auto;
 }
+
+.add-pokemon {
+    @include flexbox(flex, row, center, space-evenly);
+}
+
+.add-button{
+    width: 10%;
+    height: auto;
+}
+
+.poke-facts{
+    @include flexbox(flex, column, center, center);
+}
+
+.pokemon-pic{
+    max-width: 160px;
+    width:160%;
+    height: auto; 
+}
+
+.poke-stats{
+    text-align: center;
+}
+
+.pokestats{
+    @include flexbox(flex, row, center, space-between);
+    text-align: center;
+    width: 110%;
+}
+
+.pokeAbils{
+    width: 110%;
+}
+
