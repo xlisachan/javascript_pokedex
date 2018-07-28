@@ -4,8 +4,8 @@ logan.add('psyduck');
 logan.add('snorlax');
 logan.add('slowbro');
 
-logan.get('psyduck');
-logan.get('slowbro');
-logan.get('snorlax');
+logan.get('54');
+logan.get('143');
+logan.get('80');
 
 logan.all();
