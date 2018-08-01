@@ -83,7 +83,7 @@ class Trainer{
                 if (e.target === DDuserProfile){
                     pokedex.innerHTML = '';
                     userNameButton.remove();
-                    logan.renderTrainer();
+                    derek.renderTrainer();
                 } else if (e.target === DDlogin){
                     pokedex.innerHTML = '';
                     userNameButton.remove();

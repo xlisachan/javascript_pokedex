@@ -1,11 +1,11 @@
-let logan = new Trainer('Logan');
+let derek = new Trainer('Derek');
 
-logan.add('psyduck');
-logan.add('snorlax');
-logan.add('slowbro');
+derek.add('psyduck');
+derek.add('snorlax');
+derek.add('slowbro');
 
-logan.get('54');
-logan.get('143');
-logan.get('80');
+derek.get('54');
+derek.get('143');
+derek.get('80');
 
-logan.all();
+derek.all();

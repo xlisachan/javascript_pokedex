@@ -8,25 +8,25 @@ let pokedex = document.getElementsByClassName('active')[0];
     loginMenu.id = 'login-menu';
 
         // DIV CLASS - 'user-profile'
-        let loganLogin = document.createElement('div');
-        loganLogin.classList.add('user-profile');
+        let userLogin = document.createElement('div');
+        userLogin.classList.add('user-profile');
 
             // IMG CLASS = 'user-pic'
-            let loganPic = document.createElement('img');
-            loganPic.src = 'psyduck.png';
-            loganPic.classList.add('user-pic');
+            let userPic = document.createElement('img');
+            userPic.src = 'snorlax-profile.png';
+            userPic.classList.add('user-pic');
 
             // SPAN - username
-            let loganText = document.createElement('span');
-            loganText.innerText = 'LOGAN';
+            let userText = document.createElement('span');
+            userText.innerText = 'DEREK';
 
-        loganLogin.append(loganPic, loganText);
+        userLogin.append(userPic, userText);
     
-    loginMenu.appendChild(loganLogin);
+    loginMenu.appendChild(userLogin);
     pokedex.appendChild(loginMenu);
 
-    loganLogin.addEventListener('click', e => {
+    userLogin.addEventListener('click', e => {
         e.preventDefault();
         loginMenu.remove();
-        logan.renderTrainer();
+        derek.renderTrainer();
     })
