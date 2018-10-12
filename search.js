@@ -57,7 +57,7 @@ let pokeSearch = (pokemon) => {
                     pokedex.innerHTML = '';
                     let userLoginDiv = document.getElementById('user');
                     userLoginDiv.innerHTML = '';
-                    logan.renderTrainer();
+                    derek.renderTrainer();
                 })
 
                 let addDiv = document.createElement('div');
@@ -75,7 +75,7 @@ let pokeSearch = (pokemon) => {
                 addDiv.addEventListener('click', e => {
                     e.preventDefault();
                     let pokeNum = data.id;
-                    logan.add(pokeNum);
+                    derek.add(pokeNum);
                     alert(`${pokemon} ADDED TO POKEDEX!`);
                 });
         
