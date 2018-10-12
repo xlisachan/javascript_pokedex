@@ -13,7 +13,7 @@ let pokedex = document.getElementsByClassName('active')[0];
 
             // IMG CLASS = 'user-pic'
             let userPic = document.createElement('img');
-            userPic.src = 'snorlax-profile.png';
+            userPic.src = 'images/snorlax-profile.png';
             userPic.classList.add('user-pic');
 
             // SPAN - username

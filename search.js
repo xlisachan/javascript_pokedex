@@ -21,7 +21,7 @@ pokeSearchForm.setAttribute('autocomplete', 'off');
     // SEARCH BUTTON
     const pokeSearchSubmit = document.createElement('input');
     pokeSearchSubmit.type = "image";
-    pokeSearchSubmit.src = 'searchbutton.png';
+    pokeSearchSubmit.src = 'images/searchbutton.png';
     pokeSearchSubmit.setAttribute('width', '30px');
     pokeSearchSubmit.setAttribute('height', '30px');
 
@@ -49,7 +49,7 @@ let pokeSearch = (pokemon) => {
                 let backButtonDiv = document.createElement('div');
                 let backButton = document.createElement('img');
                 backButton.classList.add('back-button');
-                backButton.src = "backbutton.png";
+                backButton.src = "images/backbutton.png";
                 backButtonDiv.append(backButton);
 
                 backButtonDiv.addEventListener('click', e => {
@@ -65,7 +65,7 @@ let pokeSearch = (pokemon) => {
 
                     let addPokemonButton = document.createElement('img');
                     addPokemonButton.classList.add('add-button');
-                    addPokemonButton.src = "add.png";
+                    addPokemonButton.src = "images/add.png";
 
                     let addPokeText = document.createElement('span');
                     addPokeText.innerText = "Add Pokemon";
