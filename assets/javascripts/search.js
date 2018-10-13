@@ -1,6 +1,7 @@
 //SEARCH - DIV CLASS POKE-RESULTS
 let pokemonSearchResults = document.createElement('div');
 pokemonSearchResults.classList.add('poke-results');
+pokemonSearchResults.classList.add('flex-col');
 
 //SEARCH ID - 'poke-search'
 let pokemonSearch = document.getElementById('poke-search');
@@ -19,9 +20,8 @@ pokeSearchForm.setAttribute('autocomplete', 'off');
     pokeSearchInputBox.appendChild(pokeSearchInput);
 
     // SEARCH BUTTON
-    const pokeSearchSubmit = document.createElement('input');
-    pokeSearchSubmit.type = "image";
-    pokeSearchSubmit.src = 'images/searchbutton.png';
+    const pokeSearchSubmit = document.createElement('div');
+    pokeSearchSubmit.innerHTML = '<i class="fas fa-search"></i>';
     pokeSearchSubmit.setAttribute('width', '30px');
     pokeSearchSubmit.setAttribute('height', '30px');
 
@@ -29,7 +29,7 @@ pokeSearchForm.setAttribute('autocomplete', 'off');
 pokeSearchForm.append(pokeSearchInputBox, pokeSearchSubmit);
 pokemonSearch.appendChild(pokeSearchForm);
 
-//SEARCH FORM
+//SEARCH DIV
 pokeSearchForm.addEventListener('submit', e => {
     e.preventDefault();
     pokemonSearchResults.innerHTML = '';
@@ -47,10 +47,8 @@ let pokeSearch = (pokemon) => {
             topDiv.classList.add('top-div');
 
                 let backButtonDiv = document.createElement('div');
-                let backButton = document.createElement('img');
-                backButton.classList.add('back-button');
-                backButton.src = "images/backbutton.png";
-                backButtonDiv.append(backButton);
+                backButtonDiv.classList.add('back-button');
+                backButtonDiv.innerHTML = '<i class="fas fa-arrow-left"></i>';
 
                 backButtonDiv.addEventListener('click', e => {
                     e.preventDefault();
@@ -63,9 +61,9 @@ let pokeSearch = (pokemon) => {
                 let addDiv = document.createElement('div');
                 addDiv.classList.add('add-pokemon');
 
-                    let addPokemonButton = document.createElement('img');
+                    let addPokemonButton = document.createElement('div');
                     addPokemonButton.classList.add('add-button');
-                    addPokemonButton.src = "images/add.png";
+                    addPokemonButton.innerHTML = '<i class="fas fa-plus-circle"></i>';
 
                     let addPokeText = document.createElement('span');
                     addPokeText.innerText = "Add Pokemon";
@@ -83,7 +81,7 @@ let pokeSearch = (pokemon) => {
 
             //DIV CLASS - 'pokefacts'
             let pokeFacts = document.createElement('div');
-            pokeFacts.classList.add('poke-facts');
+            pokeFacts.classList.add('flex-col');
             
                 //IMG CLASS - 'poke-pic'
                 let pokeFrontPic = document.createElement('img');

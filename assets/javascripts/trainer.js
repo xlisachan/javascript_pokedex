@@ -95,7 +95,8 @@ class Trainer{
         //SECTION CLASS - 'new-trainer'
         let newTrainerContainer = document.createElement('section');
         newTrainerContainer.classList.add('new-trainer');
-            
+        newTrainerContainer.classList.add('flex-col');
+
             //DIV CLASS - 'trainer-facts'
             let newTrainerFacts = document.createElement('div');
             newTrainerFacts.classList.add('trainer-facts');
@@ -118,6 +119,7 @@ class Trainer{
                 // SPAN CLASS - pokeball
                 let pokeBall = document.createElement('span');
                 pokeBall.classList.add('pokeball');
+                pokeBall.classList.add('flex-col')
 
                     let pokePic = document.createElement('img');
                     pokePic.src = pokemon.frontPic;

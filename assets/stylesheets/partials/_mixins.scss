@@ -4,3 +4,9 @@
     align-items: $align-items;
     justify-content: $justify-content;
 }
+
+@mixin box($background-color, $width, $height){
+    background-color: $background-color;
+    width: $width;
+    height: $height;
+}

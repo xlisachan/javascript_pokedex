@@ -6,6 +6,7 @@ let pokedex = document.getElementsByClassName('active')[0];
     //SECTION ID - 'login-menu'
     let loginMenu = document.createElement('section');
     loginMenu.id = 'login-menu';
+    loginMenu.classList.add('flex-col')
 
         // DIV CLASS - 'user-profile'
         let userLogin = document.createElement('div');
@@ -13,7 +14,7 @@ let pokedex = document.getElementsByClassName('active')[0];
 
             // IMG CLASS = 'user-pic'
             let userPic = document.createElement('img');
-            userPic.src = 'images/snorlax-profile.png';
+            userPic.src = './assets/images/snorlax-profile.png';
             userPic.classList.add('user-pic');
 
             // SPAN - username
