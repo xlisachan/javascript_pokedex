@@ -2,15 +2,12 @@ pokeSearchForm.remove();
 
 let mainContainer = document.getElementById('main-container');
 
-//LOGIN MENU
 //SECTION ID - 'login-menu'
 let loginMenu = document.createElement('section');
-loginMenu.id = 'login-menu';
-loginMenu.classList.add('flex-col')
+loginMenu.classList.add('flex-row')
 
-    // DIV CLASS - 'user-profile'
-    let userLogin = document.createElement('div');
-    userLogin.classList.add('flex-col');
+    let userInfo = document.createElement('div');
+    userInfo.classList.add('flex-col');
 
         // IMG CLASS = 'user-pic'
         let userPic = document.createElement('img');
@@ -18,15 +15,15 @@ loginMenu.classList.add('flex-col')
         userPic.classList.add('user-pic');
 
         // SPAN - username
-        let userText = document.createElement('span');
-        userText.innerText = 'DEREK';
+        let userName = document.createElement('span');
+        userName.innerText = 'DEREK';
 
-    userLogin.append(userPic, userText);
+    userInfo.append(userPic, userName);
 
-loginMenu.appendChild(userLogin);
+loginMenu.appendChild(userInfo);
 mainContainer.appendChild(loginMenu);
 
-userLogin.addEventListener('click', e => {
+userInfo.addEventListener('click', e => {
     e.preventDefault();
     loginMenu.remove();
     derek.renderTrainer();

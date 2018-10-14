@@ -127,6 +127,15 @@ body {
 
 #poke-search .search-submit {
   padding-left: 1vw;
+  background-color: transparent;
+  color: white;
+  border: none;
+}
+
+#search {
+  width: 160px;
+  height: 3vh;
+  font-size: 0.7em;
 }
 
 #user {
@@ -161,13 +170,8 @@ body {
   display: block;
 }
 
-#login-menu {
-  width: 250px;
-}
-
-#login-menu .user-pic {
-  width: 30%;
-  height: auto;
+.user-pic {
+  width: 15vw;
 }
 
 .trainer-section {
@@ -210,7 +214,7 @@ body {
           justify-content: flex-start;
   -ms-flex-flow: row wrap;
       flex-flow: row wrap;
-  width: 300px;
+  width: 100vw;
   height: 280px;
   position: relative;
   left: 12px;
@@ -228,20 +232,9 @@ body {
   font-size: 0.8em;
 }
 
-#search {
-  width: 160px;
-  height: 3vh;
-  font-size: 0.7em;
-}
-
-.poke-results {
-  font-size: 85%;
-}
-
-form {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+.search-results {
+  font-size: 0.8em;
+  width: 80vw;
 }
 
 .top-div {
@@ -255,14 +248,14 @@ form {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  width: 80vw;
 }
 
-.back-button {
-  width: 50%;
-  height: auto;
+.button-div {
+  width: 15vw;
 }
 
 .add-pokemon {
@@ -276,14 +269,6 @@ form {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
-}
-
-.add-button {
-  width: 10%;
-  height: auto;
 }
 
 .pokemon-pic {
