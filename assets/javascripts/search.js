@@ -1,39 +1,33 @@
 //SEARCH - DIV CLASS POKE-RESULTS
 let pokemonSearchResults = document.createElement('div');
-pokemonSearchResults.classList.add('poke-results');
-pokemonSearchResults.classList.add('flex-col');
+pokemonSearchResults.classList.add('poke-results','flex-col');
 
 //SEARCH ID - 'poke-search'
 let pokemonSearch = document.getElementById('poke-search');
 
-// SEARCH FORM
-const pokeSearchForm = document.createElement('form');
-pokeSearchForm.setAttribute('autocomplete', 'off');
-
-    // SEARCH INPUT BAR
-    const pokeSearchInputBox = document.createElement('div');
+    // SEARCH FORM
+    const pokeSearchForm = document.createElement('form');
+    pokeSearchForm.setAttribute('autocomplete', 'off');
     const pokeSearchInput = document.createElement('input');
     pokeSearchInput.id = 'search';
     pokeSearchInput.type = 'search';
     pokeSearchInput.name = 'search';
     pokeSearchInput.placeholder = 'Enter Pokemon';
-    pokeSearchInputBox.appendChild(pokeSearchInput);
 
     // SEARCH BUTTON
     const pokeSearchSubmit = document.createElement('div');
+    pokeSearchSubmit.classList.add('search-submit');
     pokeSearchSubmit.innerHTML = '<i class="fas fa-search"></i>';
-    pokeSearchSubmit.setAttribute('width', '30px');
-    pokeSearchSubmit.setAttribute('height', '30px');
 
 //APPEND SEARCH TO PAGE
-pokeSearchForm.append(pokeSearchInputBox, pokeSearchSubmit);
-pokemonSearch.appendChild(pokeSearchForm);
+pokeSearchForm.append(pokeSearchInput, pokeSearchSubmit);
+pokemonSearch.append(pokeSearchForm);
 
 //SEARCH DIV
 pokeSearchForm.addEventListener('submit', e => {
     e.preventDefault();
     pokemonSearchResults.innerHTML = '';
-    pokedex.innerHTML = '';
+    mainContainer.innerHTML = '';
     let pokemon = document.getElementById('search');
     pokeSearch(pokemon.value);
     pokemon.value = '';
@@ -41,7 +35,7 @@ pokeSearchForm.addEventListener('submit', e => {
 
 //SEARCH CODE
 let pokeSearch = (pokemon) => {
-    axios.get(`https://pokeapi.co/api/v2/pokemon/${pokemon}`).then(response => {
+    axios.get(`https://pokeapi.co/api/v2/pokemon/${pokemon}/`).then(response => {
         let data = response.data;
             let topDiv = document.createElement('div');
             topDiv.classList.add('top-div');
@@ -52,7 +46,7 @@ let pokeSearch = (pokemon) => {
 
                 backButtonDiv.addEventListener('click', e => {
                     e.preventDefault();
-                    pokedex.innerHTML = '';
+                    mainContainer.innerHTML = '';
                     let userLoginDiv = document.getElementById('user');
                     userLoginDiv.innerHTML = '';
                     derek.renderTrainer();
@@ -91,7 +85,7 @@ let pokeSearch = (pokemon) => {
                 //pokemon name
                 let pokePtag = document.createElement('p');
                 pokePtag.classList.add('poke-stats');
-                pokePtag.innerHTML = '<span>' + `${data.name}` + '<br/>' + 'NO. ' + `${data.id}` + '<br/>' + `${data.types[0].type.name}` + '</span>';
+                pokePtag.innerHTML = '<span>' + `${data.name}` + '<br/>' + 'NO. ' + `${data.id}` + '<br/>' + 'TYPE ' + `${data.types[0].type.name}` + '</span>';
             
             pokeFacts.append(pokeFrontPic, pokePtag);
 
@@ -125,10 +119,9 @@ let pokeSearch = (pokemon) => {
             pokeAbility.innerHTML = 'Abilities' + '<br>' + `${pokemonAbilities}`;
         
         pokemonSearchResults.append(topDiv, pokeFacts, pokeStats, pokeAbility);
-        pokedex.append(pokemonSearchResults);
+        mainContainer.append(pokemonSearchResults);
 
     }).catch(error => {
         console.log(error);
     });
 };
-

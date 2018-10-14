@@ -1,33 +1,33 @@
 pokeSearchForm.remove();
 
-let pokedex = document.getElementsByClassName('active')[0];
+let mainContainer = document.getElementById('main-container');
 
 //LOGIN MENU
-    //SECTION ID - 'login-menu'
-    let loginMenu = document.createElement('section');
-    loginMenu.id = 'login-menu';
-    loginMenu.classList.add('flex-col')
+//SECTION ID - 'login-menu'
+let loginMenu = document.createElement('section');
+loginMenu.id = 'login-menu';
+loginMenu.classList.add('flex-col')
 
-        // DIV CLASS - 'user-profile'
-        let userLogin = document.createElement('div');
-        userLogin.classList.add('user-profile');
+    // DIV CLASS - 'user-profile'
+    let userLogin = document.createElement('div');
+    userLogin.classList.add('flex-col');
 
-            // IMG CLASS = 'user-pic'
-            let userPic = document.createElement('img');
-            userPic.src = './assets/images/snorlax-profile.png';
-            userPic.classList.add('user-pic');
+        // IMG CLASS = 'user-pic'
+        let userPic = document.createElement('img');
+        userPic.src = './assets/images/snorlax-profile.png';
+        userPic.classList.add('user-pic');
 
-            // SPAN - username
-            let userText = document.createElement('span');
-            userText.innerText = 'DEREK';
+        // SPAN - username
+        let userText = document.createElement('span');
+        userText.innerText = 'DEREK';
 
-        userLogin.append(userPic, userText);
-    
-    loginMenu.appendChild(userLogin);
-    pokedex.appendChild(loginMenu);
+    userLogin.append(userPic, userText);
 
-    userLogin.addEventListener('click', e => {
-        e.preventDefault();
-        loginMenu.remove();
-        derek.renderTrainer();
-    })
+loginMenu.appendChild(userLogin);
+mainContainer.appendChild(loginMenu);
+
+userLogin.addEventListener('click', e => {
+    e.preventDefault();
+    loginMenu.remove();
+    derek.renderTrainer();
+})

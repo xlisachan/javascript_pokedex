@@ -1,20 +1,31 @@
 @import './partials/colors';
 @import './partials/mixins';
 @import './partials/fonts';
+@import './partials/variables';
 
 body{
     font-family: $font-family;
-    font-size: 14px;
-    color: black;
     text-transform: uppercase;
 }
 
 .flex-col{
-    @include flexbox(flex,column, center, center);
+    @include flexbox(flex, column, center);
 }
 
-.active {
-    width: 90%;
+.flex-row{
+    @include flexbox(flex, row, center);
+}
+
+.jc-center {
+    justify-content: center;
+}
+
+.jc-start{
+    justify-content: flex-start;
+}
+
+.jc-end{
+    justify-content: flex-end;
 }
 
 //CASE
@@ -24,85 +35,80 @@ body{
     border-radius: 30px 30px; 
 }
 
-.white-bezel {
-    @include box(white, 100vw, 63vh);
-    border-top: 10px solid white;
-    border-bottom: 10px solid white;
-}
-
 .circle-black {
-    @include box(black, 165px, 165px);
+    @include box(black, $large-circle, $large-circle/2);
     border: 10px solid white;
-    border-radius: 50%;
-    position: absolute;
 }
 
 .circle-blue {
-    @include box($light-blue, 90px, 90px);
-    border: 5px solid black;
-    border-radius: 50%;
-    position: absolute;
+    @include box($light-blue, $small-circle, $small-circle/2);
+    border: 5px solid none;
 }
 
 .screen{
-    @include box($light-blue, 90vw, 60vh);
+    @include box($light-blue, 90vw, 55vh);
+    border-right: 1vw solid black;
+    border-bottom: 1vh solid white;
     border-left: 15px solid gray;
-    border-right: 0.5px solid black;
-    box-shadow: inset 2px 8px 18px -12px; 
-    position: absolute;
 }
 
-.circle-blacktop {
-    top: 10vh;  
+.large-top {
+    border-top-left-radius: $large-circle;
+    border-top-right-radius: $large-circle;
+    border-bottom: 0;
 }
 
-.circle-blackbottom {
-    top: 67vh;   
+.large-bottom {
+    border-bottom-left-radius: $large-circle;
+    border-bottom-right-radius: $large-circle;
+    border-top: 0;
 }
 
-.circle-bluetop {
-    top: 3vh;
+.small-top {
+    border-top-left-radius: $small-circle;
+    border-top-right-radius: $small-circle;
 }
 
-.circle-bluebottom {
-    top: 4.5vh;  
+.small-bottom {
+    border-bottom-left-radius: $small-circle;
+    border-bottom-right-radius: $small-circle;
 }
 
-//LOGIN MENU
-#login-menu {
-    width: 250px;
-    
-    .user-profile {
-        @include flexbox(flex, row, center, space-between);
-        margin: 5px;
-
-        .user-pic{
-            width: 30%;
-            height: auto;
-        }
-    }
-}
-
-//NAV BAR - DROPDOWN
+//NAV BAR
 #navigation-bar{
-    @include box(#333A40, 90vw, 5vh);
-    @include flexbox(flex, row, center, center);
+    @include box(#333A40, 90vw, 7vh);
+    border-top: 1vh solid white;
     color: white;
+    width: 90vw;
+    padding-left: 2vw;
+    padding-right: 1vw;
+} 
+
+#poke-search{
+    width: 30vw;
+    form {
+        display: flex;
+        align-items: center;
+    }
+    .search-submit{
+        padding-left: 1vw;
+    }
 }
 
 #user{
     text-align: right;
 }
 
+//NAV BAR - DROPDOWN
 .dropdown {
     position: relative;
     display: inline-block;
 }
 
 .dropdown-content {
+    position: absolute;
     display: none;
     color: black;
-    position: absolute;
     left: -75px;
     background-color: #f1f1f1;
     min-width: 160px;
@@ -121,19 +127,31 @@ body{
     display: block;
 }
 
-//trainer
-.new-trainer {
-    justify-content: center;
+//LOGIN MENU
+#login-menu {
     width: 250px;
-    font-size: 90%;
+
+    .user-pic{
+        width: 30%;
+        height: auto;
+    }
 }
 
-.trainer-facts{
-    @include flexbox (flex, column, flex-start, center);
+//trainer
+.trainer-section {
+    justify-content: center;
+    font-size: 0.9em;
+}
+
+.trainer-profile{
+    @include flexbox (flex, column, flex-start);
+    justify-content: center;
+    font-size: 0.9em;
 }
 
 .trainer-pokemon {
-    @include flexbox(flex, row, flex-start, flex-start);
+    @include flexbox(flex, row, flex-start);
+    justify-content: flex-start;
     flex-flow: row wrap;
     width: 300px;
     height: 280px;
@@ -148,22 +166,19 @@ body{
     border-radius: 10px;
     opacity: 0.95;
     margin: 5px;
-    font-size: 80%;
+    font-size: 0.8em;
 }
 
 //SEARCH
 #search {
-    width: 150px;
-    font-size: 10px;
+    width: 160px;
+    height: 3vh;
+    font-size: 0.7em;
 }
 
 .poke-results {
     font-size: 85%;
-    width: 110%
-}
-
-#poke-search{
-    @include flexbox(flex, row, none, center);
+    // width: 110%
 }
 
 form {
@@ -171,7 +186,8 @@ form {
 }
 
 .top-div{
-    @include flexbox(flex, row, center, center);
+    @include flexbox(flex, row, center);
+    justify-content: center;
 }
 
 .back-button{
@@ -180,7 +196,8 @@ form {
 }
 
 .add-pokemon {
-    @include flexbox(flex, row, center, space-evenly);
+    @include flexbox(flex, row, center);
+    justify-content: space-evenly;
 }
 
 .add-button{
@@ -190,7 +207,7 @@ form {
 
 .pokemon-pic{
     max-width: 160px;
-    width:160%;
+    // width:160%;
     height: auto; 
 }
 
@@ -199,11 +216,8 @@ form {
 }
 
 .pokestats{
-    @include flexbox(flex, row, center, space-between);
+    @include flexbox(flex, row, center);
+    justify-content: space-between;
     text-align: center;
-    width: 110%;
-}
-
-.pokeAbils{
     width: 110%;
 }
