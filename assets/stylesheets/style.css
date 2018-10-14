@@ -1,0 +1,315 @@
+@import url("https://fonts.googleapis.com/css?family=Press+Start+2P");
+body {
+  font-family: "Press Start 2P", cursive;
+  text-transform: uppercase;
+}
+
+.flex-col {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.flex-row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.jc-center {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.jc-start {
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+
+.jc-end {
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.red-case {
+  background-color: #E40031;
+  width: 90vw;
+  height: 100vh;
+  border: 15px inset #E40031;
+  border-radius: 30px 30px;
+}
+
+.circle-black {
+  background-color: black;
+  width: 165px;
+  height: 82.5px;
+  border: 10px solid white;
+}
+
+.circle-blue {
+  background-color: #E2F5FC;
+  width: 90px;
+  height: 45px;
+  border: 5px solid none;
+}
+
+.screen {
+  background-color: #E2F5FC;
+  width: 90vw;
+  height: 55vh;
+  border-right: 1vw solid black;
+  border-bottom: 1vh solid white;
+  border-left: 15px solid gray;
+}
+
+.large-top {
+  border-top-left-radius: 165px;
+  border-top-right-radius: 165px;
+  border-bottom: 0;
+}
+
+.large-bottom {
+  border-bottom-left-radius: 165px;
+  border-bottom-right-radius: 165px;
+  border-top: 0;
+}
+
+.small-top {
+  border-top-left-radius: 90px;
+  border-top-right-radius: 90px;
+}
+
+.small-bottom {
+  border-bottom-left-radius: 90px;
+  border-bottom-right-radius: 90px;
+}
+
+#navigation-bar {
+  background-color: #333A40;
+  width: 90vw;
+  height: 7vh;
+  border-top: 1vh solid white;
+  color: white;
+  width: 90vw;
+  padding-left: 2vw;
+  padding-right: 1vw;
+}
+
+#poke-search {
+  width: 30vw;
+}
+
+#poke-search form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#poke-search .search-submit {
+  padding-left: 1vw;
+}
+
+#user {
+  text-align: right;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  position: absolute;
+  display: none;
+  color: black;
+  left: -75px;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  -webkit-box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+          box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+#login-menu {
+  width: 250px;
+}
+
+#login-menu .user-pic {
+  width: 30%;
+  height: auto;
+}
+
+.trainer-section {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-size: 0.9em;
+}
+
+.trainer-profile {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-size: 0.9em;
+}
+
+.trainer-pokemon {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -ms-flex-flow: row wrap;
+      flex-flow: row wrap;
+  width: 300px;
+  height: 280px;
+  position: relative;
+  left: 12px;
+  overflow: scroll;
+}
+
+.pokeball {
+  background-color: white;
+  width: 90px;
+  height: 110px;
+  border: 1px solid gray;
+  border-radius: 10px;
+  opacity: 0.95;
+  margin: 5px;
+  font-size: 0.8em;
+}
+
+#search {
+  width: 160px;
+  height: 3vh;
+  font-size: 0.7em;
+}
+
+.poke-results {
+  font-size: 85%;
+}
+
+form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.top-div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.back-button {
+  width: 50%;
+  height: auto;
+}
+
+.add-pokemon {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+.add-button {
+  width: 10%;
+  height: auto;
+}
+
+.pokemon-pic {
+  max-width: 160px;
+  height: auto;
+}
+
+.poke-stats {
+  text-align: center;
+}
+
+.pokestats {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  text-align: center;
+  width: 110%;
+}
+/*# sourceMappingURL=style.css.map */

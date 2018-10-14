@@ -1,0 +1,223 @@
+@import './partials/colors';
+@import './partials/mixins';
+@import './partials/fonts';
+@import './partials/variables';
+
+body{
+    font-family: $font-family;
+    text-transform: uppercase;
+}
+
+.flex-col{
+    @include flexbox(flex, column, center);
+}
+
+.flex-row{
+    @include flexbox(flex, row, center);
+}
+
+.jc-center {
+    justify-content: center;
+}
+
+.jc-start{
+    justify-content: flex-start;
+}
+
+.jc-end{
+    justify-content: flex-end;
+}
+
+//CASE
+.red-case {
+    @include box($red, 90vw, 100vh);
+    border: 15px inset $red;  
+    border-radius: 30px 30px; 
+}
+
+.circle-black {
+    @include box(black, $large-circle, $large-circle/2);
+    border: 10px solid white;
+}
+
+.circle-blue {
+    @include box($light-blue, $small-circle, $small-circle/2);
+    border: 5px solid none;
+}
+
+.screen{
+    @include box($light-blue, 90vw, 55vh);
+    border-right: 1vw solid black;
+    border-bottom: 1vh solid white;
+    border-left: 15px solid gray;
+}
+
+.large-top {
+    border-top-left-radius: $large-circle;
+    border-top-right-radius: $large-circle;
+    border-bottom: 0;
+}
+
+.large-bottom {
+    border-bottom-left-radius: $large-circle;
+    border-bottom-right-radius: $large-circle;
+    border-top: 0;
+}
+
+.small-top {
+    border-top-left-radius: $small-circle;
+    border-top-right-radius: $small-circle;
+}
+
+.small-bottom {
+    border-bottom-left-radius: $small-circle;
+    border-bottom-right-radius: $small-circle;
+}
+
+//NAV BAR
+#navigation-bar{
+    @include box(#333A40, 90vw, 7vh);
+    border-top: 1vh solid white;
+    color: white;
+    width: 90vw;
+    padding-left: 2vw;
+    padding-right: 1vw;
+} 
+
+#poke-search{
+    width: 30vw;
+    form {
+        display: flex;
+        align-items: center;
+    }
+    .search-submit{
+        padding-left: 1vw;
+    }
+}
+
+#user{
+    text-align: right;
+}
+
+//NAV BAR - DROPDOWN
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    position: absolute;
+    display: none;
+    color: black;
+    left: -75px;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    
+    a {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+    }
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+//LOGIN MENU
+#login-menu {
+    width: 250px;
+
+    .user-pic{
+        width: 30%;
+        height: auto;
+    }
+}
+
+//trainer
+.trainer-section {
+    justify-content: center;
+    font-size: 0.9em;
+}
+
+.trainer-profile{
+    @include flexbox (flex, column, flex-start);
+    justify-content: center;
+    font-size: 0.9em;
+}
+
+.trainer-pokemon {
+    @include flexbox(flex, row, flex-start);
+    justify-content: flex-start;
+    flex-flow: row wrap;
+    width: 300px;
+    height: 280px;
+    position: relative;
+    left: 12px;
+    overflow: scroll;
+}
+
+.pokeball{
+    @include box(white, 90px, 110px);
+    border: 1px solid gray;
+    border-radius: 10px;
+    opacity: 0.95;
+    margin: 5px;
+    font-size: 0.8em;
+}
+
+//SEARCH
+#search {
+    width: 160px;
+    height: 3vh;
+    font-size: 0.7em;
+}
+
+.poke-results {
+    font-size: 85%;
+    // width: 110%
+}
+
+form {
+    display: flex;
+}
+
+.top-div{
+    @include flexbox(flex, row, center);
+    justify-content: center;
+}
+
+.back-button{
+    width: 50%;
+    height: auto;
+}
+
+.add-pokemon {
+    @include flexbox(flex, row, center);
+    justify-content: space-evenly;
+}
+
+.add-button{
+    width: 10%;
+    height: auto;
+}
+
+.pokemon-pic{
+    max-width: 160px;
+    // width:160%;
+    height: auto; 
+}
+
+.poke-stats{
+    text-align: center;
+}
+
+.pokestats{
+    @include flexbox(flex, row, center);
+    justify-content: space-between;
+    text-align: center;
+    width: 110%;
+}

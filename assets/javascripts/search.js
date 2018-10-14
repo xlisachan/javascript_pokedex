@@ -1,39 +1,33 @@
 //SEARCH - DIV CLASS POKE-RESULTS
 let pokemonSearchResults = document.createElement('div');
-pokemonSearchResults.classList.add('poke-results');
+pokemonSearchResults.classList.add('poke-results','flex-col');
 
 //SEARCH ID - 'poke-search'
 let pokemonSearch = document.getElementById('poke-search');
 
-// SEARCH FORM
-const pokeSearchForm = document.createElement('form');
-pokeSearchForm.setAttribute('autocomplete', 'off');
-
-    // SEARCH INPUT BAR
-    const pokeSearchInputBox = document.createElement('div');
+    // SEARCH FORM
+    const pokeSearchForm = document.createElement('form');
+    pokeSearchForm.setAttribute('autocomplete', 'off');
     const pokeSearchInput = document.createElement('input');
     pokeSearchInput.id = 'search';
     pokeSearchInput.type = 'search';
     pokeSearchInput.name = 'search';
     pokeSearchInput.placeholder = 'Enter Pokemon';
-    pokeSearchInputBox.appendChild(pokeSearchInput);
 
     // SEARCH BUTTON
-    const pokeSearchSubmit = document.createElement('input');
-    pokeSearchSubmit.type = "image";
-    pokeSearchSubmit.src = 'searchbutton.png';
-    pokeSearchSubmit.setAttribute('width', '30px');
-    pokeSearchSubmit.setAttribute('height', '30px');
+    const pokeSearchSubmit = document.createElement('div');
+    pokeSearchSubmit.classList.add('search-submit');
+    pokeSearchSubmit.innerHTML = '<i class="fas fa-search"></i>';
 
 //APPEND SEARCH TO PAGE
-pokeSearchForm.append(pokeSearchInputBox, pokeSearchSubmit);
-pokemonSearch.appendChild(pokeSearchForm);
+pokeSearchForm.append(pokeSearchInput, pokeSearchSubmit);
+pokemonSearch.append(pokeSearchForm);
 
-//SEARCH FORM
+//SEARCH DIV
 pokeSearchForm.addEventListener('submit', e => {
     e.preventDefault();
     pokemonSearchResults.innerHTML = '';
-    pokedex.innerHTML = '';
+    mainContainer.innerHTML = '';
     let pokemon = document.getElementById('search');
     pokeSearch(pokemon.value);
     pokemon.value = '';
@@ -41,20 +35,18 @@ pokeSearchForm.addEventListener('submit', e => {
 
 //SEARCH CODE
 let pokeSearch = (pokemon) => {
-    axios.get(`https://pokeapi.co/api/v2/pokemon/${pokemon}`).then(response => {
+    axios.get(`https://pokeapi.co/api/v2/pokemon/${pokemon}/`).then(response => {
         let data = response.data;
             let topDiv = document.createElement('div');
             topDiv.classList.add('top-div');
 
                 let backButtonDiv = document.createElement('div');
-                let backButton = document.createElement('img');
-                backButton.classList.add('back-button');
-                backButton.src = "backbutton.png";
-                backButtonDiv.append(backButton);
+                backButtonDiv.classList.add('back-button');
+                backButtonDiv.innerHTML = '<i class="fas fa-arrow-left"></i>';
 
                 backButtonDiv.addEventListener('click', e => {
                     e.preventDefault();
-                    pokedex.innerHTML = '';
+                    mainContainer.innerHTML = '';
                     let userLoginDiv = document.getElementById('user');
                     userLoginDiv.innerHTML = '';
                     derek.renderTrainer();
@@ -63,9 +55,9 @@ let pokeSearch = (pokemon) => {
                 let addDiv = document.createElement('div');
                 addDiv.classList.add('add-pokemon');
 
-                    let addPokemonButton = document.createElement('img');
+                    let addPokemonButton = document.createElement('div');
                     addPokemonButton.classList.add('add-button');
-                    addPokemonButton.src = "add.png";
+                    addPokemonButton.innerHTML = '<i class="fas fa-plus-circle"></i>';
 
                     let addPokeText = document.createElement('span');
                     addPokeText.innerText = "Add Pokemon";
@@ -83,7 +75,7 @@ let pokeSearch = (pokemon) => {
 
             //DIV CLASS - 'pokefacts'
             let pokeFacts = document.createElement('div');
-            pokeFacts.classList.add('poke-facts');
+            pokeFacts.classList.add('flex-col');
             
                 //IMG CLASS - 'poke-pic'
                 let pokeFrontPic = document.createElement('img');
@@ -93,7 +85,7 @@ let pokeSearch = (pokemon) => {
                 //pokemon name
                 let pokePtag = document.createElement('p');
                 pokePtag.classList.add('poke-stats');
-                pokePtag.innerHTML = '<span>' + `${data.name}` + '<br/>' + 'NO. ' + `${data.id}` + '<br/>' + `${data.types[0].type.name}` + '</span>';
+                pokePtag.innerHTML = '<span>' + `${data.name}` + '<br/>' + 'NO. ' + `${data.id}` + '<br/>' + 'TYPE ' + `${data.types[0].type.name}` + '</span>';
             
             pokeFacts.append(pokeFrontPic, pokePtag);
 
@@ -127,10 +119,9 @@ let pokeSearch = (pokemon) => {
             pokeAbility.innerHTML = 'Abilities' + '<br>' + `${pokemonAbilities}`;
         
         pokemonSearchResults.append(topDiv, pokeFacts, pokeStats, pokeAbility);
-        pokedex.append(pokemonSearchResults);
+        mainContainer.append(pokemonSearchResults);
 
     }).catch(error => {
         console.log(error);
     });
 };
-
