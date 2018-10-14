@@ -92,7 +92,16 @@ body{
     }
     .search-submit{
         padding-left: 1vw;
+        background-color: transparent;
+        color: white;
+        border: none;
     }
+}
+
+#search {
+    width: 160px;
+    height: 3vh;
+    font-size: 0.7em;
 }
 
 #user{
@@ -128,13 +137,8 @@ body{
 }
 
 //LOGIN MENU
-#login-menu {
-    width: 250px;
-
-    .user-pic{
-        width: 30%;
-        height: auto;
-    }
+.user-pic{
+    width: 15vw;
 }
 
 //trainer
@@ -153,7 +157,7 @@ body{
     @include flexbox(flex, row, flex-start);
     justify-content: flex-start;
     flex-flow: row wrap;
-    width: 300px;
+    width: 100vw;
     height: 280px;
     position: relative;
     left: 12px;
@@ -170,39 +174,25 @@ body{
 }
 
 //SEARCH
-#search {
-    width: 160px;
-    height: 3vh;
-    font-size: 0.7em;
-}
 
-.poke-results {
-    font-size: 85%;
-    // width: 110%
-}
 
-form {
-    display: flex;
+.search-results {
+    font-size: 0.8em;
+    width: 80vw;
 }
 
 .top-div{
     @include flexbox(flex, row, center);
-    justify-content: center;
+    justify-content: flex-start;
+    width: 80vw;
 }
 
-.back-button{
-    width: 50%;
-    height: auto;
+.button-div{
+    width: 15vw;
 }
 
 .add-pokemon {
     @include flexbox(flex, row, center);
-    justify-content: space-evenly;
-}
-
-.add-button{
-    width: 10%;
-    height: auto;
 }
 
 .pokemon-pic{
