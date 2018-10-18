@@ -89,18 +89,14 @@ class Trainer{
 
         //SECTION CLASS - 'new-trainer'
         let trainerSection = document.createElement('div');
-        trainerSection.classList.add('trainer-section', 'flex-col');
+        trainerSection.classList.add('container', 'jc-start');
 
             //DIV CLASS - 'trainer-profile'
-            let trainerProfile = document.createElement('div');
-            let trainerName = document.createElement('p');
-            let trainerStats = document.createElement('span');
+            let trainerName = document.createElement('div');
+            let trainerCount = document.createElement('div');
 
-            trainerProfile.classList.add('trainer-profile', 'jc-center');
             trainerName.innerText = 'Name ' + this.name;
-            trainerStats.innerHTML = `# of Pokemon Caught<br>${this.pokemonCaught.length} / 802`;
-        
-            trainerProfile.append(trainerName, trainerStats);
+            trainerCount.innerHTML = `# of Pokemon Caught<br>${this.pokemonCaught.length} / 802`;
             
             // DIV CLASS - 'trainer-pokemon'
             let pokemonSection = document.createElement('div');
@@ -126,7 +122,7 @@ class Trainer{
             })
         }
             
-        trainerSection.append(trainerProfile, pokemonSection);
+        trainerSection.append(trainerName, trainerCount, pokemonSection);
         mainContainer.append(trainerSection);
     }
 }

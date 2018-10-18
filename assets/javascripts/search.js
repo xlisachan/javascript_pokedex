@@ -49,11 +49,11 @@ let pokeSearch = (pokemon) => {
         // });
         //TOP DIV - buttons: Back To Profile, Add To Pokedex
         let navDiv = document.createElement('div');
-        navDiv.classList.add('nav-div', 'flex-row', 'jc-start');
+        navDiv.classList.add('nav-div', 'flex-row', 'jc-sb');
 
             let backButtonDiv = document.createElement('div');
-            backButtonDiv.classList.add('button-div');
-            backButtonDiv.innerHTML = '<i class="fas fa-arrow-left"></i>';
+            backButtonDiv.classList.add('back-button');
+            backButtonDiv.innerHTML = '<i class="fas fa-arrow-circle-left"></i>';
 
             backButtonDiv.addEventListener('click', e => {
                 e.preventDefault();
@@ -64,8 +64,8 @@ let pokeSearch = (pokemon) => {
             })
 
             let addToPokedex = document.createElement('div');
-            addToPokedex.classList.add('flex-row');
-            addToPokedex.innerHTML = `<i class="fas fa-plus-circle"></i>&nbsp;Add Pokemon`;
+            addToPokedex.classList.add('button-div', 'flex-row');
+            addToPokedex.innerHTML = `Add To Pokedex`;
 
             addToPokedex.addEventListener('click', e => {
                 e.preventDefault();

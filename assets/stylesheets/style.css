@@ -48,6 +48,12 @@ body {
           justify-content: flex-end;
 }
 
+.jc-sb {
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
 .red-case {
   background-color: #E40031;
   width: 90vw;
@@ -77,6 +83,7 @@ body {
   border-right: 1vw solid black;
   border-bottom: 1vh solid white;
   border-left: 15px solid gray;
+  padding: 1vh 1vw;
 }
 
 .large-top {
@@ -170,15 +177,31 @@ body {
   display: block;
 }
 
-.user-pic, .button-div {
-  width: 15vw;
+#main-container {
+  width: 95vw;
+  padding: 1vh 2vw;
 }
 
-.trainer-section {
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  font-size: 0.9em;
+.container {
+  font-size: 0.8em;
+}
+
+.user-pic {
+  width: 10vh;
+}
+
+.back-button {
+  font-size: 2em;
+}
+
+.button-div {
+  background-color: lightgray;
+  border: 3px inset darkgray;
+  border-radius: 7px;
+  height: 4vh;
+  padding: 5px;
+  -webkit-box-shadow: 1px 2px 2px 2px #333A40;
+          box-shadow: 1px 2px 2px 2px #333A40;
 }
 
 .trainer-profile {
@@ -192,7 +215,6 @@ body {
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
-  font-size: 0.9em;
 }
 
 .trainer-pokemon {
@@ -208,16 +230,13 @@ body {
           align-items: flex-start;
   -ms-flex-flow: row wrap;
       flex-flow: row wrap;
-  width: 90vw;
-  height: 280px;
-  position: relative;
-  left: 12px;
+  height: 43vh;
   overflow: scroll;
 }
 
 .pokeball {
   background-color: white;
-  width: 90px;
+  width: 78px;
   height: 110px;
   border: 1px solid gray;
   border-radius: 10px;
@@ -244,6 +263,6 @@ body {
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
   text-align: center;
-  width: 100%;
+  width: 60vw;
 }
 /*# sourceMappingURL=style.css.map */

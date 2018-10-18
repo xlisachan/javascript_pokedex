@@ -3,11 +3,11 @@ pokeSearchForm.remove();
 let mainContainer = document.getElementById('main-container');
 
 //SECTION ID - 'login-menu'
-let loginMenu = document.createElement('section');
+let loginMenu = document.createElement('div');
 loginMenu.classList.add('flex-row')
 
     let userInfo = document.createElement('div');
-    userInfo.classList.add('flex-col');
+    userInfo.classList.add('container', 'flex-col');
 
         // IMG CLASS = 'user-pic'
         let userPic = document.createElement('img');

@@ -5,6 +5,7 @@
 
 body{
     font-family: $font-family;
+    // font-size:14px;
     text-transform: uppercase;
 }
 
@@ -26,6 +27,10 @@ body{
 
 .jc-end{
     justify-content: flex-end;
+}
+
+.jc-sb{
+    justify-content: space-between;
 }
 
 //CASE
@@ -50,6 +55,7 @@ body{
     border-right: 1vw solid black;
     border-bottom: 1vh solid white;
     border-left: 15px solid gray;
+    padding: 1vh 1vw;
 }
 
 .large-top {
@@ -136,34 +142,47 @@ body{
     display: block;
 }
 
-//LOGIN MENU
-.user-pic, .button-div {
-    width: 15vw;
+#main-container{
+    width: 95vw;
+    padding: 1vh 2vw;
 }
 
-//trainer
-.trainer-section {
-    justify-content: center;
-    font-size: 0.9em;
+.container{
+    font-size: 0.8em;
+}
+
+//LOGIN MENU
+.user-pic {
+    width: 10vh;
+}
+
+.back-button{
+    font-size: 2em;
+}
+
+.button-div {
+    background-color: lightgray;
+    border: 3px inset darkgray;
+    border-radius: 7px;
+    height: 4vh;
+    padding: 5px;
+    box-shadow: 1px 2px 2px 2px #333A40;
 }
 
 .trainer-profile{
     @include flexbox (flex, column, flex-start);
-    font-size: 0.9em;
+
 }
 
 .trainer-pokemon {
     @include flexbox(flex, row, flex-start);
     flex-flow: row wrap;
-    width: 90vw;
-    height: 280px;
-    position: relative;
-    left: 12px;
+    height: 43vh;
     overflow: scroll;
 }
 
 .pokeball{
-    @include box(white, 90px, 110px);
+    @include box(white, 78px, 110px);
     border: 1px solid gray;
     border-radius: 10px;
     opacity: 0.95;
@@ -188,5 +207,5 @@ body{
 .poke-stats{
     justify-content: space-evenly;
     text-align: center;
-    width: 100%;
+    width: 60vw;
 }
