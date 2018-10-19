@@ -80,6 +80,12 @@ body{
     border-bottom-right-radius: $small-circle;
 }
 
+#main-container{
+    width: 95vw;
+    padding: 1vh 2vw;
+    font-size: 0.8em;
+}
+
 //NAV BAR
 #navigation-bar{
     @include box(#333A40, 90vw, 6vh);
@@ -142,38 +148,12 @@ body{
     display: block;
 }
 
-#main-container{
-    width: 95vw;
-    padding: 1vh 2vw;
-}
-
-.container{
-    font-size: 0.8em;
-}
-
 //LOGIN MENU
 .user-pic {
-    width: 10vh;
+    height: 10vh;
 }
 
-.back-button{
-    font-size: 2em;
-}
-
-.button-div {
-    background-color: lightgray;
-    border: 3px inset darkgray;
-    border-radius: 7px;
-    height: 4vh;
-    padding: 5px;
-    box-shadow: 1px 2px 2px 2px #333A40;
-}
-
-.trainer-profile{
-    @include flexbox (flex, column, flex-start);
-
-}
-
+//PROFILE
 .trainer-pokemon {
     @include flexbox(flex, row, flex-start);
     flex-flow: row wrap;
@@ -191,13 +171,17 @@ body{
 }
 
 //SEARCH
-.search-results {
-    font-size: 0.8em;
-    width: 80vw;
+.back-button{
+    font-size: 2em;
 }
 
-.nav-div{
-    width: 80vw;
+.button-div {
+    background-color: lightgray;
+    border: 3px inset darkgray;
+    border-radius: 7px;
+    height: 4vh;
+    padding: 5px;
+    box-shadow: 1px 2px 2px 2px #333A40;
 }
 
 .pokemon-img{
@@ -208,4 +192,10 @@ body{
     justify-content: space-evenly;
     text-align: center;
     width: 60vw;
+}
+
+.poke-abil{
+    width: 60vw;
+    display: flex;
+    justify-content: center;
 }

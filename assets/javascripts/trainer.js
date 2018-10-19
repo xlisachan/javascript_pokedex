@@ -50,22 +50,20 @@ class Trainer{
     renderTrainer() {
         //NAVBAR
         pokemonSearch.appendChild(pokeSearchForm);
+
         let userLogin = document.getElementById('user');
+        let userNameDiv = document.createElement('div');
+        let userNameText = document.createElement('div');
+        let userNameDropdown = document.createElement('div');
+        let DDuserProfile = document.createElement('a');
+        let DDlogin = document.createElement('a');
 
             //DIV CLASS - dropdown
-            let userNameDiv = document.createElement('div');
             userNameDiv.classList.add('dropdown');
-
-            let userNameText = document.createElement('div');
             userNameText.innerText = this.name;
 
             //DIV CLASS - dropdown-content
-            let userNameDropdown = document.createElement('div');
             userNameDropdown.classList.add('dropdown-content');
-
-            let DDuserProfile = document.createElement('a');
-            let DDlogin = document.createElement('a');
-            
             DDuserProfile.innerText = 'Profile';
             DDlogin.innerText = 'Login';
 
@@ -89,19 +87,17 @@ class Trainer{
 
         //SECTION CLASS - 'new-trainer'
         let trainerSection = document.createElement('div');
-        trainerSection.classList.add('container', 'jc-start');
+        let trainerName = document.createElement('div');
+        let trainerCount = document.createElement('div');
+        let pokemonSection = document.createElement('div');
+        trainerSection.classList.add('container');
+        pokemonSection.classList.add('trainer-pokemon', 'jc-start');
 
             //DIV CLASS - 'trainer-profile'
-            let trainerName = document.createElement('div');
-            let trainerCount = document.createElement('div');
-
             trainerName.innerText = 'Name ' + this.name;
             trainerCount.innerHTML = `# of Pokemon Caught<br>${this.pokemonCaught.length} / 802`;
             
             // DIV CLASS - 'trainer-pokemon'
-            let pokemonSection = document.createElement('div');
-            pokemonSection.classList.add('trainer-pokemon', 'jc-start');
-           
             for (let pokemon of this.pokemonCaught) {
                 let pokeBall = document.createElement('span');
                 let pokePic = document.createElement('img');
