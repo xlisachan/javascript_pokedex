@@ -1,25 +1,18 @@
+let mainContainer = document.getElementById('main-container');
+let loginMenu = document.createElement('div');
+let userInfo = document.createElement('div');
+let userPic = document.createElement('img');
+let userName = document.createElement('span');
+
 pokeSearchForm.remove();
 
-let mainContainer = document.getElementById('main-container');
-
-//SECTION ID - 'login-menu'
-let loginMenu = document.createElement('div');
 loginMenu.classList.add('flex-row')
+userInfo.classList.add('container', 'flex-col');
+userPic.src = './assets/images/snorlax-profile.png';
+userPic.classList.add('user-pic');
+userName.innerText = 'DEREK';
 
-    let userInfo = document.createElement('div');
-    userInfo.classList.add('container', 'flex-col');
-
-        // IMG CLASS = 'user-pic'
-        let userPic = document.createElement('img');
-        userPic.src = './assets/images/snorlax-profile.png';
-        userPic.classList.add('user-pic');
-
-        // SPAN - username
-        let userName = document.createElement('span');
-        userName.innerText = 'DEREK';
-
-    userInfo.append(userPic, userName);
-
+userInfo.append(userPic, userName);
 loginMenu.appendChild(userInfo);
 mainContainer.appendChild(loginMenu);
 

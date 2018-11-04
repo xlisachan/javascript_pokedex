@@ -25,12 +25,13 @@ class Trainer{
     }
     
     add(pokemonObject){
-        axios.get(`https://pokeapi.co/api/v2/pokemon/${pokemonObject}/`).then(response => {
+        const pokeUrl = url + pokemonObject + '/';
+        axios.get(pokeUrl).then(response => { 
             let data = response.data;
             let pokemonName = data.name;
             let pokemonNumber = data.id;
             let pokemonType = data.types[0].type.name;
-            let pokeFrontPic = data.sprites.front_default;
+            let pokemonPic = data.sprites.front_default;
             let pokemonHp = parseInt(`${data.stats[5].base_stat}`);
             let pokemonAtk = parseInt(`${data.stats[4].base_stat}`);
             let pokemonDef = parseInt(`${data.stats[3].base_stat}`);
@@ -40,32 +41,31 @@ class Trainer{
                     pokemonAbilities.push(ability.ability.name);
                 });
             
-            let newPokemon = new Pokemon(pokemonName, pokemonNumber, pokemonType, pokeFrontPic, pokemonHp, pokemonAtk, pokemonDef, pokemonAbilities);
+            let newPokemon = new Pokemon(pokemonName, pokemonNumber, pokemonType, pokemonPic, pokemonHp, pokemonAtk, pokemonDef, pokemonAbilities);
 
             this.pokemonCaught.push(newPokemon);
-
         });
     }
 
     renderTrainer() {
-        //NAVBAR
-        pokemonSearch.appendChild(pokeSearchForm);
-
         let userLogin = document.getElementById('user');
         let userNameDiv = document.createElement('div');
         let userNameText = document.createElement('div');
         let userNameDropdown = document.createElement('div');
         let DDuserProfile = document.createElement('a');
         let DDlogin = document.createElement('a');
+        let trainerSection = document.createElement('div');
+        let trainerName = document.createElement('div');
+        let trainerCount = document.createElement('div');
+        let pokemonSection = document.createElement('div');
 
-            //DIV CLASS - dropdown
-            userNameDiv.classList.add('dropdown');
-            userNameText.innerText = this.name;
+        pokemonSearch.appendChild(pokeSearchForm);
 
-            //DIV CLASS - dropdown-content
-            userNameDropdown.classList.add('dropdown-content');
-            DDuserProfile.innerText = 'Profile';
-            DDlogin.innerText = 'Login';
+        userNameDiv.classList.add('dropdown');
+        userNameText.innerText = this.name;
+        userNameDropdown.classList.add('dropdown-content');
+        DDuserProfile.innerText = 'Profile';
+        DDlogin.innerText = 'Login';
 
         userNameDropdown.append(DDuserProfile, DDlogin);
         userNameDiv.append(userNameText, userNameDropdown);
@@ -81,31 +81,24 @@ class Trainer{
                 mainContainer.innerHTML = '';
                 userNameDiv.remove();
                 pokeSearchForm.remove();
-                mainContainer.appendChild(loginMenu); 
+                mainContainer.append(loginMenu); 
             } 
         })
 
-        //SECTION CLASS - 'new-trainer'
-        let trainerSection = document.createElement('div');
-        let trainerName = document.createElement('div');
-        let trainerCount = document.createElement('div');
-        let pokemonSection = document.createElement('div');
         trainerSection.classList.add('container');
-        pokemonSection.classList.add('trainer-pokemon', 'jc-start');
-
-            //DIV CLASS - 'trainer-profile'
-            trainerName.innerText = 'Name ' + this.name;
-            trainerCount.innerHTML = `# of Pokemon Caught<br>${this.pokemonCaught.length} / 802`;
+        pokemonSection.classList.add('trainer-pokemon', 'jc-start'); 
+        trainerName.innerText = 'Name ' + this.name;
+        trainerCount.innerHTML = `# of Pokemon Caught<br>${this.pokemonCaught.length} / 802`;
             
-            // DIV CLASS - 'trainer-pokemon'
-            for (let pokemon of this.pokemonCaught) {
-                let pokeBall = document.createElement('span');
-                let pokePic = document.createElement('img');
-                let pokeTag = document.createElement('p');
-                
-                pokeBall.classList.add('pokeball', 'flex-col', 'jc-center');
-                pokePic.src = pokemon.frontPic;
-                pokeTag.innerText = pokemon.name;
+        // DIV CLASS - 'trainer-pokemon'
+        for (let pokemon of this.pokemonCaught) {
+            let pokeBall = document.createElement('span');
+            let pokePic = document.createElement('img');
+            let pokeTag = document.createElement('p');
+            
+            pokeBall.classList.add('pokeball', 'flex-col', 'jc-center');
+            pokePic.src = pokemon.pic;
+            pokeTag.innerText = pokemon.name;
 
             pokeBall.append(pokePic, pokeTag);
             pokemonSection.append(pokeBall);
@@ -114,7 +107,7 @@ class Trainer{
                 e.preventDefault();
                 pokemonSearchResults.innerHTML = '';
                 trainerSection.remove();
-                pokeSearch(pokemon.name);
+                getPokemon(pokemon.name);
             })
         }
             
