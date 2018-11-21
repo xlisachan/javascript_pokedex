@@ -5,8 +5,8 @@ let userName = document.getElementById('user-name');
 
 pokeSearchForm.remove();
 
-userName.innerText = lisa.name;
 userAvatar.src = lisa.avatar;
+userName.innerText = lisa.name;
 
 userInfo.addEventListener('click', e => {
     e.preventDefault();
