@@ -2,6 +2,7 @@
 const url = 'https://pokeapi.co/api/v2/pokemon/';
 
 // Page elements
+const mainContainer = document.getElementById('main-container');
 const pokemonSearch = document.getElementById('poke-search');
 const pokeSearchForm = document.createElement('form');
 const pokeSearchInput = document.createElement('input');
