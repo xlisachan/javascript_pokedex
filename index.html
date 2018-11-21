@@ -27,7 +27,15 @@
                     <button input type="submit" value="submit" class="search-submit"><i class="fas fa-search"></i></button>
                 </form>
             </div>
-            <div class="col" id="user"></div>
+            <div class="col" id="user">
+                <div class="dropdown" id="dropdown">
+                    <a id="dropdown-btn"></a>
+                    <div class="dropdown-content">
+                        <a id="dropdown-user">Profile</a>
+                        <a id="dropdown-login">Login</a>
+                    </div>
+                </div>
+            </div>
         </div>
         <div class="screen">
             <div class="col flex-col" id="main-container">
@@ -37,6 +45,11 @@
                         <span id="user-name"></span>
                     </div>
                 </div>
+                <!-- <div class="container" id="trainer-section" style="display: none">
+                    <div>Name <span id="trainer-name"></span></div>
+                    <div># of Pokemon Caught <span id="trainer-count"></span> / 802</div>
+                    <div></div>
+                </div> -->
             </div>
         </div>
         <div class="red-case red-bottom flex-col">

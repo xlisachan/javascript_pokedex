@@ -8,15 +8,15 @@ const pokeSearchForm = document.getElementById('poke-form');
 const pokeSearchInput = document.getElementById('search-input');
 const pokemonSearchResults = document.createElement('div');
 
+pokemonSearchResults.classList.add('container');
+
 pokeSearchForm.addEventListener('submit', e => {
     e.preventDefault();
     pokemonSearchResults.innerHTML = '';
-    mainContainer.innerHTML = '';
+    loginMenu.style.display = 'none';
     getPokemon(pokeSearchInput.value);
     pokeSearchInput.value = '';
 });
-
-pokemonSearchResults.classList.add('container');
 
 // AJAX functions
 const getPokemon = async(pokemon) => {
@@ -56,8 +56,8 @@ const getPokemon = async(pokemon) => {
             backButtonDiv.addEventListener('click', e => {
                 e.preventDefault();
                 mainContainer.innerHTML = '';
-                let userLoginDiv = document.getElementById('user');
-                userLoginDiv.innerHTML = '';
+                // let userLoginDiv = document.getElementById('user');
+                // userLoginDiv.style.display = 'none';
                 lisa.renderTrainer();
             })
 

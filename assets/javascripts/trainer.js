@@ -49,39 +49,27 @@ class Trainer{
     }
 
     renderTrainer() {
-        let userLogin = document.getElementById('user');
-        let userNameDiv = document.createElement('div');
-        let userNameText = document.createElement('div');
-        let userNameDropdown = document.createElement('div');
-        let DDuserProfile = document.createElement('a');
-        let DDlogin = document.createElement('a');
+        let userNameDiv = document.getElementById('dropdown');
+        let ddButton = document.getElementById('dropdown-btn');
+        let ddProfile = document.getElementById('dropdown-user');
+        let ddLogin = document.getElementById('dropdown-login');
         let trainerSection = document.createElement('div');
         let trainerName = document.createElement('div');
         let trainerCount = document.createElement('div');
         let pokemonSection = document.createElement('div');
-
-        navSearch.appendChild(pokeSearchForm);
-
-        userNameDiv.classList.add('dropdown');
-        userNameText.innerText = this.name;
-        userNameDropdown.classList.add('dropdown-content');
-        DDuserProfile.innerText = 'Profile';
-        DDlogin.innerText = 'Login';
-
-        userNameDropdown.append(DDuserProfile, DDlogin);
-        userNameDiv.append(userNameText, userNameDropdown);
-        userLogin.appendChild(userNameDiv);
+        
+        ddButton.innerText = this.name;
 
         userNameDiv.addEventListener('click', e =>{
             e.preventDefault();
-            if (e.target === DDuserProfile){
+            if (e.target === ddProfile){
                 mainContainer.innerHTML = '';
-                userNameDiv.remove();
+                userLogin.style.display = 'inline';
                 lisa.renderTrainer();
-            } else if (e.target === DDlogin){
+            } else if (e.target === ddLogin){
                 mainContainer.innerHTML = '';
-                userNameDiv.remove();
-                pokeSearchForm.remove();
+                userLogin.style.display = 'none';
+                pokeSearchForm.style.display = 'none';
                 mainContainer.append(loginMenu); 
             } 
         })
