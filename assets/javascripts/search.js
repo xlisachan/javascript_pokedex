@@ -3,22 +3,10 @@ const url = 'https://pokeapi.co/api/v2/pokemon/';
 
 // Page elements
 const mainContainer = document.getElementById('main-container');
-const pokemonSearch = document.getElementById('poke-search');
-const pokeSearchForm = document.createElement('form');
-const pokeSearchInput = document.createElement('input');
-const pokeSearchSubmit = document.createElement('button');
+const navSearch = document.getElementById('nav-search');
+const pokeSearchForm = document.getElementById('poke-form');
+const pokeSearchInput = document.getElementById('search-input');
 const pokemonSearchResults = document.createElement('div');
-
-pokeSearchForm.setAttribute('autocomplete', 'off');
-pokeSearchInput.id = 'search';
-pokeSearchInput.placeholder = 'Enter Pokemon';
-pokeSearchSubmit.type= 'submit';
-pokeSearchSubmit.value= 'submit';
-pokeSearchSubmit.classList.add('search-submit');
-pokeSearchSubmit.innerHTML = '<i class="fas fa-search"></i>';
-
-pokeSearchForm.append(pokeSearchInput, pokeSearchSubmit);
-pokemonSearch.append(pokeSearchForm);
 
 pokeSearchForm.addEventListener('submit', e => {
     e.preventDefault();

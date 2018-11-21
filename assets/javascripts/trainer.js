@@ -60,7 +60,7 @@ class Trainer{
         let trainerCount = document.createElement('div');
         let pokemonSection = document.createElement('div');
 
-        pokemonSearch.appendChild(pokeSearchForm);
+        navSearch.appendChild(pokeSearchForm);
 
         userNameDiv.classList.add('dropdown');
         userNameText.innerText = this.name;
