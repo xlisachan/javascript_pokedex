@@ -57,15 +57,21 @@ body {
           justify-content: space-between;
 }
 
-.red-case-top {
+.red-case {
   background-color: #E40031;
   width: 100%;
   height: 20vh;
   position: relative;
   top: 0;
   border: 15px inset #E40031;
-  border-bottom: 0;
+}
+
+.red-top {
   border-radius: 30px 30px 0px 0px;
+  border-bottom: 0;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
 }
 
 .circle-black {
@@ -82,10 +88,22 @@ body {
   border: 5px solid none;
 }
 
+.large-top {
+  border-top-left-radius: 160px;
+  border-top-right-radius: 160px;
+  border-bottom: 0;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
 .wrapper {
   width: 90vw;
   max-width: 900px;
   margin: 0 auto;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .screen {
@@ -98,27 +116,22 @@ body {
   padding: 1vh 1vw;
 }
 
-.red-case-bottom {
-  background-color: #E40031;
-  width: 100%;
-  height: 20vh;
-  position: relative;
-  bottom: 0;
-  border: 15px inset #E40031;
-  border-top: 0;
-  border-radius: 0px 0px 30px 30px;
-}
-
-.large-top {
-  border-top-left-radius: 160px;
-  border-top-right-radius: 160px;
-  border-bottom: 0;
+#main-container {
+  width: 95vw;
+  padding: 1vh 2vw;
+  font-size: 0.8em;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .large-bottom {
   border-bottom-left-radius: 160px;
   border-bottom-right-radius: 160px;
   border-top: 0;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
 }
 
 .small-top {
@@ -131,10 +144,12 @@ body {
   border-bottom-right-radius: 80px;
 }
 
-#main-container {
-  width: 95vw;
-  padding: 1vh 2vw;
-  font-size: 0.8em;
+.red-bottom {
+  border-radius: 0px 0px 30px 30px;
+  border-top: 0;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
 }
 
 #navigation-bar {
@@ -145,6 +160,9 @@ body {
   color: white;
   padding-left: 2vw;
   padding-right: 1vw;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 #poke-search {
@@ -186,7 +204,7 @@ body {
   position: absolute;
   display: none;
   color: black;
-  left: -60px;
+  left: -82px;
   background-color: #f1f1f1;
   min-width: 160px;
   -webkit-box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
