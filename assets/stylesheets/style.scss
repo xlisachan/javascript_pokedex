@@ -34,10 +34,13 @@ body{
 }
 
 //CASE
-.red-case {
-    @include box($red, 90vw, 100vh);
+.red-case-top {
+    @include box($red, 100%, 20vh);
+    position: relative;
+    top: 0;
     border: 15px inset $red;  
-    border-radius: 30px 30px; 
+    border-bottom: 0;
+    border-radius: 30px 30px 0px 0px; 
 }
 
 .circle-black {
@@ -55,6 +58,7 @@ body{
     max-width: 900px;
     margin: 0 auto;
 }
+
 .screen{
     background-color: rgba(226, 245, 252,0.5);
     width: 100%;
@@ -63,6 +67,15 @@ body{
     border-bottom: 1vh solid white;
     border-left: 15px solid gray;
     padding: 1vh 1vw;
+}
+
+.red-case-bottom {
+    @include box($red, 100%, 20vh);
+    position: relative;
+    bottom: 0;
+    border: 15px inset $red;  
+    border-top: 0;
+    border-radius: 0px 0px 30px 30px; 
 }
 
 .large-top {
