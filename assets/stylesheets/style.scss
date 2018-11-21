@@ -4,8 +4,12 @@
 @import './partials/variables';
 
 body{
+    background : {
+        image: url('../images/pokemonbg.png');
+        position: center;
+        repeat: no-repeat;
+    }
     font-family: $font-family;
-    // font-size:14px;
     text-transform: uppercase;
 }
 
@@ -217,4 +221,13 @@ body{
     width: 100%;
     display: flex;
     justify-content: center;
+}
+
+@media only screen and (min-width: 768px){
+    body{
+        background : {
+            position: initial;
+            size: initial;
+        }
+    }
 }

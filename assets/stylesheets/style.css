@@ -1,5 +1,8 @@
 @import url("https://fonts.googleapis.com/css?family=Press+Start+2P");
 body {
+  background-image: url("../images/pokemonbg.png");
+  background-position: center;
+  background-repeat: no-repeat;
   font-family: "Press Start 2P", cursive;
   text-transform: uppercase;
 }
@@ -268,5 +271,12 @@ body {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+}
+
+@media only screen and (min-width: 768px) {
+  body {
+    background-position: initial;
+    background-size: initial;
+  }
 }
 /*# sourceMappingURL=style.css.map */
