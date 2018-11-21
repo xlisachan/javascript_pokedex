@@ -162,7 +162,7 @@ body{
 }
 
 .pokeball{
-    @include box(white, 78px, 110px);
+    @include box(white, 110px, 110px);
     border: 1px solid gray;
     border-radius: 10px;
     opacity: 0.95;

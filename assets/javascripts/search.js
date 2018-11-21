@@ -69,7 +69,7 @@ const getPokemon = async(pokemon) => {
                 mainContainer.innerHTML = '';
                 let userLoginDiv = document.getElementById('user');
                 userLoginDiv.innerHTML = '';
-                derek.renderTrainer();
+                lisa.renderTrainer();
             })
 
             addToPokedex.addEventListener('click', e => {
@@ -114,14 +114,14 @@ const getPokemon = async(pokemon) => {
 
 
 let check = pokemonNumber => {
-    let found = derek.pokemonCaught.some(function (el) {
+    let found = lisa.pokemonCaught.some(function (el) {
       return el.id === pokemonNumber;
     });
     if (found){
         alert('You already have this pokemon!');
     }
     else {
-        derek.add(pokemonNumber);
+        lisa.add(pokemonNumber);
         alert('Pokemon added to pokedex!');
     }
 }

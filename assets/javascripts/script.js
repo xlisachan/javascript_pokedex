@@ -1,11 +1,11 @@
-let derek = new Trainer('Derek');
+let lisa = new Trainer('Lisa', './assets/images/snorlax-profile.png');
 
-derek.add('psyduck');
-derek.add('snorlax');
-derek.add('slowbro');
+lisa.add('bulbasaur');
+lisa.add('charmander');
+lisa.add('squirtle');
 
-derek.get('54');
-derek.get('143');
-derek.get('80');
+lisa.get('1');
+lisa.get('4');
+lisa.get('7');
 
-derek.all();
+lisa.all();

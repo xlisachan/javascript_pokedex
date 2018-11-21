@@ -1,6 +1,7 @@
 class Trainer{
-    constructor(name){
+    constructor(name, avatar){
         this.name = name;
+        this.avatar = avatar;
         this.pokemonCaught = [];
     }
 
@@ -76,7 +77,7 @@ class Trainer{
             if (e.target === DDuserProfile){
                 mainContainer.innerHTML = '';
                 userNameDiv.remove();
-                derek.renderTrainer();
+                lisa.renderTrainer();
             } else if (e.target === DDlogin){
                 mainContainer.innerHTML = '';
                 userNameDiv.remove();

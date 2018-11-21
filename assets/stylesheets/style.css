@@ -1,8 +1,5 @@
 @import url("https://fonts.googleapis.com/css?family=Press+Start+2P");
 body {
-  background-image: url("./assets/images/pokeball.jpg");
-  background-repeat: no-repeat;
-  background-attachment: fixed;
   font-family: "Press Start 2P", cursive;
   text-transform: uppercase;
 }
@@ -209,7 +206,7 @@ body {
 
 .pokeball {
   background-color: white;
-  width: 78px;
+  width: 110px;
   height: 110px;
   border: 1px solid gray;
   border-radius: 10px;
