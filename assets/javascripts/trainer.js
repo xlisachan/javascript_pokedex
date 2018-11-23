@@ -21,6 +21,7 @@ class Trainer{
     
     add(pokemonObject){
         const pokeUrl = url + pokemonObject + '/';
+        
         axios.get(pokeUrl).then(response => { 
             const data = response.data;
             const pokemonName = data.name;
