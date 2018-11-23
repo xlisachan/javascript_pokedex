@@ -6,15 +6,25 @@ const mainContainer = document.getElementById('main-container');
 const navSearch = document.getElementById('nav-search');
 const pokeSearchForm = document.getElementById('poke-form');
 const pokeSearchInput = document.getElementById('search-input');
-const pokemonSearchResults = document.createElement('div');
+const pokemonSearchResults = document.getElementById('search-results');
 
-pokemonSearchResults.classList.add('container');
+const pokeDiv = document.createElement('div');
+const pokeImage = document.createElement('img');
+const pokePtag = document.createElement('p');
+const pokeStats = document.createElement('div'); 
+const pokeHp = document.createElement('p');
+const pokeAtk = document.createElement('p');
+const pokeDef = document.createElement('p');
+const pokeAbility = document.createElement('p');
 
 pokeSearchForm.addEventListener('submit', e => {
     e.preventDefault();
     pokemonSearchResults.innerHTML = '';
     loginMenu.style.display = 'none';
+    trainerSection.style.display = 'none';
+    userLogin.style.display = 'inline';
     getPokemon(pokeSearchInput.value);
+    pokemonSearchResults.style.display = 'inline';
     pokeSearchInput.value = '';
 });
 
@@ -40,9 +50,6 @@ const getPokemon = async(pokemon) => {
             });
 
             // const newPokemon = new Pokemon(pokemonName, pokemonNumber, pokemonType, pokemonPic, pokemonHp, pokemonAtk, pokemonDef, pokemonAbilities);
-            
-            // MAKE THIS A RENDER FUNCTION
-            //TOP DIV - Button: (1)Back to Profile, (2)Add to Pokedex
             const navDiv = document.createElement('div');
             const backButtonDiv = document.createElement('div');
             const addToPokedex = document.createElement('div');
@@ -52,30 +59,7 @@ const getPokemon = async(pokemon) => {
             backButtonDiv.innerHTML = '<i class="fas fa-arrow-circle-left"></i>';
             addToPokedex.classList.add('button-div', 'flex-row');
             addToPokedex.innerHTML = `Add To Pokedex`;
-
-            backButtonDiv.addEventListener('click', e => {
-                e.preventDefault();
-                mainContainer.innerHTML = '';
-                // let userLoginDiv = document.getElementById('user');
-                // userLoginDiv.style.display = 'none';
-                lisa.renderTrainer();
-            })
-
-            addToPokedex.addEventListener('click', e => {
-                e.preventDefault();
-                check(pokemonNumber);
-            });
-
-            //BOTTOM DIV - Pokemon
-            let pokeDiv = document.createElement('div');
-            let pokeImage = document.createElement('img');
-            let pokePtag = document.createElement('p');
-            let pokeStats = document.createElement('div'); 
-            let pokeHp = document.createElement('p');
-            let pokeAtk = document.createElement('p');
-            let pokeDef = document.createElement('p');
-            let pokeAbility = document.createElement('div');
-
+            
             pokeDiv.classList.add('flex-col');
             pokeImage.classList.add('pokemon-img');
             pokePtag.classList.add('poke-stats');
@@ -83,19 +67,33 @@ const getPokemon = async(pokemon) => {
             pokeAbility.classList.add('poke-abil');  
 
             pokeImage.src = pokemonPic;
-            pokePtag.innerHTML = '<span>' + pokemonName + '<br/>' + 'NO. ' + pokemonNumber + '<br/>' + 'TYPE ' + pokemonType + '</span>';
-            pokeHp.innerHTML = 'HP<br>' + pokemonHp;
-            pokeAtk.innerHTML = 'ATK<br>' + pokemonAtk;            
-            pokeDef.innerHTML = 'DEF<br>' + pokemonDef; 
-            pokeAbility.innerHTML = 'Abilities' + '<br>' + pokemonAbilities;
+            pokePtag.innerHTML = '<span>' + pokemonName + '<br/> NO. ' + pokemonNumber + '<br/> TYPE ' + pokemonType + '</span>';
+            pokeHp.innerHTML = 'HP <br/>' + pokemonHp;
+            pokeAtk.innerHTML = 'ATK <br/>' + pokemonAtk;            
+            pokeDef.innerHTML = 'DEF <br/>' + pokemonDef; 
+            pokeAbility.innerHTML = 'Abilities <br/>' + pokemonAbilities;
 
             navDiv.append(backButtonDiv, addToPokedex);
             pokeStats.append(pokeHp, pokeAtk, pokeDef);
             pokeDiv.append(pokeImage, pokePtag, pokeStats, pokeAbility);
             pokemonSearchResults.append(navDiv, pokeDiv);
-            mainContainer.append(pokemonSearchResults);
-        }
 
+            backButtonDiv.addEventListener('click', e => {
+                e.preventDefault();
+                loginMenu.style.display = 'none';
+                pokeSearchForm.style.display = 'inline-flex';
+                userLogin.style.display = 'inline';
+                trainerSection.style.display = 'inline';
+                pokemonSection.innerHTML = '';
+                pokemonSearchResults.innerHTML = '';
+                lisa.renderTrainer();
+            })
+
+            addToPokedex.addEventListener('click', e => {
+                e.preventDefault();
+                check(pokemonNumber);
+            });
+        }
     } catch(error){
         console.log(error);
     }

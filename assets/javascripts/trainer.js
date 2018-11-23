@@ -15,34 +15,28 @@ class Trainer{
         //accepts one parameter - name
         //returns a Pokemon object housing info for the pokemon found
         this.pokemonCaught.filter(element => {
-            if (element.name == name){
-                console.log(element);
-                return element;
-            } else {
-                console.log(`Pokemon not found`);
-                return `Pokemon not found`;
-            }
+            return element.name == name ? element : 'Pokemon not found';
         });
     }
     
     add(pokemonObject){
         const pokeUrl = url + pokemonObject + '/';
         axios.get(pokeUrl).then(response => { 
-            let data = response.data;
-            let pokemonName = data.name;
-            let pokemonNumber = data.id;
-            let pokemonType = data.types[0].type.name;
-            let pokemonPic = data.sprites.front_default;
-            let pokemonHp = parseInt(`${data.stats[5].base_stat}`);
-            let pokemonAtk = parseInt(`${data.stats[4].base_stat}`);
-            let pokemonDef = parseInt(`${data.stats[3].base_stat}`);
-            let pokemonAbilities = [];
-            let abilities = data.abilities;
+            const data = response.data;
+            const pokemonName = data.name;
+            const pokemonNumber = data.id;
+            const pokemonType = data.types[0].type.name;
+            const pokemonPic = data.sprites.front_default;
+            const pokemonHp = parseInt(`${data.stats[5].base_stat}`);
+            const pokemonAtk = parseInt(`${data.stats[4].base_stat}`);
+            const pokemonDef = parseInt(`${data.stats[3].base_stat}`);
+            const pokemonAbilities = [];
+            const abilities = data.abilities;
                 abilities.forEach(ability => {
                     pokemonAbilities.push(ability.ability.name);
                 });
             
-            let newPokemon = new Pokemon(pokemonName, pokemonNumber, pokemonType, pokemonPic, pokemonHp, pokemonAtk, pokemonDef, pokemonAbilities);
+            const newPokemon = new Pokemon(pokemonName, pokemonNumber, pokemonType, pokemonPic, pokemonHp, pokemonAtk, pokemonDef, pokemonAbilities);
 
             this.pokemonCaught.push(newPokemon);
         });
@@ -53,33 +47,34 @@ class Trainer{
         let ddButton = document.getElementById('dropdown-btn');
         let ddProfile = document.getElementById('dropdown-user');
         let ddLogin = document.getElementById('dropdown-login');
-        let trainerSection = document.createElement('div');
-        let trainerName = document.createElement('div');
-        let trainerCount = document.createElement('div');
-        let pokemonSection = document.createElement('div');
+        let trainerName = document.getElementById('trainer-name');
+        let trainerCount = document.getElementById('trainer-count');
         
         ddButton.innerText = this.name;
+        trainerName.innerText = this.name;
+        trainerCount.innerHTML = this.pokemonCaught.length;
 
         userNameDiv.addEventListener('click', e =>{
             e.preventDefault();
             if (e.target === ddProfile){
-                mainContainer.innerHTML = '';
+                e.preventDefault();
+                loginMenu.style.display = 'none';
+                pokeSearchForm.style.display = 'inline-flex';
                 userLogin.style.display = 'inline';
+                trainerSection.style.display = 'inline';
+                pokemonSection.innerHTML = '';
+                pokemonSearchResults.style.display = 'none';
                 lisa.renderTrainer();
             } else if (e.target === ddLogin){
-                mainContainer.innerHTML = '';
+                pokemonSearchResults.innerHTML = '';
                 userLogin.style.display = 'none';
                 pokeSearchForm.style.display = 'none';
-                mainContainer.append(loginMenu); 
+                trainerSection.style.display = 'none';
+                pokemonSearchResults.style.display = 'none';
+                loginMenu.style.display = 'inline';
             } 
         })
-
-        trainerSection.classList.add('container');
-        pokemonSection.classList.add('trainer-pokemon', 'jc-start'); 
-        trainerName.innerText = 'Name ' + this.name;
-        trainerCount.innerHTML = `# of Pokemon Caught<br>${this.pokemonCaught.length} / 802`;
             
-        // DIV CLASS - 'trainer-pokemon'
         for (let pokemon of this.pokemonCaught) {
             let pokeBall = document.createElement('span');
             let pokePic = document.createElement('img');
@@ -94,13 +89,10 @@ class Trainer{
 
             pokeBall.addEventListener('click', e => {
                 e.preventDefault();
-                pokemonSearchResults.innerHTML = '';
-                trainerSection.remove();
+                trainerSection.style.display = 'none';
                 getPokemon(pokemon.name);
+                pokemonSearchResults.style.display = 'inline';
             })
         }
-            
-        trainerSection.append(trainerName, trainerCount, pokemonSection);
-        mainContainer.append(trainerSection);
     }
 }
