@@ -58,14 +58,14 @@ body {
 }
 
 .opaque-div {
-  background: rgba(255, 255, 255, 0.6);
+  background: rgba(255, 255, 255, 0.5);
   border-radius: 10px 10px 10px 10px;
   margin: 15px 5px 5px 5px;
 }
 
 .case {
   width: 100%;
-  height: 25vh;
+  height: 24vh;
   position: relative;
   border: 15px inset;
   z-index: 1;
@@ -79,7 +79,6 @@ body {
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: flex-end;
-  top: 25vh;
 }
 
 .poke-bottom {
@@ -90,7 +89,7 @@ body {
   -webkit-box-pack: start;
       -ms-flex-pack: start;
           justify-content: flex-start;
-  top: 25vh;
+  top: 24vh;
 }
 
 .circle-black {
@@ -126,7 +125,7 @@ body {
 }
 
 .screen {
-  background-color: rgba(226, 245, 252, 0.5);
+  background-color: rgba(226, 245, 252, 0.7);
   width: 100%;
   height: 45vh;
   border-right: 1vw solid black;
@@ -252,7 +251,7 @@ body {
           align-items: flex-start;
   -ms-flex-flow: row wrap;
       flex-flow: row wrap;
-  height: 34vh;
+  height: 33vh;
   overflow: scroll;
 }
 
@@ -262,7 +261,6 @@ body {
   height: 110px;
   border: 1px solid gray;
   border-radius: 10px;
-  opacity: 0.95;
   margin: 5px;
   font-size: 0.8em;
 }

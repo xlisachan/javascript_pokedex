@@ -61,6 +61,7 @@ class Trainer{
 
             pokeBall.addEventListener('click', e => {
                 e.preventDefault();
+                pokemonSearchResults.innerHTML = '';
                 trainerSection.style.display = 'none';
                 getPokemon(pokemon.name).then(newPokemon => renderSearchResults(newPokemon));
                 pokemonSearchResults.style.display = 'inline';

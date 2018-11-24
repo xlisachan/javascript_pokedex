@@ -27,6 +27,7 @@ const getPokemon = async(pokemon) => {
         } 
     } catch(error){
         console.log(error);
+        pokemonSearchResults.innerHTML = '<center>404 error <br /> ' + pokemon + ' not found <img style="width:80%" src="./assets/images/detectivepikachu.png"/></center>';
     }
 }
 

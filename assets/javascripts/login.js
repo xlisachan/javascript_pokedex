@@ -5,16 +5,16 @@ const pokeCaseBottom = document.getElementById('bottom-case');
 
 pokeButtonTop.addEventListener('click', e => {
     e.preventDefault();
-    if (pokeCaseTop.style.top === "25vh") {
+    if (pokeCaseTop.style.top === "24vh") {
         pokeCaseTop.style.top = "0vh";
         pokeCaseBottom.style.top = "0vh";
-        navBar.style.display = "inline-flex";
-        screen.style.display = "inline";
         pokeButtonTop.classList.remove('infinite');
         pokeButtonBottom.classList.remove('infinite');
+        navBar.style.display = "inline-flex";
+        screen.style.display = "inline";
     } else {
-        pokeCaseTop.style.top = "25vh";
-        pokeCaseBottom.style.top = "25vh";
+        pokeCaseTop.style.top = "24vh";
+        pokeCaseBottom.style.top = "24vh";
         pokeButtonTop.classList.add('infinite');
         pokeButtonBottom.classList.add('infinite');
         navBar.style.display = "none";
@@ -24,16 +24,17 @@ pokeButtonTop.addEventListener('click', e => {
 
 pokeButtonBottom.addEventListener('click', e => {
     e.preventDefault();
-    if (pokeCaseTop.style.top === "25vh") {
+    if (pokeCaseTop.style.top === "24vh") {
         pokeCaseTop.style.top = "0vh";
         pokeCaseBottom.style.top = "0vh";
-        navBar.style.display = "inline-flex";
-        screen.style.display = "inline";
         pokeButtonTop.classList.remove('infinite');
         pokeButtonBottom.classList.remove('infinite');
+        navBar.style.display = "inline-flex";
+        screen.style.display = "inline";
+        
     } else {
-        pokeCaseTop.style.top = "25vh";
-        pokeCaseBottom.style.top = "25vh";
+        pokeCaseTop.style.top = "24vh";
+        pokeCaseBottom.style.top = "24vh";
         pokeButtonTop.classList.add('infinite');
         pokeButtonBottom.classList.add('infinite');
         navBar.style.display = "none";
