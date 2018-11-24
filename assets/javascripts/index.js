@@ -36,7 +36,6 @@ const navDiv = document.createElement('div');
 navDiv.classList.add('flex-row', 'jc-sb');
 backButtonDiv.classList.add('back-button');
 addToPokedex.classList.add('button-div', 'flex-row');
-
 pokeDiv.classList.add('flex-col', 'opaque-div');
 pokeBasics.classList.add('flex-row');
 pokeImage.classList.add('pokemon-img');
