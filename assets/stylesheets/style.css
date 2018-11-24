@@ -57,21 +57,40 @@ body {
           justify-content: space-between;
 }
 
-.red-case {
-  background-color: #E40031;
-  width: 100%;
-  height: 20vh;
-  position: relative;
-  top: 0;
-  border: 15px inset #E40031;
+.opaque-div {
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 10px 10px 10px 10px;
+  margin: 3px;
 }
 
-.red-top {
+.case {
+  width: 100%;
+  height: 25vh;
+  position: relative;
+  border: 15px inset;
+  z-index: 1;
+}
+
+.poke-top {
+  background: red;
+  border-color: #E40031;
   border-radius: 30px 30px 0px 0px;
   border-bottom: 0;
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: flex-end;
+  top: 25vh;
+}
+
+.poke-bottom {
+  background: white;
+  border-color: gray;
+  border-radius: 0px 0px 30px 30px;
+  border-top: 0;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  top: 25vh;
 }
 
 .circle-black {
@@ -109,7 +128,7 @@ body {
 .screen {
   background-color: rgba(226, 245, 252, 0.5);
   width: 100%;
-  height: 55vh;
+  height: 45vh;
   border-right: 1vw solid black;
   border-bottom: 1vh solid white;
   border-left: 15px solid gray;
@@ -142,14 +161,6 @@ body {
 .small-bottom {
   border-bottom-left-radius: 80px;
   border-bottom-right-radius: 80px;
-}
-
-.red-bottom {
-  border-radius: 0px 0px 30px 30px;
-  border-top: 0;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
 }
 
 #navigation-bar {
@@ -241,12 +252,12 @@ body {
           align-items: flex-start;
   -ms-flex-flow: row wrap;
       flex-flow: row wrap;
-  height: 43vh;
+  height: 34vh;
   overflow: scroll;
 }
 
 .pokeball {
-  background-color: white;
+  background-color: rgba(255, 255, 255, 0.5);
   width: 110px;
   height: 110px;
   border: 1px solid gray;
@@ -278,7 +289,7 @@ body {
   -webkit-box-pack: space-evenly;
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
-  text-align: center;
+  text-align: left;
   width: 100%;
 }
 

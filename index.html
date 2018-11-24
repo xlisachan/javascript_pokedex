@@ -15,14 +15,14 @@
 
 <body>
     <div class="wrapper flex-col">
-        <div class="red-case red-top flex-col">
+        <div class="case poke-top flex-col" id="top-case">
             <div class="circle-black large-top flex-col">
-                <div class="circle-blue small-top"></div>
+                <div class="circle-blue small-top" id="top-btn"></div>
             </div>
         </div>
-        <div class="flex-row" id="navigation-bar">
-            <div class="col" id="nav-search" >
-                <form id="poke-form" autocomplete="off">
+        <div class="flex-row" id="navigation-bar" style="display: none">
+            <div class="col" id="nav-search">
+                <form id="poke-form" autocomplete="off" style="display: none">
                     <input id="search-input" placeholder="Enter Pokemon">
                     <button input type="submit" value="submit" class="search-submit"><i class="fas fa-search"></i></button>
                 </form>
@@ -37,7 +37,7 @@
                 </div>
             </div>
         </div>
-        <div class="screen">
+        <div class="screen" id="screen" style="display: none">
             <div class="col flex-col" id="main-container">
                 <div class="flex-row" id="login-menu">
                     <div class="container flex-col" id="user-info">
@@ -53,9 +53,9 @@
                 <div class="container" id="search-results" style="display: none"></div>
             </div>
         </div>
-        <div class="red-case red-bottom flex-col">
+        <div class="case poke-bottom flex-col" id="bottom-case">
             <div class="circle-black large-bottom flex-col">
-                <div class="circle-blue small-bottom"></div>
+                <div class="circle-blue small-bottom" id="bottom-btn"></div>
             </div>
         </div>
     </div>
@@ -65,7 +65,7 @@
         crossorigin="anonymous"></script>
     <script src="./assets/javascripts/pokemon.js"></script>
     <script src="./assets/javascripts/trainer.js"></script>
-    <script src="./assets/javascripts/check.js"></script>
+    <script src="./assets/javascripts/index.js"></script>
     <script src="./assets/javascripts/search.js"></script>
     <script src="./assets/javascripts/script.js"></script>
     <script src="./assets/javascripts/login.js"></script>

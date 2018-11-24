@@ -21,7 +21,6 @@ class Trainer{
     
     add(pokemonObject){
         const pokeUrl = url + pokemonObject + '/';
-        
         axios.get(pokeUrl).then(response => { 
             const data = response.data;
             const pokemonName = data.name;
@@ -44,37 +43,9 @@ class Trainer{
     }
 
     renderTrainer() {
-        let userNameDiv = document.getElementById('dropdown');
-        let ddButton = document.getElementById('dropdown-btn');
-        let ddProfile = document.getElementById('dropdown-user');
-        let ddLogin = document.getElementById('dropdown-login');
-        let trainerName = document.getElementById('trainer-name');
-        let trainerCount = document.getElementById('trainer-count');
-        
         ddButton.innerText = this.name;
         trainerName.innerText = this.name;
         trainerCount.innerHTML = this.pokemonCaught.length;
-
-        userNameDiv.addEventListener('click', e =>{
-            e.preventDefault();
-            if (e.target === ddProfile){
-                e.preventDefault();
-                loginMenu.style.display = 'none';
-                pokeSearchForm.style.display = 'inline-flex';
-                userLogin.style.display = 'inline';
-                trainerSection.style.display = 'inline';
-                pokemonSection.innerHTML = '';
-                pokemonSearchResults.style.display = 'none';
-                lisa.renderTrainer();
-            } else if (e.target === ddLogin){
-                pokemonSearchResults.innerHTML = '';
-                userLogin.style.display = 'none';
-                pokeSearchForm.style.display = 'none';
-                trainerSection.style.display = 'none';
-                pokemonSearchResults.style.display = 'none';
-                loginMenu.style.display = 'inline';
-            } 
-        })
             
         for (let pokemon of this.pokemonCaught) {
             let pokeBall = document.createElement('span');
@@ -91,9 +62,9 @@ class Trainer{
             pokeBall.addEventListener('click', e => {
                 e.preventDefault();
                 trainerSection.style.display = 'none';
-                getPokemon(pokemon.name);
+                getPokemon(pokemon.name).then(newPokemon => renderSearchResults(newPokemon));
                 pokemonSearchResults.style.display = 'inline';
-            })
+            });
         }
     }
 }

@@ -1,10 +1,21 @@
-let loginMenu = document.getElementById('login-menu');
-let userInfo = document.getElementById('user-info');
-let userAvatar = document.getElementById('user-avatar');
-let userName = document.getElementById('user-name');
-let userLogin = document.getElementById('user');
-let trainerSection = document.getElementById('trainer-section');
-let pokemonSection = document.getElementById('pokemon-section');
+const pokeButtonTop = document.getElementById('top-btn');
+const pokeButtonBottom = document.getElementById('bottom-btn');
+
+pokeButtonTop.addEventListener('click', e => {
+    e.preventDefault();
+    document.getElementById('top-case').style.top = "0vh";
+    document.getElementById('bottom-case').style.top = "0vh";
+    navBar.style.display = "inline-flex";
+    screen.style.display = "inline";
+});
+
+pokeButtonBottom.addEventListener('click', e => {
+    e.preventDefault();
+    document.getElementById('top-case').style.top = "0vh";
+    document.getElementById('bottom-case').style.top = "0vh";
+    navBar.style.display = "inline-flex";
+    screen.style.display = "inline";
+});
 
 userAvatar.src = lisa.avatar;
 userName.innerText = lisa.name;
@@ -18,5 +29,3 @@ userInfo.addEventListener('click', e => {
     pokemonSection.innerHTML = '';
     lisa.renderTrainer();
 })
-
-pokeSearchForm.style.display = 'none';

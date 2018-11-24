@@ -1,33 +1,6 @@
 // Information to reach API
 const url = 'https://pokeapi.co/api/v2/pokemon/';
 
-// Page elements
-const mainContainer = document.getElementById('main-container');
-const navSearch = document.getElementById('nav-search');
-const pokeSearchForm = document.getElementById('poke-form');
-const pokeSearchInput = document.getElementById('search-input');
-const pokemonSearchResults = document.getElementById('search-results');
-
-const pokeDiv = document.createElement('div');
-const pokeImage = document.createElement('img');
-const pokePtag = document.createElement('p');
-const pokeStats = document.createElement('div'); 
-const pokeHp = document.createElement('p');
-const pokeAtk = document.createElement('p');
-const pokeDef = document.createElement('p');
-const pokeAbility = document.createElement('p');
-
-pokeSearchForm.addEventListener('submit', e => {
-    e.preventDefault();
-    pokemonSearchResults.innerHTML = '';
-    loginMenu.style.display = 'none';
-    trainerSection.style.display = 'none';
-    userLogin.style.display = 'inline';
-    getPokemon(pokeSearchInput.value);
-    pokemonSearchResults.style.display = 'inline';
-    pokeSearchInput.value = '';
-});
-
 // AJAX functions
 const getPokemon = async(pokemon) => {
     const pokeUrl = url + pokemon + '/';
@@ -49,52 +22,30 @@ const getPokemon = async(pokemon) => {
                 pokemonAbilities.push(ability.ability.name);
             });
 
-            // const newPokemon = new Pokemon(pokemonName, pokemonNumber, pokemonType, pokemonPic, pokemonHp, pokemonAtk, pokemonDef, pokemonAbilities);
-            const navDiv = document.createElement('div');
-            const backButtonDiv = document.createElement('div');
-            const addToPokedex = document.createElement('div');
-
-            navDiv.classList.add('flex-row', 'jc-sb');
-            backButtonDiv.classList.add('back-button');
-            backButtonDiv.innerHTML = '<i class="fas fa-arrow-circle-left"></i>';
-            addToPokedex.classList.add('button-div', 'flex-row');
-            addToPokedex.innerHTML = `Add To Pokedex`;
-            
-            pokeDiv.classList.add('flex-col');
-            pokeImage.classList.add('pokemon-img');
-            pokePtag.classList.add('poke-stats');
-            pokeStats.classList.add('poke-stats', 'flex-row');
-            pokeAbility.classList.add('poke-abil');  
-
-            pokeImage.src = pokemonPic;
-            pokePtag.innerHTML = '<span>' + pokemonName + '<br/> NO. ' + pokemonNumber + '<br/> TYPE ' + pokemonType + '</span>';
-            pokeHp.innerHTML = 'HP <br/>' + pokemonHp;
-            pokeAtk.innerHTML = 'ATK <br/>' + pokemonAtk;            
-            pokeDef.innerHTML = 'DEF <br/>' + pokemonDef; 
-            pokeAbility.innerHTML = 'Abilities <br/>' + pokemonAbilities;
-
-            navDiv.append(backButtonDiv, addToPokedex);
-            pokeStats.append(pokeHp, pokeAtk, pokeDef);
-            pokeDiv.append(pokeImage, pokePtag, pokeStats, pokeAbility);
-            pokemonSearchResults.append(navDiv, pokeDiv);
-
-            backButtonDiv.addEventListener('click', e => {
-                e.preventDefault();
-                loginMenu.style.display = 'none';
-                pokeSearchForm.style.display = 'inline-flex';
-                userLogin.style.display = 'inline';
-                trainerSection.style.display = 'inline';
-                pokemonSection.innerHTML = '';
-                pokemonSearchResults.innerHTML = '';
-                lisa.renderTrainer();
-            })
-
-            addToPokedex.addEventListener('click', e => {
-                e.preventDefault();
-                check(pokemonNumber);
-            });
-        }
+            const newPokemon = new Pokemon(pokemonName, pokemonNumber, pokemonType, pokemonPic, pokemonHp, pokemonAtk, pokemonDef, pokemonAbilities);
+            return newPokemon;
+        } 
     } catch(error){
         console.log(error);
     }
+}
+
+const renderSearchResults = newPokemon => {
+    pokeImage.src = newPokemon.pic;
+    pokePtag.innerHTML = '<span>' + newPokemon.name + '<br/> NO. ' + newPokemon.id + '<br/> TYPE ' + newPokemon.type + '</span>';
+    pokeHp.innerHTML = 'HP <br/>' + newPokemon.hp;
+    pokeAtk.innerHTML = 'ATK <br/>' + newPokemon.atk;            
+    pokeDef.innerHTML = 'DEF <br/>' + newPokemon.def; 
+    pokeAbility.innerHTML = 'Abilities <br/>' + newPokemon.pokemonAbilities;
+
+    navDiv.append(backButtonDiv, addToPokedex);
+    pokeBasics.append(pokeImage, pokePtag)
+    pokeStats.append(pokeHp, pokeAtk, pokeDef);
+    pokeDiv.append(pokeBasics, pokeStats, pokeAbility);
+    pokemonSearchResults.append(navDiv, pokeDiv);
+
+    addToPokedex.addEventListener('click', e => {
+        e.preventDefault();
+        check(newPokemon.id);
+    });
 }

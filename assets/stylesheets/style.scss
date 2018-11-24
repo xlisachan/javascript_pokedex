@@ -37,20 +37,39 @@ body{
     justify-content: space-between;
 }
 
-//CASE
-.red-case {
-    @include box($red, 100%, 20vh);
-    position: relative;
-    top: 0;
-    border: 15px inset $red; 
+.opaque-div {
+    background: rgba(255,255,255,0.6);
+    border-radius: 10px 10px 10px 10px;
+    margin: 3px;
 }
 
-.red-top{
+//CASE
+.case {
+    width: 100%;
+    height: 25vh;
+    position: relative;
+    border: 15px inset; 
+    z-index: 1;
+}
+
+.poke-top{
+    background: red;
+    border-color: $red;
     border-radius: 30px 30px 0px 0px;
     border-bottom: 0;
     justify-content: flex-end;
+    top: 25vh;
 }
 
+.poke-bottom{
+    background: white;
+    border-color: gray;
+    border-radius: 0px 0px 30px 30px; 
+    border-top: 0;
+    justify-content: flex-start;
+    top: 25vh;
+}
+  
 .circle-black {
     @include box(black, $large-circle, $large-circle/2);
     border: 10px solid white;
@@ -78,7 +97,7 @@ body{
 .screen{
     background-color: rgba(226, 245, 252,0.5);
     width: 100%;
-    height: 55vh;
+    height: 45vh;
     border-right: 1vw solid black;
     border-bottom: 1vh solid white;
     border-left: 15px solid gray;
@@ -107,12 +126,6 @@ body{
 .small-bottom {
     border-bottom-left-radius: $small-circle;
     border-bottom-right-radius: $small-circle;
-}
-
-.red-bottom{
-    border-radius: 0px 0px 30px 30px; 
-    border-top: 0;
-    justify-content: flex-start;
 }
 
 //NAV BAR
@@ -187,12 +200,12 @@ body{
 .trainer-pokemon {
     @include flexbox(flex, row, flex-start);
     flex-flow: row wrap;
-    height: 43vh;
+    height: 34vh;
     overflow: scroll;
 }
 
 .pokeball{
-    @include box(white, 110px, 110px);
+    @include box(rgba(255,255,255,0.5), 110px, 110px);
     border: 1px solid gray;
     border-radius: 10px;
     opacity: 0.95;
@@ -220,7 +233,7 @@ body{
 
 .poke-stats{
     justify-content: space-evenly;
-    text-align: center;
+    text-align: left;
     width: 100%;
 }
 
