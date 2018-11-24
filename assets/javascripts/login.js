@@ -1,20 +1,44 @@
 const pokeButtonTop = document.getElementById('top-btn');
 const pokeButtonBottom = document.getElementById('bottom-btn');
+const pokeCaseTop = document.getElementById('top-case');
+const pokeCaseBottom = document.getElementById('bottom-case');
 
 pokeButtonTop.addEventListener('click', e => {
     e.preventDefault();
-    document.getElementById('top-case').style.top = "0vh";
-    document.getElementById('bottom-case').style.top = "0vh";
-    navBar.style.display = "inline-flex";
-    screen.style.display = "inline";
+    if (pokeCaseTop.style.top === "25vh") {
+        pokeCaseTop.style.top = "0vh";
+        pokeCaseBottom.style.top = "0vh";
+        navBar.style.display = "inline-flex";
+        screen.style.display = "inline";
+        pokeButtonTop.classList.remove('infinite');
+        pokeButtonBottom.classList.remove('infinite');
+    } else {
+        pokeCaseTop.style.top = "25vh";
+        pokeCaseBottom.style.top = "25vh";
+        pokeButtonTop.classList.add('infinite');
+        pokeButtonBottom.classList.add('infinite');
+        navBar.style.display = "none";
+        screen.style.display = "none";
+    }
 });
 
 pokeButtonBottom.addEventListener('click', e => {
     e.preventDefault();
-    document.getElementById('top-case').style.top = "0vh";
-    document.getElementById('bottom-case').style.top = "0vh";
-    navBar.style.display = "inline-flex";
-    screen.style.display = "inline";
+    if (pokeCaseTop.style.top === "25vh") {
+        pokeCaseTop.style.top = "0vh";
+        pokeCaseBottom.style.top = "0vh";
+        navBar.style.display = "inline-flex";
+        screen.style.display = "inline";
+        pokeButtonTop.classList.remove('infinite');
+        pokeButtonBottom.classList.remove('infinite');
+    } else {
+        pokeCaseTop.style.top = "25vh";
+        pokeCaseBottom.style.top = "25vh";
+        pokeButtonTop.classList.add('infinite');
+        pokeButtonBottom.classList.add('infinite');
+        navBar.style.display = "none";
+        screen.style.display = "none";
+    }
 });
 
 userAvatar.src = lisa.avatar;
