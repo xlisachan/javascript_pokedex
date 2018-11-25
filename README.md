@@ -1,10 +1,17 @@
-# <a href="https://xlisachan.github.io/">https://xlisachan.github.io/pokedex</a>
-# Pokédex
-Create a Pokédex to display information on three Pokémon using AJAX to retrieve data from the Pokemon API. Demonstrate abilities with Javascript to traverse the DOM and employ Object Oriented Programming Javascript to organize data while applying Bootstrap grid systems and SASS to create a mobile responsive user interface. 
+# <a href="https://xlisachan.github.io/pokedex">Pokédex</a>
+* Created a Pokédex featuring a catalogue of information on Pokémon from the Pokémon series
+* Showcased a set of three starter Pokémon and ability to search/add more Pokémon using AJAX to retrieve data from the Pokémon API
+* Demonstrated skills with Javascript to traverse the DOM and use object-oriented programming to organize data
+* Designed a responsive user interface for Desktop, Tablet and Mobile devices
 
-# Built With
-HTML, SASS, Bootstrap, JavaScript, AJAX and Pokémon API
+# Deployment
+<a href="https://xlisachan.github.io/pokedex">https://xlisachan.github.io/pokedex</a><br/>
+<img src="https://github.com/xlisachan/pokedex/blob/master/assets/images/Pokedex-mobile.png" width="30%"/>
 
 # Features and Functionality
-* Browse through Pokémon trainer Logan’s Pokémon and click each Pokémon for more information
-* Search for other Pokémon and add them to Logan’s Pokédex
+* Ability to open and close Pokédex
+* Browse through starter Pokémon and click to learn more information about each Pokémon
+* Search or scroll for other Pokémon and add them to the user profile
+
+# Built With
+JavaScript, AJAX, <a href="https://pokeapi.co/">Pokémon API</a>, HTML, Sass, Bootstrap
