@@ -103,7 +103,7 @@ body {
   background-color: #E2F5FC;
   width: 80px;
   height: 40px;
-  border: 5px solid none;
+  border: 13px inset white;
 }
 
 .large-top {
@@ -155,11 +155,13 @@ body {
 .small-top {
   border-top-left-radius: 80px;
   border-top-right-radius: 80px;
+  border-bottom: 0;
 }
 
 .small-bottom {
   border-bottom-left-radius: 80px;
   border-bottom-right-radius: 80px;
+  border-top: 0;
 }
 
 #navigation-bar {
@@ -234,7 +236,7 @@ body {
   display: block;
 }
 
-#top-btn, #bottom-btn, #login-menu, #nav-helper {
+#top-btn, #bottom-btn, #login-menu, .back-button, .button-div {
   cursor: pointer;
 }
 

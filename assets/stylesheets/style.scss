@@ -76,7 +76,7 @@ body{
 
 .circle-blue {
     @include box($light-blue, $small-circle, $small-circle/2);
-    border: 5px solid none;
+    border: 13px inset white;
 }
 
 .large-top {
@@ -118,11 +118,13 @@ body{
 .small-top {
     border-top-left-radius: $small-circle;
     border-top-right-radius: $small-circle;
+    border-bottom: 0;
 }
 
 .small-bottom {
     border-bottom-left-radius: $small-circle;
     border-bottom-right-radius: $small-circle;
+    border-top: 0;
 }
 
 //NAV BAR
@@ -190,7 +192,7 @@ body{
 }
 
 //LOGIN MENU
-#top-btn, #bottom-btn, #login-menu, #nav-helper {
+#top-btn, #bottom-btn, #login-menu, .back-button, .button-div {
     cursor: pointer;
 } 
 

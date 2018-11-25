@@ -15,7 +15,8 @@ const renderSearchResults = newPokemon => {
 
     navDiv.classList.add('flex-row', 'jc-sb');
     backButtonDiv.classList.add('back-button');
-    addToPokedex.classList.add('button-div', 'flex-row');    
+    addToPokedex.classList.add('button-div', 'flex-row'); 
+    addToPokedex.id = "add-button";   
     pokeDiv.classList.add('flex-col', 'opaque-div');
     pokeBasics.classList.add('flex-row');
     pokeImage.classList.add('pokemon-img');
@@ -23,9 +24,7 @@ const renderSearchResults = newPokemon => {
     pokeStats.classList.add('poke-stats', 'flex-row');
     pokeAbility.classList.add('poke-abil');  
 
-    navDiv.id = "nav-helper";
     backButtonDiv.innerHTML = '<i class="fas fa-arrow-circle-left"></i>';
-    addToPokedex.innerHTML = 'Add To Pokedex';
     pokeImage.src = newPokemon.pic;
     pokePtag.innerHTML = '<span>' + newPokemon.name + '<br/> NO. ' + newPokemon.id + '<br/> TYPE ' + newPokemon.type + '</span>';
     pokeHp.innerHTML = 'HP <br/>' + newPokemon.hp;
@@ -40,15 +39,22 @@ const renderSearchResults = newPokemon => {
     pokemonSearchResults.append(navDiv, pokeDiv);
     pokemonSearchResults.style.display = 'inline';
 
-    //Event Listeners
-    backButtonDiv.addEventListener('click', e => {
-        e.preventDefault();
-        login();
-    });
+    const found = lisa.pokemonCaught.some(el => el.id === newPokemon.id);
+    if (found){
+        addToPokedex.innerHTML = 'Caught';
+    } else {
+        addToPokedex.innerHTML = 'Add to Pokedex';
+    }
 
+    //Event Listeners
     addToPokedex.addEventListener('click', e => {
         e.preventDefault();
         check(newPokemon.id);
+    });
+
+    backButtonDiv.addEventListener('click', e => {
+        e.preventDefault();
+        login();
     });
 }
 
@@ -61,5 +67,6 @@ const check = pokeNumber => {
     } else {
         lisa.add(pokeNumber);
         alert('Pokemon added to pokedex!');
+        document.getElementById('add-button').innerHTML = 'Caught';
     }
 }
