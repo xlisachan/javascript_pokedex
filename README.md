@@ -8,10 +8,10 @@
 <a href="https://xlisachan.github.io/pokedex">https://xlisachan.github.io/pokedex</a><br/>
 <img src="https://github.com/xlisachan/pokedex/blob/master/assets/images/Pokedex-mobile.png" width="30%"/>
 
-# Built With
-JavaScript, AJAX, <a href="https://pokeapi.co/">Pokémon API</a>, HTML, Sass, Bootstrap
-
 # Features and Functionality
 * Ability to open and close Pokédex
 * Browse through starter Pokémon and click to learn more information about each Pokémon
 * Search or scroll for other Pokémon and add them to the user profile
+
+# Built With
+JavaScript, AJAX, <a href="https://pokeapi.co/">Pokémon API</a>, HTML, Sass, Bootstrap
