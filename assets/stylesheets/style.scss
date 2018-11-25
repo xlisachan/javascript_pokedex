@@ -37,12 +37,6 @@ body{
     justify-content: space-between;
 }
 
-.opaque-div {
-    background: rgba(255,255,255,0.5);
-    border-radius: 10px 10px 10px 10px;
-    margin: 15px 5px 5px 5px;
-}
-
 //CASE
 .case {
     width: 100%;
@@ -86,28 +80,6 @@ body{
     justify-content: flex-end;
 }
 
-.wrapper {
-    width: 90vw;
-    max-width: 900px;
-    margin: 0 auto;
-    justify-content: center;
-}
-
-.screen{
-    @include box(rgba(226, 245, 252,0.7), 100%, 45vh);
-    border-right: 1vw solid black;
-    border-bottom: 1vh solid white;
-    border-left: 15px solid gray;
-    padding: 1vh 1vw;
-}
-
-#main-container{
-    width: 95vw;
-    padding: 1vh 2vw;
-    font-size: 0.8em;
-    justify-content: center;
-}
-
 .large-bottom {
     border-bottom-left-radius: $large-circle;
     border-bottom-right-radius: $large-circle;
@@ -125,6 +97,34 @@ body{
     border-bottom-left-radius: $small-circle;
     border-bottom-right-radius: $small-circle;
     border-top: 0;
+}
+
+.wrapper {
+    width: 90vw;
+    max-width: 900px;
+    margin: 0 auto;
+    justify-content: center;
+}
+
+.screen{
+    @include box(rgba(226, 245, 252,0.7), 100%, 45vh);
+    border-right: 1vw solid black;
+    border-bottom: 1vh solid white;
+    border-left: 15px solid gray;
+    padding: 1vh 1vw;
+}
+
+#main-container{
+    width: 100%;
+    padding: 1vh 2vw;
+    font-size: 0.8em;
+    justify-content: center;
+}
+
+.opaque-div {
+    background: rgba(255,255,255,0.5);
+    border-radius: 10px 10px 10px 10px;
+    margin: 10px 5px 5px 5px;
 }
 
 //NAV BAR
@@ -237,8 +237,11 @@ body{
 
 .poke-stats{
     justify-content: space-evenly;
-    text-align: left;
     width: 80%;
+
+    p {
+        text-align: center;
+    }
 }
 
 .poke-abil{

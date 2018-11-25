@@ -3,8 +3,10 @@ const url = 'https://pokeapi.co/api/v2/pokemon/';
 
 // AJAX functions
 const getPokemon = async(pokemon) => {
-    const lowerCase = pokemon.toLowerCase();
-    const pokeUrl = url + lowerCase + '/';
+    let searchValue;
+    typeof pokemon === 'string' ? searchValue = pokemon.toLowerCase() : searchValue = pokemon;
+
+    const pokeUrl = url + searchValue + '/';
     
     try{
         const response = await fetch(pokeUrl);

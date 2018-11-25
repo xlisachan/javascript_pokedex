@@ -57,12 +57,6 @@ body {
           justify-content: space-between;
 }
 
-.opaque-div {
-  background: rgba(255, 255, 255, 0.5);
-  border-radius: 10px 10px 10px 10px;
-  margin: 15px 5px 5px 5px;
-}
-
 .case {
   width: 100%;
   height: 24vh;
@@ -115,6 +109,27 @@ body {
           justify-content: flex-end;
 }
 
+.large-bottom {
+  border-bottom-left-radius: 160px;
+  border-bottom-right-radius: 160px;
+  border-top: 0;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+
+.small-top {
+  border-top-left-radius: 80px;
+  border-top-right-radius: 80px;
+  border-bottom: 0;
+}
+
+.small-bottom {
+  border-bottom-left-radius: 80px;
+  border-bottom-right-radius: 80px;
+  border-top: 0;
+}
+
 .wrapper {
   width: 90vw;
   max-width: 900px;
@@ -135,7 +150,7 @@ body {
 }
 
 #main-container {
-  width: 95vw;
+  width: 100%;
   padding: 1vh 2vw;
   font-size: 0.8em;
   -webkit-box-pack: center;
@@ -143,25 +158,10 @@ body {
           justify-content: center;
 }
 
-.large-bottom {
-  border-bottom-left-radius: 160px;
-  border-bottom-right-radius: 160px;
-  border-top: 0;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
-}
-
-.small-top {
-  border-top-left-radius: 80px;
-  border-top-right-radius: 80px;
-  border-bottom: 0;
-}
-
-.small-bottom {
-  border-bottom-left-radius: 80px;
-  border-bottom-right-radius: 80px;
-  border-top: 0;
+.opaque-div {
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 10px 10px 10px 10px;
+  margin: 10px 5px 5px 5px;
 }
 
 #navigation-bar {
@@ -294,8 +294,11 @@ body {
   -webkit-box-pack: space-evenly;
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
-  text-align: left;
   width: 80%;
+}
+
+.poke-stats p {
+  text-align: center;
 }
 
 .poke-abil {
