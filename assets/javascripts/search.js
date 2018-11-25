@@ -28,26 +28,7 @@ const getPokemon = async(pokemon) => {
         } 
     } catch(error){
         console.log(error);
+        pokemonSearchResults.style.display = 'inline';
         pokemonSearchResults.innerHTML = '<center>404 error <br /> ' + pokemon + ' not found <br/><img style="height:30vh" src="./assets/images/detectivepikachu.png"/></center>';
     }
-}
-
-const renderSearchResults = newPokemon => {
-    pokeImage.src = newPokemon.pic;
-    pokePtag.innerHTML = '<span>' + newPokemon.name + '<br/> NO. ' + newPokemon.id + '<br/> TYPE ' + newPokemon.type + '</span>';
-    pokeHp.innerHTML = 'HP <br/>' + newPokemon.hp;
-    pokeAtk.innerHTML = 'ATK <br/>' + newPokemon.atk;            
-    pokeDef.innerHTML = 'DEF <br/>' + newPokemon.def; 
-    pokeAbility.innerHTML = 'Abilities <br/>' + newPokemon.pokemonAbilities;
-
-    navDiv.append(backButtonDiv, addToPokedex);
-    pokeBasics.append(pokeImage, pokePtag)
-    pokeStats.append(pokeHp, pokeAtk, pokeDef);
-    pokeDiv.append(pokeBasics, pokeStats, pokeAbility);
-    pokemonSearchResults.append(navDiv, pokeDiv);
-
-    addToPokedex.addEventListener('click', e => {
-        e.preventDefault();
-        check(newPokemon.id);
-    });
 }

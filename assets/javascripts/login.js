@@ -1,56 +1,29 @@
-const pokeButtonTop = document.getElementById('top-btn');
-const pokeButtonBottom = document.getElementById('bottom-btn');
-const pokeCaseTop = document.getElementById('top-case');
-const pokeCaseBottom = document.getElementById('bottom-case');
-
-pokeButtonTop.addEventListener('click', e => {
-    e.preventDefault();
-    if (pokeCaseTop.style.top === "24vh") {
-        pokeCaseTop.style.top = "0vh";
-        pokeCaseBottom.style.top = "0vh";
-        pokeButtonTop.classList.remove('infinite');
-        pokeButtonBottom.classList.remove('infinite');
-        navBar.style.display = "inline-flex";
-        screen.style.display = "inline";
-    } else {
-        pokeCaseTop.style.top = "24vh";
-        pokeCaseBottom.style.top = "24vh";
-        pokeButtonTop.classList.add('infinite');
-        pokeButtonBottom.classList.add('infinite');
-        navBar.style.display = "none";
-        screen.style.display = "none";
-    }
-});
-
-pokeButtonBottom.addEventListener('click', e => {
-    e.preventDefault();
-    if (pokeCaseTop.style.top === "24vh") {
-        pokeCaseTop.style.top = "0vh";
-        pokeCaseBottom.style.top = "0vh";
-        pokeButtonTop.classList.remove('infinite');
-        pokeButtonBottom.classList.remove('infinite');
-        navBar.style.display = "inline-flex";
-        screen.style.display = "inline";
-        
-    } else {
-        pokeCaseTop.style.top = "24vh";
-        pokeCaseBottom.style.top = "24vh";
-        pokeButtonTop.classList.add('infinite');
-        pokeButtonBottom.classList.add('infinite');
-        navBar.style.display = "none";
-        screen.style.display = "none";
-    }
-});
+// Page Elements
+const userInfo = document.getElementById('user-info'),
+      userAvatar = document.getElementById('user-avatar'),
+      userName = document.getElementById('user-name'),
+      loginMenu = document.getElementById('login-menu'),
+      userLogin = document.getElementById('user'),
+      trainerSection = document.getElementById('trainer-section'),
+      pokemonSection = document.getElementById('pokemon-section'),
+      pokemonSearchResults = document.getElementById('search-results');
 
 userAvatar.src = lisa.avatar;
 userName.innerText = lisa.name;
 
+// Event Listener
 userInfo.addEventListener('click', e => {
     e.preventDefault();
+    login();
+})
+
+// Helper Function
+const login = () => {
     loginMenu.style.display = 'none';
     pokeSearchForm.style.display = 'inline-flex';
     userLogin.style.display = 'inline';
     trainerSection.style.display = 'inline';
     pokemonSection.innerHTML = '';
+    pokemonSearchResults.style.display = 'none';
     lisa.renderTrainer();
-})
+}

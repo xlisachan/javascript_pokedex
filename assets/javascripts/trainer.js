@@ -14,8 +14,8 @@ class Trainer{
     get(name){
         //accepts one parameter - name
         //returns a Pokemon object housing info for the pokemon found
-        this.pokemonCaught.filter(element => {
-            return element.name == name ? element : 'Pokemon not found';
+        this.pokemonCaught.filter(el => {
+            return el.name == name ? el : 'Pokemon not found';
         });
     }
     
@@ -43,14 +43,18 @@ class Trainer{
     }
 
     renderTrainer() {
+        const ddButton = document.getElementById('dropdown-btn'),
+              trainerName = document.getElementById('trainer-name'),
+              trainerCount = document.getElementById('trainer-count');
+
         ddButton.innerText = this.name;
         trainerName.innerText = this.name;
         trainerCount.innerHTML = this.pokemonCaught.length;
             
         for (let pokemon of this.pokemonCaught) {
-            let pokeBall = document.createElement('span');
-            let pokePic = document.createElement('img');
-            let pokeTag = document.createElement('p');
+            const pokeBall = document.createElement('span'),
+                  pokePic = document.createElement('img'),
+                  pokeTag = document.createElement('p');
             
             pokeBall.classList.add('pokeball', 'flex-col', 'jc-center');
             pokePic.src = pokemon.pic;
@@ -64,7 +68,6 @@ class Trainer{
                 pokemonSearchResults.innerHTML = '';
                 trainerSection.style.display = 'none';
                 getPokemon(pokemon.name).then(newPokemon => renderSearchResults(newPokemon));
-                pokemonSearchResults.style.display = 'inline';
             });
         }
     }
