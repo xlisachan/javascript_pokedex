@@ -9,5 +9,4 @@ pokeSearchForm.addEventListener('submit', e => {
     trainerSection.style.display = 'none';
     getPokemon(pokeSearchInput.value).then(newPokemon => renderSearchResults(newPokemon));
     pokeSearchInput.value = '';
-    getPokemonNames();
 });
