@@ -156,7 +156,7 @@ body{
     font-size: 0.7em;
 }
 
-#user{
+#user {
     text-align: right;
     cursor: pointer;
 }
@@ -190,6 +190,10 @@ body{
 }
 
 //LOGIN MENU
+#top-btn, #bottom-btn, #login-menu, #nav-helper {
+    cursor: pointer;
+} 
+
 #user-avatar {
     height: 10vh;
 }
@@ -208,6 +212,7 @@ body{
     border-radius: 10px;
     margin: 5px;
     font-size: 0.8em;
+    cursor: pointer;
 }
 
 //SEARCH

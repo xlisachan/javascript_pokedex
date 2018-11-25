@@ -23,6 +23,7 @@ const renderSearchResults = newPokemon => {
     pokeStats.classList.add('poke-stats', 'flex-row');
     pokeAbility.classList.add('poke-abil');  
 
+    navDiv.id = "nav-helper";
     backButtonDiv.innerHTML = '<i class="fas fa-arrow-circle-left"></i>';
     addToPokedex.innerHTML = 'Add To Pokedex';
     pokeImage.src = newPokemon.pic;
@@ -48,7 +49,6 @@ const renderSearchResults = newPokemon => {
     addToPokedex.addEventListener('click', e => {
         e.preventDefault();
         check(newPokemon.id);
-        console.log(newPokemon.id)
     });
 }
 
