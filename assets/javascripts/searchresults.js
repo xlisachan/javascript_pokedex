@@ -20,14 +20,14 @@ const renderSearchResults = newPokemon => {
     backButtonDiv.classList.add('back-button');
     addToPokedex.classList.add('button-div', 'flex-row'); 
     addToPokedex.id = "add-button";   
-    pokeDiv.classList.add('flex-col', 'poke-results');
+    pokeDiv.classList.add('flex-col', 'opaque-div', 'poke-results');
     pokeBasics.classList.add('flex-row');
     pokeImage.classList.add('pokemon-img');
     pokePtag.classList.add('poke-stats');
     pokeStats.classList.add('poke-stats', 'flex-row');
     pokeAbility.classList.add('poke-abil');
     pokeAbility.setAttribute('style', 'font-size: 0.9em');
-    outerDiv.classList.add('flex-row', 'opaque-div', 'jc-sb');
+    outerDiv.classList.add('flex-row', 'jc-sb');
     outerDiv.setAttribute('style', 'width: 100%');
 
     backButtonDiv.innerHTML = '<i class="fas fa-home"></i>';
