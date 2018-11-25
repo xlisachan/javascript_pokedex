@@ -20,10 +20,7 @@ const renderSearchResults = newPokemon => {
     backButtonDiv.classList.add('back-button');
     addToPokedex.classList.add('button-div', 'flex-row'); 
     addToPokedex.id = "add-button";   
-    pokeDiv.classList.add('flex-col');
-    pokeDiv.setAttribute('style', 'width: 80%');
-    pokeDiv.setAttribute('style', 'height: 33vh');
-    pokeDiv.setAttribute('style', 'overflow: scroll');
+    pokeDiv.classList.add('flex-col', 'poke-results');
     pokeBasics.classList.add('flex-row');
     pokeImage.classList.add('pokemon-img');
     pokePtag.classList.add('poke-stats');
@@ -33,7 +30,7 @@ const renderSearchResults = newPokemon => {
     outerDiv.classList.add('flex-row', 'opaque-div', 'jc-sb');
     outerDiv.setAttribute('style', 'width: 100%');
 
-    backButtonDiv.innerHTML = '<i class="fas fa-arrow-circle-left"></i>';
+    backButtonDiv.innerHTML = '<i class="fas fa-home"></i>';
     pokeImage.src = newPokemon.pic;
     pokePtag.innerHTML = '<span>' + newPokemon.name + '<br/> NO. ' + newPokemon.id + '<br/> TYPE ' + newPokemon.type + '</span>';
     pokeHp.innerHTML = 'HP<br/>' + newPokemon.hp;
