@@ -29,6 +29,8 @@ const renderSearchResults = newPokemon => {
     pokeAbility.setAttribute('style', 'font-size: 0.9em');
     outerDiv.classList.add('flex-row', 'jc-sb');
     outerDiv.setAttribute('style', 'width: 100%');
+    nextMon.classList.add('arrow-div');
+    prevMon.classList.add('arrow-div');
 
     backButtonDiv.innerHTML = '<i class="fas fa-home"></i>';
     pokeImage.src = newPokemon.pic;

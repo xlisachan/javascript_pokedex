@@ -116,7 +116,6 @@ body{
 }
 
 #main-container{
-    width: 100%;
     padding: 1vh 2vw;
     font-size: 0.8em;
     justify-content: center;
@@ -219,8 +218,17 @@ body{
 }
 
 //SEARCH
+.arrow-div {
+    width: 10%;
+    height: 33vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+}
+
 .back-button{
-    font-size: 1.5em;
+    font-size: 2rem;
 }
 
 .button-div {
@@ -257,7 +265,7 @@ body{
     justify-content: center;
 }
 
-@media only screen and (min-width: 768px){
+@media (min-width: 768px){
     body{
         background : {
             position: initial;
