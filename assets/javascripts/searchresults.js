@@ -52,11 +52,9 @@ const renderSearchResults = newPokemon => {
     pokemonSearchResults.style.display = 'inline';
 
     const found = lisa.pokemonCaught.some(el => el.id === newPokemon.id);
-    if (found){
-        addToPokedex.innerHTML = 'Caught';
-    } else {
+    found ?
+        addToPokedex.innerHTML = 'Caught' :
         addToPokedex.innerHTML = 'Add to Pokedex';
-    }
 
     //Event Listeners
     addToPokedex.addEventListener('click', e => {
