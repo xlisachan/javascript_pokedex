@@ -1,22 +1,22 @@
 // Page Elements
-const pokeButtonTop = document.getElementById('top-btn'),
-      pokeButtonBottom = document.getElementById('bottom-btn');
+const pokeCaseTop = document.getElementById('top-case'),
+      pokeCaseBottom = document.getElementById('bottom-case');
       
 // Event Listeners
-pokeButtonTop.addEventListener('click', e => {
+pokeCaseTop.addEventListener('click', e => {
     e.preventDefault();
     toggleCase();
 });
 
-pokeButtonBottom.addEventListener('click', e => {
+pokeCaseBottom.addEventListener('click', e => {
     e.preventDefault();
     toggleCase();
 });
 
 // Helper Function
 const toggleCase = () => {
-    const pokeCaseTop = document.getElementById('top-case'),
-          pokeCaseBottom = document.getElementById('bottom-case'),
+    const pokeButtonTop = document.getElementById('top-btn'),
+          pokeButtonBottom = document.getElementById('bottom-btn'),
           navBar = document.getElementById('navigation-bar'),
           screen = document.getElementById('screen');
           
