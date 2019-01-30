@@ -34,6 +34,7 @@ const renderSearchResults = newPokemon => {
 
     backButtonDiv.innerHTML = '<i class="fas fa-home"></i>';
     pokeImage.src = newPokemon.pic;
+    pokeImage.alt = newPokemon.name;
     pokePtag.innerHTML = '<span>' + newPokemon.name + '<br/> NO. ' + newPokemon.id + '<br/> TYPE ' + newPokemon.type + '</span>';
     pokeHp.innerHTML = 'HP<br/>' + newPokemon.hp;
     pokeAtk.innerHTML = 'ATK<br/>' + newPokemon.atk;            
