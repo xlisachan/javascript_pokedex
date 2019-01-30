@@ -1,7 +1,7 @@
 // Information to reach API
 const url = 'https://pokeapi.co/api/v2/pokemon/';
 
-// AJAX functions
+// Async function
 const getPokemon = async(pokemon) => {
     let searchValue;
     typeof pokemon === 'string' ? searchValue = pokemon.toLowerCase() : searchValue = pokemon;
@@ -10,7 +10,7 @@ const getPokemon = async(pokemon) => {
     
     try{
         const response = await fetch(pokeUrl);
-        if (response.ok) {
+        if (response) {
             const data = await response.json();
             const pokemonName = data.name;
             const pokemonNumber = data.id;
