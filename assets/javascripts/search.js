@@ -10,24 +10,26 @@ const getPokemon = async(pokemon) => {
     
     try{
         const response = await fetch(pokeUrl);
-        if (response) {
-            const data = await response.json();
-            const pokemonName = data.name;
-            const pokemonNumber = data.id;
-            const pokemonType = data.types[0].type.name;
-            const pokemonPic = data.sprites.front_default;
-            const pokemonHp = parseInt(`${data.stats[5].base_stat}`);
-            const pokemonAtk = parseInt(`${data.stats[4].base_stat}`);
-            const pokemonDef = parseInt(`${data.stats[3].base_stat}`);
-            const pokemonAbilities = [];
-            const abilities = data.abilities;
-            abilities.forEach(ability => {
-                pokemonAbilities.push(ability.ability.name);
-            });
+        const data = await response.json();
 
-            const newPokemon = new Pokemon(pokemonName, pokemonNumber, pokemonType, pokemonPic, pokemonHp, pokemonAtk, pokemonDef, pokemonAbilities);
-            return newPokemon;
-        } 
+        const pokemonAbilities = [];
+        const abilities = data.abilities;
+        abilities.forEach(ability => {
+            pokemonAbilities.push(ability.ability.name);
+        });
+
+        const newPokemon = {
+            name: data.name,
+            id: data.id,
+            type: data.types[0].type.name,
+            pic: data.sprites.front_default,
+            hp: parseInt(`${data.stats[5].base_stat}`),
+            atk: parseInt(`${data.stats[4].base_stat}`),
+            def: parseInt(`${data.stats[3].base_stat}`),
+            abilities: pokemonAbilities
+        }
+        return newPokemon;
+        
     } catch(error){
         console.log(error);
         pokemonSearchResults.style.display = 'inline';

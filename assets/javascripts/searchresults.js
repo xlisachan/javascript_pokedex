@@ -39,7 +39,7 @@ const renderSearchResults = newPokemon => {
     pokeHp.innerHTML = 'HP<br/>' + newPokemon.hp;
     pokeAtk.innerHTML = 'ATK<br/>' + newPokemon.atk;            
     pokeDef.innerHTML = 'DEF<br/>' + newPokemon.def; 
-    pokeAbility.innerHTML = 'Abilities <br/>' + newPokemon.pokemonAbilities;
+    pokeAbility.innerHTML = 'Abilities <br/>' + newPokemon.abilities;
     nextMon.innerHTML = '<i class="fas fa-chevron-right"></i>';
     prevMon.innerHTML = '<i class="fas fa-chevron-left"></i>';
 
