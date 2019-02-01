@@ -86,15 +86,26 @@ const renderSearchResults = newPokemon => {
     });
 }
 
+// Alert modal
+const msg = document.getElementById('alert-message');
+const modal = document.getElementById('alert-modal');
+const alertButton = document.getElementById('alert-button');
+
+alertButton.addEventListener('click', e => {
+    modal.style.display="none";
+})
+
 // Helper Function
 const check = pokeNumber => {
     const found = lisa.pokemonCaught.some(el => el.id === pokeNumber);
     
     if (found){
-        alert('You already have this pokemon!');
+        msg.innerHTML = 'You already have this pokemon!';
+        modal.style.display = 'inline';
     } else {
         lisa.add(pokeNumber);
-        alert('Pokemon added to pokedex!');
+        msg.innerHTML = 'Pokemon added to pokedex!';
+        modal.style.display = 'inline';
         document.getElementById('add-button').innerHTML = 'Caught';
     }
 }
