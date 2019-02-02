@@ -18,7 +18,6 @@ const renderSearchResults = newPokemon => {
 
     navDiv.classList.add('flex-row', 'jc-sb');
     backButtonDiv.classList.add('back-button');
-    addToPokedex.classList.add('button-div', 'flex-row'); 
     addToPokedex.id = "add-button";   
     pokeDiv.classList.add('flex-col', 'opaque-div', 'poke-results');
     pokeBasics.classList.add('flex-row');
@@ -52,9 +51,13 @@ const renderSearchResults = newPokemon => {
     pokemonSearchResults.style.display = 'inline';
 
     const found = lisa.pokemonCaught.some(el => el.id === newPokemon.id);
-    found ?
-        addToPokedex.innerHTML = 'Caught' :
+    if (found) {
+        addToPokedex.classList.add('addedbutton', 'flex-row');
+        addToPokedex.innerHTML = 'Caught';
+    } else {
+        addToPokedex.classList.add('button-div', 'flex-row');
         addToPokedex.innerHTML = 'Add to Pokedex';
+    }
 
     //Event Listeners
     addToPokedex.addEventListener('click', e => {
@@ -106,6 +109,7 @@ const check = pokeNumber => {
         lisa.add(pokeNumber);
         msg.innerHTML = 'Pokemon added to pokedex!';
         modal.style.display = 'inline';
+        document.getElementById('add-button').classList.add('addedbutton', 'flex-row');
         document.getElementById('add-button').innerHTML = 'Caught';
     }
 }
