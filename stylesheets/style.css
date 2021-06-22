@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css?family=Press+Start+2P");
 body {
-  background-image: url("../images/pokemonbg.png");
+  background-image: url("../assets/images/pokemonbg.png");
   background-position: center;
   background-repeat: no-repeat;
   font-family: "Press Start 2P", cursive;
@@ -258,7 +258,7 @@ body {
           align-items: flex-start;
   -ms-flex-flow: row wrap;
       flex-flow: row wrap;
-  height: 33vh;
+  height: 35vh;
   overflow: auto;
 }
 
@@ -266,7 +266,6 @@ body {
   background-color: rgba(255, 255, 255, 0.5);
   width: 110px;
   height: 110px;
-  border: 1px solid gray;
   border-radius: 10px;
   margin: 5px;
   font-size: 0.8em;

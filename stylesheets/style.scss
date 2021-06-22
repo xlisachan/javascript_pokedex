@@ -5,7 +5,7 @@
 
 body{
     background : {
-        image: url('../images/pokemonbg.png');
+        image: url('../assets/images/pokemonbg.png');
         position: center;
         repeat: no-repeat;
     }
@@ -205,13 +205,12 @@ body{
 .trainer-pokemon {
     @include flexbox(flex, row, flex-start);
     flex-flow: row wrap;
-    height: 33vh;
+    height: 35vh;
     overflow: auto;
 }
 
 .pokeball{
     @include box(rgba(255,255,255,0.5), 110px, 110px);
-    border: 1px solid gray;
     border-radius: 10px;
     margin: 5px;
     font-size: 0.8em;
