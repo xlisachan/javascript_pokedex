@@ -3,6 +3,7 @@ const renderSearchResults = newPokemon => {
     const navDiv = document.createElement('div'),
         addToPokedex = document.createElement('div'),
         pokeDiv = document.createElement('div'),
+        pokeHeader = document.createElement('header'),
         pokeBasics = document.createElement('div'),
         pokeNum = document.createElement('div'),
         pokeImage = document.createElement('img'),
@@ -57,7 +58,7 @@ const renderSearchResults = newPokemon => {
     navDiv.append(prevMon, pokeNum, nextMon);
 
     // pokemon basics - image, name, type
-    pokeBasics.style.marginLeft = '3%';
+    pokeBasics.style.paddingRight = '25px';
     pokeBasics.classList.add('flex-row');
     pokeImage.classList.add('pokemon-img');
     pokeImage.src = newPokemon.pic;
@@ -70,8 +71,12 @@ const renderSearchResults = newPokemon => {
     pokeText.append(pokeName, pokeType);
     pokeBasics.append(pokeImage, pokeText);
 
+    addToPokedex.id = "add-button";
+    pokeHeader.classList.add('results-header');
+    pokeHeader.append(pokeBasics, addToPokedex);
+
     // pokemon stats - hp, atk, def
-    hpStat.innerText = newPokemon.hp;
+    hpStat.innerHTML = `${newPokemon.hp}<span style="color: gray; font-size: 0.8em;">/255</span>`;
     hpStat.classList.add('stats-num');
     hpCalc.classList.add('stats-calc');
     hpCalc.style.width = getStatus('hp', newPokemon.hp);
@@ -82,7 +87,7 @@ const renderSearchResults = newPokemon => {
     pokeHp.classList.add('flex-row', 'jc-sb');
     pokeHp.append('HP', hpInfo);
 
-    atkStat.innerText = newPokemon.atk;
+    atkStat.innerHTML = `${newPokemon.atk}<span style="color: gray; font-size: 0.8em;">/255</span>`;
     atkStat.classList.add('stats-num');
     atkCalc.classList.add('stats-calc');
     atkCalc.style.width = getStatus('atk', newPokemon.atk);
@@ -93,7 +98,7 @@ const renderSearchResults = newPokemon => {
     pokeAtk.classList.add('flex-row', 'jc-sb');
     pokeAtk.append('ATK', atkInfo);
     
-    defStat.innerText = newPokemon.def;
+    defStat.innerHTML = `${newPokemon.def}<span style="color: gray; font-size: 0.8em;">/548</span>`;
     defStat.classList.add('stats-num');
     defCalc.classList.add('stats-calc');
     defCalc.style.width = getStatus('def', newPokemon.def);
@@ -109,12 +114,11 @@ const renderSearchResults = newPokemon => {
 
     
     pokeStats.classList.add('poke-stats');
-    pokeStats.append(pokeHp, pokeAtk, pokeDef, pokeAbility);
+    pokeStats.append(pokeHeader, pokeHp, pokeAtk, pokeDef, pokeAbility);
 
     // pokemon section
-    addToPokedex.id = "add-button";   
     pokemonSearchResults.classList.add('opaque-div');
-    pokemonSearchResults.append(navDiv, pokeBasics, addToPokedex, pokeStats);
+    pokemonSearchResults.append(navDiv, pokeStats);
     pokemonSearchResults.style.display = 'inline';
 
     const found = lisa.pokemonCaught.some(el => el.id === newPokemon.id);

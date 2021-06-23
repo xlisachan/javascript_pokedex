@@ -236,8 +236,15 @@ body{
     font-size: .9em;
 }
 
+.results-header {
+    align-items: center;
+    display: flex;
+    flex-direction: column; 
+}
+
 #add-button {
     border-radius: 7px;
+    height: 33px;
     margin: 0 auto;
     padding: 5px;
     text-align: center;
@@ -274,7 +281,7 @@ body{
 
 .stats-num {
     text-align: center;
-    width: 40px;
+    width: 120px;
 }
 
 .stats-info {
@@ -292,7 +299,7 @@ body{
 .stats-bar {
     border-radius: 8px;
     box-shadow: inset 1px 1px 3px #666;
-    width: 80%;
+    width: 65%;
 }
 
 .poke-abil {
@@ -305,6 +312,10 @@ body{
             position: initial;
             size: initial;
         }
+    }
+
+    .results-header {
+        flex-direction: row; 
     }
 }
 
