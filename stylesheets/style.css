@@ -4,7 +4,6 @@ body {
   background-position: center;
   background-repeat: no-repeat;
   font-family: "Press Start 2P", cursive;
-  height: 100vh;
   text-transform: uppercase;
 }
 
@@ -273,6 +272,7 @@ body {
 }
 
 #search-results {
+  height: 40vh;
   overflow: auto;
   padding: 10px;
   width: 100%;
@@ -307,6 +307,7 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  margin-bottom: 20px;
 }
 
 #add-button {

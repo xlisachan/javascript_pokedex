@@ -10,7 +10,6 @@ body{
         repeat: no-repeat;
     }
     font-family: $font-family;
-    height: 100vh;
     text-transform: uppercase;
 }
 
@@ -219,6 +218,7 @@ body{
 
 //SEARCH
 #search-results {
+    height: 40vh;
     overflow: auto;
     padding: 10px;
     width: 100%;
@@ -239,7 +239,8 @@ body{
 .results-header {
     align-items: center;
     display: flex;
-    flex-direction: column; 
+    flex-direction: column;
+    margin-bottom: 20px;
 }
 
 #add-button {
