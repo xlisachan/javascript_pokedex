@@ -4,6 +4,7 @@ body {
   background-position: center;
   background-repeat: no-repeat;
   font-family: "Press Start 2P", cursive;
+  height: 100vh;
   text-transform: uppercase;
 }
 
@@ -160,8 +161,7 @@ body {
 
 .opaque-div {
   background: rgba(255, 255, 255, 0.5);
-  border-radius: 10px 10px 10px 10px;
-  margin: 10px 5px 5px 5px;
+  border-radius: 10px;
 }
 
 #navigation-bar {
@@ -278,7 +278,7 @@ body {
   width: 100%;
 }
 
-.nav-div {
+.results-nav {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -310,6 +310,21 @@ body {
   margin-bottom: 20px;
 }
 
+.results-info {
+  padding-right: 25px;
+}
+
+#results-img {
+  padding: 5px 15px;
+}
+
+.poke-type {
+  border-radius: 10px;
+  color: white;
+  padding: 0 5px;
+  text-align: center;
+}
+
 #add-button {
   border-radius: 7px;
   height: 33px;
@@ -332,23 +347,12 @@ body {
   color: lightgray;
 }
 
-.pokemon-img {
-  max-width: 75vw;
-}
-
-.poke-type {
-  border-radius: 7px;
-  color: white;
-  padding: 0 5px;
-  text-align: center;
-}
-
-.poke-stats {
-  margin: 20px auto;
+.results-stats {
+  margin: 0 auto 15px auto;
   width: 85%;
 }
 
-.stats-num {
+.stats-no {
   text-align: center;
   width: 120px;
 }
@@ -371,10 +375,6 @@ body {
   -webkit-box-shadow: inset 1px 1px 3px #666;
           box-shadow: inset 1px 1px 3px #666;
   width: 65%;
-}
-
-.poke-abil {
-  margin-top: 20px;
 }
 
 @media (min-width: 768px) {

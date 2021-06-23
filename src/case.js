@@ -26,7 +26,7 @@ const toggleCase = () => {
         pokeButtonTop.classList.remove('infinite');
         pokeButtonBottom.classList.remove('infinite');
         navBar.style.display = "inline-flex";
-        screen.style.display = "inline";
+        screen.style.display = "inline-block";
     } else {
         pokeCaseTop.style.top = "24vh";
         pokeCaseBottom.style.top = "24vh";

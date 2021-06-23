@@ -1,41 +1,24 @@
+const addToPokedex = document.getElementById('add-button'),
+    navNext = document.getElementById('nav-next'),
+    navPrev = document.getElementById('nav-prev'),
+    currMon = document.getElementById('curr-no'),
+    nextMon = document.getElementById('next-no'),
+    prevMon = document.getElementById('prev-no');
+
 // Render Function
 const renderSearchResults = newPokemon => {
-    const navDiv = document.createElement('div'),
-        addToPokedex = document.createElement('div'),
-        pokeDiv = document.createElement('div'),
-        pokeHeader = document.createElement('header'),
-        pokeBasics = document.createElement('div'),
-        pokeNum = document.createElement('div'),
-        pokeImage = document.createElement('img'),
-        pokeText = document.createElement('div'),
-        pokeName = document.createElement('div'),
-        pokeType = document.createElement('div'),
-        pokeStats = document.createElement('div'),
-        hpInfo = document.createElement('div'),
-        pokeHp = document.createElement('div'),
-        pokeAtk = document.createElement('div'),
-        pokeDef = document.createElement('div'),
-        hpStat = document.createElement('div'),
-        hpCalc = document.createElement('div'),
-        hpBar = document.createElement('div'),
-        atkInfo = document.createElement('div'),
-        atkStat = document.createElement('div'),
-        atkCalc = document.createElement('div'),
-        atkBar = document.createElement('div'),
-        defInfo = document.createElement('div'),
-        defStat = document.createElement('div'),
-        defCalc = document.createElement('div'),
-        defBar = document.createElement('div'),
-        pokeAbility = document.createElement('div'),
-        nextMon = document.createElement('div'),
-        prevMon = document.createElement('div');
-
+    const pokeImage = document.getElementById('results-img'),
+        pokeName = document.getElementById('results-name'),
+        pokeType = document.getElementById('results-type'),
+        hpStat = document.getElementById('stats-hp'),
+        hpCalc = document.getElementById('calc-hp'),
+        atkStat = document.getElementById('stats-atk'),
+        atkCalc = document.getElementById('calc-atk'),
+        defStat = document.getElementById('stats-def'),
+        defCalc = document.getElementById('calc-def'),
+        pokeAbility = document.getElementById('stats-abil');
+    
     // navigation - previous, current, next pokemon
-    navDiv.classList.add('nav-div');
-    prevMon.classList.add('arrow-div');
-    nextMon.classList.add('arrow-div');
-    pokeNum.setAttribute('style', 'color: black');
-
     let currentNav = newPokemon.id;
     let prevNav = 0;
     let nextNav = 0;
@@ -50,110 +33,60 @@ const renderSearchResults = newPokemon => {
         prevNav = newPokemon.id - 1;
         nextNav = newPokemon.id + 1;
     }
-
-    prevMon.innerHTML = `<i class="fas fa-chevron-left"></i> ${prevNav}`;
-    pokeNum.innerHTML = `<span style="font-size: .9em">NO.</span> ${newPokemon.id}`;
-    nextMon.innerHTML = `${nextNav} <i class="fas fa-chevron-right"></i>`;
-
-    navDiv.append(prevMon, pokeNum, nextMon);
+    prevMon.innerText = prevNav;
+    currMon.innerText = newPokemon.id;
+    nextMon.innerText = nextNav;
 
     // pokemon basics - image, name, type
-    pokeBasics.style.paddingRight = '25px';
-    pokeBasics.classList.add('flex-row');
-    pokeImage.classList.add('pokemon-img');
     pokeImage.src = newPokemon.pic;
     pokeImage.alt = newPokemon.name;
 
     pokeName.innerText = newPokemon.name;
     pokeType.innerText = newPokemon.type;
-    pokeType.classList.add('poke-type');
     pokeType.style.backgroundColor = getBgColor(newPokemon.type);
-    pokeText.append(pokeName, pokeType);
-    pokeBasics.append(pokeImage, pokeText);
-
-    addToPokedex.id = "add-button";
-    pokeHeader.classList.add('results-header');
-    pokeHeader.append(pokeBasics, addToPokedex);
 
     // pokemon stats - hp, atk, def
-    hpStat.innerHTML = `${newPokemon.hp}<span style="color: gray; font-size: 0.8em;">/255</span>`;
-    hpStat.classList.add('stats-num');
-    hpCalc.classList.add('stats-calc');
+    hpStat.innerText = newPokemon.hp;
     hpCalc.style.width = getStatus('hp', newPokemon.hp);
-    hpBar.classList.add('stats-bar');
-    hpBar.append(hpCalc);
-    hpInfo.classList.add('flex-row', 'jc-sb', 'stats-info');
-    hpInfo.append(hpStat, hpBar);
-    pokeHp.classList.add('flex-row', 'jc-sb');
-    pokeHp.append('HP', hpInfo);
 
-    atkStat.innerHTML = `${newPokemon.atk}<span style="color: gray; font-size: 0.8em;">/255</span>`;
-    atkStat.classList.add('stats-num');
-    atkCalc.classList.add('stats-calc');
+    atkStat.innerText = newPokemon.atk;
     atkCalc.style.width = getStatus('atk', newPokemon.atk);
-    atkBar.classList.add('stats-bar');
-    atkBar.append(atkCalc);
-    atkInfo.classList.add('flex-row', 'jc-sb', 'stats-info');
-    atkInfo.append(atkStat, atkBar);
-    pokeAtk.classList.add('flex-row', 'jc-sb');
-    pokeAtk.append('ATK', atkInfo);
     
-    defStat.innerHTML = `${newPokemon.def}<span style="color: gray; font-size: 0.8em;">/548</span>`;
-    defStat.classList.add('stats-num');
-    defCalc.classList.add('stats-calc');
+    defStat.innerText = newPokemon.def;
     defCalc.style.width = getStatus('def', newPokemon.def);
-    defBar.classList.add('stats-bar');
-    defBar.append(defCalc);
-    defInfo.classList.add('flex-row', 'jc-sb', 'stats-info');
-    defInfo.append(defStat, defBar);
-    pokeDef.classList.add('flex-row', 'jc-sb');
-    pokeDef.append('def', defInfo);
 
-    pokeAbility.classList.add('poke-abil');
-    pokeAbility.innerHTML = 'Abilities <br/>' + newPokemon.abilities;
-
-    
-    pokeStats.classList.add('poke-stats');
-    pokeStats.append(pokeHeader, pokeHp, pokeAtk, pokeDef, pokeAbility);
-
-    // pokemon section
-    pokemonSearchResults.classList.add('opaque-div');
-    pokemonSearchResults.append(navDiv, pokeStats);
-    pokemonSearchResults.style.display = 'inline';
+    // pokemon abilities
+    pokeAbility.innerText = newPokemon.abilities;
 
     const found = lisa.pokemonCaught.some(el => el.id === newPokemon.id);
     if (found) {
+        addToPokedex.classList.remove('add-button');
         addToPokedex.classList.add('caught-button');
         addToPokedex.innerHTML = 'Caught';
     } else {
+        addToPokedex.classList.remove('caught-button');
         addToPokedex.classList.add('add-button');
         addToPokedex.innerHTML = 'Add to Pokedex';
     }
-
-    // Event Listeners
-    addToPokedex.addEventListener('click', e => {
-        e.preventDefault();
-        check(newPokemon.id);
-    });
-
-    nextMon.addEventListener('click', e => {
-        e.preventDefault();
-        pokemonSearchResults.innerHTML = '';
-        trainerSection.style.display = 'none';
-        let afterMon = newPokemon.id + 1;
-        if (afterMon === 803) afterMon = 1;
-        getPokemon(afterMon).then(pokemon => renderSearchResults(pokemon));
-    });
-
-    prevMon.addEventListener('click', e => {
-        e.preventDefault();
-        pokemonSearchResults.innerHTML = '';
-        trainerSection.style.display = 'none';
-        let beforeMon = newPokemon.id - 1;
-        if (beforeMon === 0) beforeMon = 802;
-        getPokemon(beforeMon).then(pokemon => renderSearchResults(pokemon));
-    });
 }
+
+// Event Listeners
+navPrev.addEventListener('click', e => {
+    e.preventDefault();
+    getPokemon(parseInt(prevMon.innerText))
+        .then(pokemon => renderSearchResults(pokemon));
+});
+
+navNext.addEventListener('click', e => {
+    e.preventDefault();
+    getPokemon(parseInt(nextMon.innerText))
+        .then(pokemon => renderSearchResults(pokemon));
+});
+
+addToPokedex.addEventListener('click', e => {
+    e.preventDefault();
+    check(parseInt(currMon.innerText));
+});
 
 // Alert modal
 const msg = document.getElementById('alert-message');
@@ -161,22 +94,23 @@ const modal = document.getElementById('alert-modal');
 const alertButton = document.getElementById('alert-button');
 
 alertButton.addEventListener('click', e => {
-    modal.style.display="none";
-})
+    modal.style.display = "none";
+});
 
 // Helper Functions
 const check = pokeNumber => {
     const found = lisa.pokemonCaught.some(el => el.id === pokeNumber);
-    
+
     if (found){
         msg.innerHTML = 'You already have this pokemon!';
-        modal.style.display = 'inline';
+        modal.style.display = 'inline-block';
     } else {
         lisa.add(pokeNumber);
         msg.innerHTML = 'Pokemon added to pokedex!';
-        modal.style.display = 'inline';
-        document.getElementById('add-button').classList.add('caught-button');
-        document.getElementById('add-button').innerHTML = 'Caught';
+        modal.style.display = 'inline-block';
+        addToPokedex.classList.remove('add-button');
+        addToPokedex.classList.add('caught-button');
+        addToPokedex.innerHTML = 'Caught';
     }
 }
 

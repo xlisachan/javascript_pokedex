@@ -51,7 +51,84 @@
                     <div># of Pokemon Caught <br/><span id="trainer-count"></span> / 802</div>
                     <div class="trainer-pokemon jc-start" id="pokemon-section"></div>
                 </div>
-                <div id="search-results" style="display: none"></div>
+                <center id="no-match" style="display: none;">
+                    <div>404 Error</div>
+                    <div>
+                        <span id="no-pokemon"></span> not found
+                    </div>
+                    <img style="height:30vh" src="./assets/images/detectivepikachu.png" alt="Pokemon not found" />
+                </center>
+                <div id="search-results" style="display: none" class="opaque-div">
+                    <div class="results-nav">
+                        <div id="nav-prev" class="arrow-div">
+                            <i class="fas fa-chevron-left"></i>
+                            <span id="prev-no"></span>
+                        </div>
+                        <div id="nav-curr">
+                            <span style="font-size: .9em">NO. </span>
+                            <span id="curr-no"></span>
+                        </div>
+                        <div id="nav-next" class="arrow-div">
+                            <span id="next-no"></span>
+                            <i class="fas fa-chevron-right"></i>
+                        </div>
+                    </div>
+                    <div class="results-header">
+                        <div class="results-info flex-row">
+                            <img id="results-img"></img>
+                            <div id="results-basics">
+                                <div id="results-name"></div>
+                                <div id="results-type" class="poke-type"></div>
+                            </div>
+                        </div>
+                        <div id="add-button"></div>
+                    </div>
+                    <div class="results-body-stats">
+                        <div>STATS</div>
+                        <div class="results-stats">
+                            <div class="flex-row jc-sb">
+                                <div class="stats-name">HP</div>
+                                <div class="stats-info flex-row jc-sb">
+                                    <div class="stats-no">
+                                        <span id="stats-hp"></span>
+                                        <span style="color: gray; font-size: 0.8em;">/255</span>
+                                    </div>
+                                    <div class="stats-bar">
+                                        <div id="calc-hp" class="stats-calc"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flex-row jc-sb">
+                                <div class="stats-name">ATK</div>
+                                <div class="stats-info flex-row jc-sb">
+                                    <div class="stats-no">
+                                        <span id="stats-atk"></span>
+                                        <span style="color: gray; font-size: 0.8em;">/255</span>
+                                    </div>
+                                    <div class="stats-bar">
+                                        <div id="calc-atk" class="stats-calc"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flex-row jc-sb">
+                                <div class="stats-name">DEF</div>
+                                <div class="stats-info flex-row jc-sb">
+                                    <div class="stats-no">
+                                        <span id="stats-def"></span>
+                                        <span style="color: gray; font-size: 0.8em;">/548</span>
+                                    </div>
+                                    <div class="stats-bar">
+                                        <div id="calc-def" class="stats-calc"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="results-body-abilities">
+                        <div>Abilities</div>
+                        <div id="stats-abil" class="results-stats"></div>
+                    </div>
+                </div>
             </div>
         </div>
         <div id="alert-modal" style="display: none">

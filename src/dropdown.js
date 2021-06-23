@@ -12,7 +12,6 @@ userNameDiv.addEventListener('click', e =>{
         e.preventDefault();
         login();
     } else if (e.target === ddLogin){
-        pokemonSearchResults.innerHTML = '';
         pokeSearchForm.style.display = 'none';
         userLogin.style.display = 'none';
         trainerSection.style.display = 'none';

@@ -5,8 +5,16 @@ const pokeSearchForm = document.getElementById('poke-form'),
 // Event Listener
 pokeSearchForm.addEventListener('submit', e => {
     e.preventDefault();
-    pokemonSearchResults.innerHTML = '';
     trainerSection.style.display = 'none';
-    getPokemon(pokeSearchInput.value).then(newPokemon => renderSearchResults(newPokemon));
+    getPokemon(pokeSearchInput.value)
+        .then(newPokemon => {
+            noMatchPage.style.display = 'none';
+            pokemonSearchResults.style.display = 'inline-block';
+            renderSearchResults(newPokemon)
+        })
+        .catch(error => {
+            pokemonSearchResults.style.display = 'none';
+            noMatchPage.style.display = 'inline-block';
+        });
     pokeSearchInput.value = '';
 });

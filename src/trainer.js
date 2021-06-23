@@ -66,8 +66,8 @@ class Trainer{
 
             pokeBall.addEventListener('click', e => {
                 e.preventDefault();
-                pokemonSearchResults.innerHTML = '';
                 trainerSection.style.display = 'none';
+                pokemonSearchResults.style.display = 'inline-block';
                 getPokemon(pokemon.name).then(newPokemon => renderSearchResults(newPokemon));
             });
         }

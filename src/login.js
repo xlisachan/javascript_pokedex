@@ -6,7 +6,8 @@ const userInfo = document.getElementById('user-info'),
       userLogin = document.getElementById('user'),
       trainerSection = document.getElementById('trainer-section'),
       pokemonSection = document.getElementById('pokemon-section'),
-      pokemonSearchResults = document.getElementById('search-results');
+      pokemonSearchResults = document.getElementById('search-results'),
+      noMatchPage = document.getElementById('no-match');
 
 userAvatar.src = lisa.avatar;
 userName.innerText = lisa.name;
@@ -21,9 +22,10 @@ userInfo.addEventListener('click', e => {
 const login = () => {
     loginMenu.style.display = 'none';
     pokeSearchForm.style.display = 'inline-flex';
-    userLogin.style.display = 'inline';
-    trainerSection.style.display = 'inline';
+    userLogin.style.display = 'inline-block';
+    trainerSection.style.display = 'inline-block';
     pokemonSection.innerHTML = '';
     pokemonSearchResults.style.display = 'none';
+    noMatchPage.style.display = 'none';
     lisa.renderTrainer();
 }
