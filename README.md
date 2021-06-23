@@ -7,11 +7,11 @@
 ## Features and Functionality
 * Ability to open and close Pokédex
 * Browse through starter Pokémon and click to learn more information about each Pokémon
-* Search or scroll for other Pokémon and add them to the user profile
+* Search for other Pokémon and add them to the user profile
 
 ## Built With
 JavaScript, AJAX, <a href="https://pokeapi.co/">Pokémon API</a>, HTML, Sass, Bootstrap
 
 ## Deployment
 <a href="https://xlisachan.github.io/javascript_pokedex/">https://xlisachan.github.io/javascript_pokedex/</a><br/>
-<img src="https://github.com/xlisachan/pokedex/blob/master/assets/images/Pokedex-mobile.png" width="30%"/>
+<img src="./assets/images/new_pokedex.png" width="50%"/>
