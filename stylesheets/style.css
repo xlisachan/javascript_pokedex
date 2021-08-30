@@ -3,6 +3,7 @@ body {
   background-image: url("../assets/images/pokemonbg.png");
   background-position: center;
   background-repeat: no-repeat;
+  background-size: cover;
   font-family: "Press Start 2P", cursive;
   height: 100vh;
   text-transform: uppercase;
@@ -378,10 +379,6 @@ body {
 }
 
 @media (min-width: 768px) {
-  body {
-    background-position: initial;
-    background-size: initial;
-  }
   .results-header {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;

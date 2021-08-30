@@ -8,6 +8,7 @@ body{
         image: url('../assets/images/pokemonbg.png');
         position: center;
         repeat: no-repeat;
+        size: cover;
     }
     font-family: $font-family;
     height: 100vh;
@@ -308,13 +309,6 @@ body{
 }
 
 @media (min-width: 768px){
-    body{
-        background : {
-            position: initial;
-            size: initial;
-        }
-    }
-
     .results-header {
         flex-direction: row; 
     }
